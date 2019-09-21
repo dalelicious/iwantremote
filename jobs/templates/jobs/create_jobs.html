@@ -1,0 +1,24 @@
+<html>
+	<head>
+		<title>Create Job</title>
+	</head>
+	<body>
+		<center>
+			<fieldset style="background-color:233d44">
+				<h1 style="color:white" style="font-family:dejavu serif" ><center><b>Create Job</b></center></h1>
+			</fieldset>
+			<br><br>
+			<form method="post" action="{% url 'jobs:create-job' %}">
+				{% csrf_token %}
+				Job Title: <input type="text" name="job_title"></br><br>
+				Category: <input type="text" name="category"></br><br>
+				Job Type: <input type="text" name="job_type"></br><br>
+				Headquarters: <input type="text" name="headquarters"></br><br>
+				Region: <input type="text" name="region"></br><br>
+				Apply Link: <input type="text" name="apply_link"></br><br>
+				Job Description: <input type="text" name="job_description"></br><br>
+				<input type="submit" name="create"></br>
+			</form>
+		</center>
+	</body>
+</html>
