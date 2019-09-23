@@ -1,0 +1,25 @@
+{% extends "main.html" %}
+
+{% block content_additions %}
+
+<div class="container mt-5">
+	<a href="/jobs/" class="btn btn-dark">Back to all jobs</a>
+</div>
+<div class="container mt-3">
+	<div class="card shadow">
+		<div class="card-body">
+			<h2 class="card-title mb-3">{{company.name}}
+				<img src="/static/images/spacex.png" class="float-right" width="150" height="120">
+				<h4 class="card-title mb-3">Company Tagline</h4>
+			</h2>
+			<i class="text-muted">Location</i><br>
+			<i class="text-muted">Jobs Posted</i><br>
+			<i class="text-muted">{{company.website}}</i>
+			<p class="card-text mt-5">
+				{{company.description}}
+			</p>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

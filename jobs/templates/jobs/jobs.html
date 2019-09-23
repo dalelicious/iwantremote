@@ -27,7 +27,7 @@
 				<!-- <img src={{job.logo}} width="150" height="120"> -->
 				<img src="/static/images/spacex.png" alt="Girl in a jacket" width="150" height="120">
 			</div>
-			<h5 class="card-title nav-item"><a href="{% url 'jobs:job-detail' job.id %}">{{job.job_title}}</a>
+			<h5 class="card-title nav-item"><a href="{% url 'jobs:job-detail' job.id %}">{{job.title}}</a>
 				<span class="badge badge-danger"> Urgent! </span>
 				<span class="badge badge-primary"> Devops </span>
 				<span class="badge badge-primary"> Django </span>
@@ -35,7 +35,7 @@
 				<h6 class="card-title nav-item text-muted">{{job.job_type}}/{{job.headquarters}}</h6>
 			</h5>
 			<p class="card-text">
-				{{job.job_description}}
+				{{job.description}}
 			</p>
 		</div>
 		{% endfor %}

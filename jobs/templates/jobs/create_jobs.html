@@ -1,24 +1,68 @@
-<html>
-	<head>
-		<title>Create Job</title>
-	</head>
-	<body>
-		<center>
-			<fieldset style="background-color:233d44">
-				<h1 style="color:white" style="font-family:dejavu serif" ><center><b>Create Job</b></center></h1>
-			</fieldset>
-			<br><br>
-			<form method="post" action="{% url 'jobs:create-job' %}">
-				{% csrf_token %}
-				Job Title: <input type="text" name="job_title"></br><br>
-				Category: <input type="text" name="category"></br><br>
-				Job Type: <input type="text" name="job_type"></br><br>
-				Headquarters: <input type="text" name="headquarters"></br><br>
-				Region: <input type="text" name="region"></br><br>
-				Apply Link: <input type="text" name="apply_link"></br><br>
-				Job Description: <input type="text" name="job_description"></br><br>
-				<input type="submit" name="create"></br>
-			</form>
-		</center>
-	</body>
-</html>
+{% extends "main.html" %}
+
+{% block content_additions %}
+
+<div class="jumbotron bg-white">
+	<div class="row">
+		<div class="col-lg-12 text-center">
+			<img src="/static/images/jobs.png" class="img-fluid" alt="Responsive image" width="450">
+			<h1 class="mt-2 text-dark-50">Reach the largest remote tech works around the globe.</h1>
+		</div>
+	</div>
+</div>
+
+<section id="tabs" calss="project-tab">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="tab-content" id="nav-tabContent">
+					<div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+						<div class="container mt-3">
+							<div class="card">
+								<h4 class="card-header bg-dark text-white text-center">Step 1. Create a Job</h4>
+								<div class="card-body shadow">
+									<form method="post" action="{% url 'jobs:create-job' %}">
+										{% csrf_token %}
+										<h4 class="card-title nav-item">Tell us about your job</h4>
+										<h6 class="card-title mt-3">Position*</h6>
+										<input input type="text" name="title" class="form-control col-md-6">
+										<h6 class="card-title mt-3">Category *</h6>
+										<input input type="text" name="category" class="form-control col-md-6">
+										<h6 class="card-title mt-3">Job Type *</h6>
+										<input input type="text" name="job_type" class="form-control col-md-6">
+										<h6 class="card-title mt-3">Headquarters *</h6>
+										<input input type="text" name="headquarters" class="form-control col-md-6">
+										<h6 class="card-title mt-3">Region *</h6>
+										<input input type="text" name="region" class="form-control col-md-6">
+										<h6 class="card-title mt-3">Apply Link *</h6>
+										<input input type="text" name="link" class="form-control col-md-6">
+										<h6 class="card-title mt-3">Job Description *</h6>
+										<input input type="text" name="job_description" class="form-control col-md-6">
+										
+										<h4 class="card-title nav-item mt-5">Tell us about your Company</h4>
+										<h6 class="card-title mt-3">Company *</h6>
+										<input input type="text" name="company_name" class="form-control col-md-6">
+										<h6 class="card-title mt-3">Company Logo *</h6>
+										<input input type="text" name="logo" class="form-control col-md-6">
+										<h6 class="card-title mt-3">Tagline *</h6>
+										<input input type="text" name="tagline" class="form-control col-md-6">
+										<h6 class="card-title mt-3">Company Website *</h6>
+										<input input type="text" name="website" class="form-control col-md-6">
+										<h6 class="card-title mt-3">Email *</h6>
+										<input input type="text" name="email" class="form-control col-md-6">
+										<h6 class="card-title mt-3">Company Description *</h6>
+										<input input type="text" name="company_description" class="form-control col-md-6">
+
+										<button type="submit" name="create" class="btn-lg btn-danger mt-3">Submit this job</button>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+{% endblock %}

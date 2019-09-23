@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     #iwanteremote apps
     'jobs',
+    'company',
 ]
 
 MIDDLEWARE = [
