@@ -37,3 +37,13 @@ def create_job(request):
 		job.create_new_job(job_title, category, job_type, headquarters, region, apply_link, job_description)
 
 		return redirect('jobs:jobs')
+
+
+def job_detail(request, jobId):
+
+	job_detail = job.get_job_id(jobId)
+
+	return render(request, 'jobs/job_detail.html',
+				 {'job' : job_detail})
+
+

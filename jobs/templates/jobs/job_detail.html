@@ -1,0 +1,86 @@
+{% extends "main.html" %}
+
+{% block content_additions %}
+
+<div class="jumbotron bg-light">
+  <div class="row">
+    <div class="col-lg-12 text-center">
+      <img src="/static/images/jobs.png" alt="Girl in a jacket" width="500" height="200">
+      <h1 class="mt-2 text-dark-50 text-uppercase">Featured Remote Jobs</h1>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12">
+    <div class="container">
+      <div class="card">
+        <div class="card-body shadow">
+          <!-- <i class="card-title nav-item text-dark">{{job.date_added}}</i> -->
+          <i class="card-title nav-item text-dark">Posted Sept 19</i>
+          <!-- <img src={{job.logo}} class="float-right" alt="Girl in a jacket" width="150" height="120"> -->
+          <img src="/static/images/spacex.png" class="float-right" alt="Girl in a jacket" width="150" height="120">
+          <h1 class="card-title nav-item mt-5">{{job.job_title}}</h1>
+          <h6 class="card-title nav-item text-muted">{{job.job_type}}/{{job.headquarters}}
+            <span class="badge badge-primary"> Devops </span>
+            <span class="badge badge-primary"> Django </span>
+            <span class="badge badge-primary"> Python </span>
+          </h6>
+          <!-- Start Job Description from database with correct format -->
+          <!-- {{job.job_description}} -->
+          <h4 class="card-title nav-item mt-5">About:</h4>
+          <p class="card-text">
+            At Close, we're building the sales communication platform of the future. With our roots as the very first sales CRM to include built-in calling, we're leading the industry toward eliminating manual processes and helping companies to close more deals(faster). Since our founding in 2013, we've grown to become a profitable, 100% globally distributed team of ~33 high-performing, happy people that are dedicated to building a product our customers love..
+          </p>
+          <p>
+            Our backend tech stack currently consists of Python Flask/Gunicorn web apps with our TaskTiger scheduler handling many of the backend asynchronous processing tasks.  Our data stores include MongoDB, Elasticsearch, PostgreSQL, MySQL, and Redis.  Our infrastructure runs on AWS using a combination of managed services like RDS and ElastiCache as well as EC2 instances managed by Puppet, Ansible, and Terraform.  Today we manage hundreds of EC2 instances and thousands of Docker containers on our Kubernetes clusters.
+          </p>
+
+          <h4 class="card-title nav-item mt-5">We're looking for:</h4>
+          <p class="card-text">
+            <ul>
+              <li>Building out our Kubernetes infrastructure to include additional services, increased redundancy/scalability, and harnessing new k8s features</li>
+              <li>Tighten security across our infrastructure</li>
+              <li>Improve our CI/CD process making builds/deployments faster and safer</li>
+            </ul>
+          </p>
+
+          <h4 class="card-title nav-item mt-5">Help us for:</h4>
+          <p class="card-text">
+            <ul>
+              <li>Building out our Kubernetes infrastructure to include additional services, increased redundancy/scalability, and harnessing new k8s features</li>
+              <li>Tighten security across our infrastructure</li>
+              <li>Improve our CI/CD process making builds/deployments faster and safer</li>
+            </ul>  
+          </p>
+          <p class="card-text">
+            Will develop information systems by studying operations; designing, developing and installing software solutions; support and developing software team. The Senior Software Engineer will lead a team of developers responsible for building new and support existing websites.
+          </p>
+          <h4 class="card-title nav-item mt-5">What  you will do</h4>
+          <p class="card-text">
+            We come from 13 countries and 15 states; a collection of talented humans rich in diverse backgrounds, lifestyles, and cultures. Twice a year we meet up somewhere around the world to spend time with one another. We see these retreats as an opportunity to strengthen the social fiber of our community..
+          </p>
+          <!-- End Job Description from database with correct format -->
+
+          <ul class="list-unstyled">
+            <button type="button" class="btn btn-danger mt-3 btn-lg rounded">Apply for this Position</button>
+            <button type="button" class="btn btn-danger m-3 btn-sm float-right ">Share</button>
+          </ul>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-5">
+    <div class="card-body bg-light border"> 
+      <h5 class="card-title nav-item">Help us maintain the quality of jobs posted on We Work Remotely.
+      <ul class="list-unstyled">
+        <button type="button" class="btn btn-dark mt-3 btn-lg rounded">Let us know</button>
+      </ul>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

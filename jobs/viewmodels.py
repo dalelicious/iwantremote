@@ -5,6 +5,15 @@ from . models import Jobs
 class JobsViewModel():
 
 
+	def get_job_id(self, jobId):
+		""" Get job id
+		"""
+
+		job = Jobs.objects.get(id=jobId)
+
+		return job
+
+
 	def get_jobs_list(self):
 		""" Get all jobs
 		"""
