@@ -3,31 +3,34 @@
 {% block content_additions %}
 
 
-<div class="row justify-content-md-center mt-5 ">
+<div class="row justify-content-md-center mt-5">
   <div class="col-sm-4">
     <a href="/jobs/" class="" style="color: #343a40"><img src="/static/assets/vendor/iconic/svg/arrow-thick-left.svg"> Back to all jobs</a>
   </div>
-  <div class="col-lg-2">
+  <div class="col-lg-3">
     <a href="/jobs/" class="float-right" style="color: #343a40"> See more Software Engineering Jobs <img src="/static/assets/vendor/iconic/svg/arrow-thick-right.svg"></a>
   </div>
 </div>
 
-<div class="row">
-  <div class="col-12">
+<div class="row justify-content-md-center mt-5">
+  <div class="col-sm-7">
     <div class="container">
       <div class="card">
         <div class="card-body shadow">
-          <i class="card-title nav-item text-dark">Posted {{job.create_date|date:"M d"}}</i>
+          <i class="card-title nav-item text-dark ">Posted {{job.create_date|date:"M d"}}</i>
           <!-- <img src={{company.logo}} class="float-right" alt="Girl in a jacket" width="150" height="120"> -->
           <a href="{% url 'company:company-detail' company.id %}">
             <img src="/static/images/spacex.png" class="float-right" width="150" height="120">
           </a>
           <h1 class="card-title nav-item mt-5">{{job.title}}</h1>
-          <h6 class="card-title nav-item text-muted">{{job.job_type}}/{{job.headquarters}}
+          <h6 class="card-title nav-item text-muted ">{{job.job_type}} ({{job.headquarters}})
             <span class="badge badge-primary"> Devops </span>
             <span class="badge badge-primary"> Django </span>
             <span class="badge badge-primary"> Python </span>
           </h6>
+          <div class="row">
+             <div class="col"><hr></div>
+          </div>
           <!-- Start Job Description from database with correct format -->
           <!-- {{job.job_description}} -->
           <h4 class="card-title nav-item mt-5">About:</h4>
@@ -77,9 +80,9 @@
   </div>
 </div>
 
-<div class="container mt-5">
+<div class="container col-sm-7 mt-3">
     <div class="card-body bg-light border"> 
-      <h5 class="card-title nav-item">Help us maintain the quality of jobs posted on We Work Remotely.
+      <h5 class="card-title nav-item">Help us maintain the quality of jobs posted on IWantRemote. Is this job not remote?
       <ul class="list-unstyled">
         <button type="button" class="btn btn-dark mt-3 btn-lg rounded">Let us know</button>
       </ul>
