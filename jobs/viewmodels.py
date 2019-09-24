@@ -37,7 +37,7 @@ class JobsViewModel():
 		job.job_type = job_type
 		job.headquarters = headquarters
 		job.region = region
-		job.apply_link = link
+		job.link = link
 		job.description = job_description
 		job.create_date = timezone.now()
 
