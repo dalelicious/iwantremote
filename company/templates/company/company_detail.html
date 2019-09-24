@@ -2,17 +2,11 @@
 
 {% block content_additions %}
 
-<div class="row justify-content-md-center mt-5">
-	<div class="col-sm-4">
-		<a href="/jobs/" class="" style="color: #343a40"> Back to all jobs</a>
-	</div>
-	<div class="col-lg-2">
-		<a href="/jobs/" class="float-right" style="color: #343a40"> See more Companies</a>
-	</div>
+<div class="container mt-5">
+	<a href="/jobs/" class="btn btn-dark">Back to all jobs</a>
 </div>
-
-<div class="row justify-content-md-center mt-5">
-	<div class="card shadow col-sm-6">
+<div class="container mt-3">
+	<div class="card shadow">
 		<div class="card-body">
 			<h2 class="card-title mb-3">{{company.name}}
 				<img src="/static/images/spacex.png" class="float-right" width="150" height="120">
@@ -21,14 +15,9 @@
 			<i class="text-muted">Location</i><br>
 			<i class="text-muted">Jobs Posted: {{job_posted}}</i><br>
 			<i class="text-muted">{{company.website}}</i>
-			<div class="row mt-3">
-              <div class="col"><hr></div>
-          	</div>
 			<p class="card-text mt-5">
 				{{company.description}}
 			</p>
-			 <div class="row mt-5">
-		     </div>
 		</div>
 	</div>
 </div>
