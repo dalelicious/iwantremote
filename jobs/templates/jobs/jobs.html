@@ -2,12 +2,12 @@
 
 {% block content_additions %}
 
-<div class="jumbotron bg-white">
+<div class="jumbotron alert alert-primary">
 	<div class="row">
 		<div class="col-lg-12 text-center">
-			<img src="/static/images/jobs.png" class="img-fluid" alt="Responsive image" width="450">
-			<h1 class="mt-2 text-dark-50">WOW Tech Jobs.</h1>
-			<p class="lead card-text"><strong>iWantRemote</strong> is the <strong>largest gateway for remote tech jobs around the globe</strong>.
+			<img src="/static/images/cover.png" class="img-fluid" alt="Responsive image" width="450">
+			<h1 class="mt-2 text-dark">#1 remote tech jobs, screened-daily.</h1>
+			<h5 class="card-text text-dark">Your <strong>one-stop</strong> job portal for remote tech jobs worldwide.</h5>
 			<ul class="list-unstyled">
 				<button class="btn btn-danger mt-3 btn-lg rounded" onclick="location.href='{% url 'jobs:create-job' %}'">Post a job for $199</button>
 			</ul>
@@ -16,19 +16,18 @@
 </div>
 
 <div class="container">
-	<div class="card">
-		<h4 class="card-header bg-dark text-white">Featured Remote Jobs
+	<div class="card border-0">
+		<h4 class="text-dark mt-3">Featured Remote Jobs
 			<!-- <span class="card-text float-right"><small class="text-white">{{job.last_update}}</small></span> -->
 			<span class="card-text float-right"><small class="text-white"> Last updated 3 mins ago</small></span>
 		</h4>
 		{% for job in jobs_list %}
-		<div class="card-body shadow"> 
+		<div class="card-body shadow mt-3 border"> 
 			<div class="float-right">
 				<!-- <img src={{job.logo}} width="150" height="120"> -->
 				<img src="/static/images/spacex.png" alt="Girl in a jacket" width="150" height="120">
 			</div>
 			<h5 class="card-title nav-item"><a href="{% url 'jobs:job-detail' job.id %}" style="color: #343a40">{{job.title}}</a>
-				<span class="badge badge-danger"> Urgent! </span>
 				<span class="badge badge-primary"> Devops </span>
 				<span class="badge badge-primary"> Django </span>
 				<span class="badge badge-primary"> Python </span>
