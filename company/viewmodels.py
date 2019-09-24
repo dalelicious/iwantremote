@@ -25,6 +25,16 @@ class CompanyViewModel():
 		return company
 
 
+	def get_all_job_posted(self, companyId):
+		""" Get all job posted
+		"""
+
+		company = Company.objects.get(id=companyId)
+		job_posted = len(Jobs.objects.filter(company=company.email))
+
+		return job_posted
+
+
 	def create_new_company(self, name, logo, tagline, website, email, company_description):
 		""" Create new company
 		"""
