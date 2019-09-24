@@ -11,3 +11,4 @@ class Jobs(models.Model):
 	region = models.CharField(max_length=50, null=True)
 	link = models.CharField(max_length=50, null=True)
 	description = models.CharField(max_length=50, null=True)
+	create_date = models.DateTimeField()

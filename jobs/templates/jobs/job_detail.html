@@ -16,8 +16,7 @@
     <div class="container">
       <div class="card">
         <div class="card-body shadow">
-          <!-- <i class="card-title nav-item text-dark">{{job.date_added}}</i> -->
-          <i class="card-title nav-item text-dark">Posted Sept 19</i>
+          <i class="card-title nav-item text-dark">Posted {{job.create_date|date:"M d"}}</i>
           <!-- <img src={{company.logo}} class="float-right" alt="Girl in a jacket" width="150" height="120"> -->
           <a href="{% url 'company:company-detail' company.id %}">
             <img src="/static/images/spacex.png" class="float-right" width="150" height="120">

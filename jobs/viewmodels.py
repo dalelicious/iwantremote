@@ -1,5 +1,8 @@
+# Django
+from django.utils 	import timezone
+
 # Jobs
-from . models import Jobs
+from . models 		import Jobs
 
 
 class JobsViewModel():
@@ -36,6 +39,7 @@ class JobsViewModel():
 		job.region = region
 		job.apply_link = link
 		job.description = job_description
+		job.create_date = timezone.now()
 
 		self.save_to_jobs(job)		
 
