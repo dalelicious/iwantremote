@@ -14,5 +14,5 @@ def categories(request):
 
 	category_list = category.get_category_list()
 
-	return render(request, 'category/category.html',
-				 {'category_list' : category_list})
+	return render(request, 'templates/header.html',
+				 {'category_list':category_list})

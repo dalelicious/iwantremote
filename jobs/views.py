@@ -6,25 +6,32 @@ from django.shortcuts 		import redirect
 # iwantremote
 from . viewmodels 			import JobsViewModel
 from company.viewmodels 	import CompanyViewModel
+from category.viewmodels 	import CategoryViewModel
 
 
 job = JobsViewModel()
 company = CompanyViewModel()
+categories = CategoryViewModel()
 
 
 def jobs(request):
 
 	jobs_list = job.get_jobs_list()
+	category_list = categories.get_category_list()
 
 	return render(request, 'jobs/jobs.html',
-				 {'jobs_list' : jobs_list})
+				 {'jobs_list':jobs_list,
+				  'category_list':category_list})
 
 
 def create_job(request):
 
 	if request.method == "GET":
 
-		return render(request, 'jobs/create_jobs.html')
+		category_list = categories.get_category_list()
+
+		return render(request, 'jobs/create_jobs.html',
+					 {'category_list':category_list})
 
 	else:
 
@@ -53,10 +60,12 @@ def create_job(request):
 def job_detail(request, jobId):
 
 	job_detail = job.get_job_id(jobId)
+	category_list = categories.get_category_list()
 	company_detail = company.get_company_by_job_id(jobId)
 
 	return render(request, 'jobs/job_detail.html',
-				 {'job' : job_detail,
-				  'company' : company_detail})
+				 {'job':job_detail,
+				  'company':company_detail,
+				  'category_list':category_list})
 
 
