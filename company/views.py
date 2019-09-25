@@ -10,6 +10,14 @@ from . viewmodels 			import CompanyViewModel
 company = CompanyViewModel()
 
 
+def companies(request):
+
+	company_list = company.get_company_list()
+
+	return render(request, 'company/company.html',
+				 {'company_list' : company_list})
+
+
 def company_detail(request, companyId):
 
 	company_detail = company.get_company_by_id(companyId)
