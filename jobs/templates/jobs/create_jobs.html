@@ -30,11 +30,15 @@
 										<div class="card-title mt-3 form-row">
 		    								<div class="form-group col-md-6">
 		      										<h6 for="card-title mt-3">Category<span style="color:red;">*</span></h6>
-		      										<input type="text" name="category" class="form-control col-md-12 form-control-lg">
+		      										<select name="category" class="form-control col-md-12 form-control-lg">
+		      											{% for category in category_list %}
+		      												<option value="{{category.id}}">{{category.name}}</option>
+		      											{% endfor %}
+		      										</select>
 		    								</div>
 	    								<div class="form-group col-md-6">
-	      										<h6 for="inputPassword4">Job Type<span style="color:red;">*</span></h6>
-	     										 <input type="password" name="job_type" class="form-control form-control-lg">
+	      										<h6>Job Type<span style="color:red;">*</span></h6>
+	     										 <input type="text" name="job_type" class="form-control form-control-lg">
 	  										  </div>
 	  									</div>
 										<h6 class="card-title"> Tags</h6>
@@ -46,8 +50,8 @@
 		      										<p class="text-muted">Example: "US only", "EST"</p>
 		    								</div>
 	    								<div class="form-group col-md-6">
-	      										<h6 for="inputPassword4">Regional Restrictions <span style="color:red;">*</span></h6>
-	     										 <input type="password" name="region" class="form-control form-control-lg">
+	      										<h6>Regional Restrictions <span style="color:red;">*</span></h6>
+	     										 <input type="text" name="region" class="form-control form-control-lg">
 	     										 <p class="text-muted">Example: “North America Only”,   “P.S.T. Only”</p>
 	  										  </div>
 	  									</div>
@@ -70,8 +74,8 @@
 		      										<input input type="text" name="logo" class="form-control form-control-lg col-md-12">
 		    								</div>
 	    								<div class="form-group col-md-6">
-	      										<h6 for="inputPassword4">Tagline</h6>
-	     										 <input type="password" name="tagline" class="form-control form-control-lg">
+	      										<h6>Tagline</h6>
+	     										 <input type="text" name="tagline" class="form-control form-control-lg">
 	  										  </div>
 	  									</div>
 	  									<div class="card-title mt-3 form-row">
@@ -80,8 +84,8 @@
 		      										<input input type="text" name="website" class="form-control form-control-lg col-md-12">
 		    								</div>
 	    								<div class="form-group col-md-6">
-	      										<h6 for="inputPassword4">Email<span style="color:red;">*</span></h6>
-	     										 <input type="password" name="email" class="form-control form-control-lg">
+	      										<h6>Email<span style="color:red;">*</span></h6>
+	     										 <input type="text" name="email" class="form-control form-control-lg">
 	  										  </div>
 	  									</div>
 										<button type="submit" name="create" class="btn-lg btn-danger mt-3">Submit this job</button>
