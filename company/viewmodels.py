@@ -25,6 +25,15 @@ class CompanyViewModel():
 		return company
 
 
+	def get_company_list(self):
+		""" Get all company
+		"""
+
+		company_list = Company.objects.all()
+
+		return company_list
+
+
 	def get_all_job_posted(self, companyId):
 		""" Get all job posted
 		"""

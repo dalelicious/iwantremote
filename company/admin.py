@@ -1,3 +1,13 @@
-from django.contrib import admin
+# Django
+from django.db 						import models
+from django.contrib 				import admin
 
-# Register your models here.
+# iwantremote
+from company.models 				import Company
+
+
+class CompanyAdmin(admin.ModelAdmin):
+	list_display = ('id', 'name', 'email', 'logo', 'tagline', 'website', 'description')
+
+
+admin.site.register(Company, CompanyAdmin)

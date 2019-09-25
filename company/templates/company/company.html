@@ -1,0 +1,36 @@
+{% extends "main.html" %}
+
+{% block content_additions %}
+
+<div class="jumbotron bg-white">
+  <div class="row">
+    <div class="col-lg-12 text-center">
+      <h1 class="mt-2 text-dark-50">All Remote Companies.</h1>
+      <p class="lead card-text">A list of remote-first and remote-friendly companies. Find the right fit for you from our library of amazing remote companies.
+      <ul class="list-unstyled">
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="card" style="max-width: 1200px;">
+    <div class="row no-gutters">
+      {% for company in company_list %}
+      <div class="col-md-3 rounded">
+        <!-- <img src={{company.logo}} class="card-img" alt="..."> -->
+        <img src="/static/images/google.png" class="card-img" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h4 class="card-title">{{company.name}}</h4>
+          <p class="card-text">{{company.description}}</p>
+          <p class="card-text"><small class="badge badge-primary badge-pill">Jobs Posted: {{company.job_posted}}</small></p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -13,21 +13,9 @@
         <li class="nav-item dropdown">
           <a class="navbar-brand dropdown-toggle" data-toggle="dropdown" href="#">Categories</a>
           <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">DevOps</a>
-            <a class="dropdown-item" href="#">System Administration</a>
-            <a class="dropdown-item" href="#">Software Engineering</a>
-            <a class="dropdown-item" href="#">UI/UX Design</a>
-            <a class="dropdown-item" href="#">Web Development</a>
-            <a class="dropdown-item" href="#">Cloud Computing</a>
-            <a class="dropdown-item" href="#">QA/Testing</a>
-            <a class="dropdown-item" href="#">IOS/Android</a>
-            <a class="dropdown-item" href="#">Database</a>
-            <a class="dropdown-item" href="#">TelephonyVoip</a>
-            <a class="dropdown-item" href="#">Project Management</a>
-            <a class="dropdown-item" href="#">Networking</a>
-            <a class="dropdown-item" href="#">Information Security</a>
-            <a class="dropdown-item" href="#">IT Support</a>
-            <a class="dropdown-item" href="#">Customer Support</a>
+            {% for category in category_list %}
+              <a class="dropdown-item" href="#">{{category.name}}</a>
+            {% endfor %}
           </div>
         </li>
         <li class="nav-item dropdown">
