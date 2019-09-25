@@ -5,7 +5,7 @@
 <div class="jumbotron alert alert-primary">
 	<div class="row">
 		<div class="col-lg-12 text-center">
-			<img src="/static/images/cover.png" class="img-fluid" alt="Responsive image" width="450">
+			<img src="/static/images/bg1.png" class="img-fluid" alt="Responsive image" width="350">
 			<h1 class="mt-2 text-dark">#1 remote tech jobs, screened-daily.</h1>
 			<h5 class="card-text text-dark">Your <strong>one-stop</strong> job portal for remote tech jobs worldwide.</h5>
 			<ul class="list-unstyled">
@@ -25,7 +25,7 @@
 		<div class="card-body shadow mt-3 border"> 
 			<div class="float-right">
 				<!-- <img src={{job.logo}} width="150" height="120"> -->
-				<img src="/static/images/spacex.png" alt="Girl in a jacket" width="150" height="120">
+				<img src="/static/images/google.png" alt="Girl in a jacket" width="100" height="80">
 			</div>
 			<h4 class="card-title nav-item "><a href="{% url 'jobs:job-detail' job.id %}" style="color: #343a40">{{job.title}}</a>
 				<span class="badge badge-primary"> Devops </span>
@@ -33,7 +33,7 @@
 				<span class="badge badge-primary"> Python </span>
 				<h6 class="card-title nav-item text-muted">{{job.job_type}} ({{job.headquarters}})</h6>
 			</h4>
-			<p class="card-text text-nowrap text-truncate" style="max-width: 1000px;">
+			<p class="card-text text-truncate" style="max-width: 1000px;">
 				{{job.description}}
 			</p>
 		</div>
