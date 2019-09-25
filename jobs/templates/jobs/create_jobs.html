@@ -5,7 +5,7 @@
 <div class="jumbotron alert alert-primary">
 	<div class="row">
 		<div class="col-lg-12 text-center">
-			<img src="/static/images/cover.png" class="img-fluid" alt="Responsive image" width="450">
+			<img src="/static/images/bg1.png" class="img-fluid" alt="Responsive image" width="350">
 			<h1 class="mt-2 text-dark">Reach millions of remote tech workers.</h1>
 		</div>
 	</div>
@@ -13,8 +13,8 @@
 
 <section id="tabs" calss="project-tab">
 	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
+		<div class="row justify-content-md-center">
+			<div class="col-md-10">
 				<div class="tab-content" id="nav-tabContent">
 					<div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
 						<div class="container mt-3">
@@ -23,36 +23,67 @@
 								<div class="card-body shadow">
 									<form method="post" action="{% url 'jobs:create-job' %}">
 										{% csrf_token %}
+										<h6 class="required-field float-right">Required Fields <span style="color:red;">*</span></h6>
 										<h4 class="card-title nav-item">Tell us about your job</h4>
-										<h6 class="card-title mt-3">Position*</h6>
-										<input input type="text" name="title" class="form-control col-md-6">
-										<h6 class="card-title mt-3">Category *</h6>
-										<input input type="text" name="category" class="form-control col-md-6">
-										<h6 class="card-title mt-3">Job Type *</h6>
-										<input input type="text" name="job_type" class="form-control col-md-6">
-										<h6 class="card-title mt-3">Headquarters *</h6>
-										<input input type="text" name="headquarters" class="form-control col-md-6">
-										<h6 class="card-title mt-3">Region *</h6>
-										<input input type="text" name="region" class="form-control col-md-6">
-										<h6 class="card-title mt-3">Apply Link *</h6>
-										<input input type="text" name="link" class="form-control col-md-6">
-										<h6 class="card-title mt-3">Job Description *</h6>
-										<input input type="text" name="job_description" class="form-control col-md-6">
-										
+										<h6 class="card-title mt-3">Position<span style="color:red;">*</span></h6>
+										<input input type="text"  name="title" placeholder="e.g Software Engineer" class="form-control form-control-lg col-md-12">
+										<div class="card-title mt-3 form-row">
+		    								<div class="form-group col-md-6">
+		      										<h6 for="card-title mt-3">Category<span style="color:red;">*</span></h6>
+		      										<input type="text" name="category" class="form-control col-md-12 form-control-lg">
+		    								</div>
+	    								<div class="form-group col-md-6">
+	      										<h6 for="inputPassword4">Job Type<span style="color:red;">*</span></h6>
+	     										 <input type="password" name="job_type" class="form-control form-control-lg">
+	  										  </div>
+	  									</div>
+										<h6 class="card-title"> Tags</h6>
+										<input input type="text" name="tags" placeholder="e.g python, django, redhat..." class="form-control form-control-lg col-md-12">
+										<div class="card-title mt-3 form-row">
+		    								<div class="form-group col-md-6">
+		      										<h6 for="card-title mt-3">Headquarters<span style="color:red;">*</span></h6>
+		      										<input type="text" name="headquarters" class="form-control col-md-12 form-control-lg">
+		      										<p class="text-muted">Example: "US only", "EST"</p>
+		    								</div>
+	    								<div class="form-group col-md-6">
+	      										<h6 for="inputPassword4">Regional Restrictions <span style="color:red;">*</span></h6>
+	     										 <input type="password" name="region" class="form-control form-control-lg">
+	     										 <p class="text-muted">Example: “North America Only”,   “P.S.T. Only”</p>
+	  										  </div>
+	  									</div>
+										<h6 class="card-title">Apply Link<span style="color:red;">*</span></h6>
+										<input input type="text" name="link" class="form-control col-md-12">
+										<p class="text-muted">Example: https://mybusiness.com/careers/apply or employee@email.com</p>
+										<h6 class="card-title mt-3">Job Description<span style="color:red;">*</span></h6>
+										<textarea class="form-control form-control-lg col-md-12" name="job_description" rows="6">
+										</textarea>
 										<h4 class="card-title nav-item mt-5">Tell us about your Company</h4>
-										<h6 class="card-title mt-3">Company *</h6>
-										<input input type="text" name="company_name" class="form-control col-md-6">
-										<h6 class="card-title mt-3">Company Logo *</h6>
-										<input input type="text" name="logo" class="form-control col-md-6">
-										<h6 class="card-title mt-3">Tagline *</h6>
-										<input input type="text" name="tagline" class="form-control col-md-6">
-										<h6 class="card-title mt-3">Company Website *</h6>
-										<input input type="text" name="website" class="form-control col-md-6">
-										<h6 class="card-title mt-3">Email *</h6>
-										<input input type="text" name="email" class="form-control col-md-6">
-										<h6 class="card-title mt-3">Company Description *</h6>
-										<input input type="text" name="company_description" class="form-control col-md-6">
-
+										<h6 class="card-title mt-3">Name<span style="color:red;">*</span></h6>
+										<input input type="text" name="company_name" class="form-control form-control-lg col-md-12">
+										<p class="text-muted">Enter your company or organization’s name.</p>
+										<h6 class="card-title mt-3">Company Description<span style="color:red;">*</span></h6>
+										<textarea class="form-control form-control-lg col-md-12" name="company_description" rows="6"></textarea>
+										<p class="text-muted">It’s highly recommended to use your Twitter or Facebook avatar.</p>
+										<div class="card-title mt-3 form-row">
+		    								<div class="form-group col-md-6">
+		      										<h6 for="card-title mt-3">Company Logo<span style="color:red;">*</span></h6>
+		      										<input input type="text" name="logo" class="form-control form-control-lg col-md-12">
+		    								</div>
+	    								<div class="form-group col-md-6">
+	      										<h6 for="inputPassword4">Tagline</h6>
+	     										 <input type="password" name="tagline" class="form-control form-control-lg">
+	  										  </div>
+	  									</div>
+	  									<div class="card-title mt-3 form-row">
+		    								<div class="form-group col-md-6">
+		      										<h6 for="card-title mt-3">Company Website<span style="color:red;">*</span></h6>
+		      										<input input type="text" name="website" class="form-control form-control-lg col-md-12">
+		    								</div>
+	    								<div class="form-group col-md-6">
+	      										<h6 for="inputPassword4">Email<span style="color:red;">*</span></h6>
+	     										 <input type="password" name="email" class="form-control form-control-lg">
+	  										  </div>
+	  									</div>
 										<button type="submit" name="create" class="btn-lg btn-danger mt-3">Submit this job</button>
 									</form>
 								</div>
