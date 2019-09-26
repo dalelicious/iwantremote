@@ -59,6 +59,15 @@ class CompanyViewModel():
 		self.save_to_company(company)
 
 
+	def company_exist(self, email):
+		""" Check if company already exist
+		"""
+
+		company = Company.objects.get(email=email)
+
+		return True
+
+
 	def save_to_company(self, company):
 		""" Save company to database
 		"""

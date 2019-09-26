@@ -52,7 +52,12 @@ def create_job(request):
 
 		job.create_new_job(email, title, category, job_type, headquarters, region, link, job_description)
 
-		company.create_new_company(name, logo, tagline, website, email, company_description)
+		company_exist = company.company_exist(email)
+		
+		if company_exist:
+			pass
+		else:
+			company.create_new_company(name, logo, tagline, website, email, company_description)
 
 		return redirect('jobs:jobs')
 
