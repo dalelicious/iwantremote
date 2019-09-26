@@ -2,30 +2,28 @@
 
 {% block content_additions %}
 
-<div class="jumbotron-fluid" style="background-image: url(/static/images/compbg.jpg)">
+<div class="jumbotron-fluid">
   <div class="row">
     <div class="col-lg-12 text-center mt-5">
       <img src="/static/images/footer.png" class="img-fluid" alt="Responsive image" width="350">
-      <h1 class="mt-2 text-dark">All Remote Companies.</h1>
-      <p class="card-text">A list of remote-friendly companies. Find the right jobs for you from our listings of amazing remote companies.
-      <ul class="list-unstyled">
+      <h1 class="mt-2 text-dark">All <span class="badge badge-primary"> Remote Companies. </span> </h1>
       </ul>
     </div>
   </div>
 </div>
-<div class="container mt-5">
+<div class="container border-0 mt-5">
   <div class="card" style="max-width: 1200px;">
-    <div class="row no-gutters shadow">
+    <div class="row no-gutters border-0">
       {% for company in company_list %}
-      <div class="col-md-3 rounded">
+      <div class="col-md-3 rounded shadow-sm">
         <a href="{% url 'company:company-detail' company.id %}">
-          <img src="/media/{{company.logo}}" class="card-img" alt="...">
+          <img src="/media/{{company.logo}}" class="card-img" alt="..." style="height: 150px">
         </a>
       </div>
       <div class="col-md-8">
         <div class="card-body">
           <h4 class="card-title"><a href="{% url 'company:company-detail' company.id %}" style="color: #343a4; text-decoration: none;">{{company.name}}</a></h4>
-          <p class="card-text">{{company.description}}</p>
+          <p class="card-text text-truncate" style="max-width: 1000px;">{{company.description}}</p>
           <p class="card-text"><small class="badge badge-primary badge-pill">Jobs Posted: {{company.job_posted}}</small></p>
         </div>
       </div>

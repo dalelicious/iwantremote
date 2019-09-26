@@ -2,26 +2,26 @@
 
 {% block content_additions %}
 
-<div class="jumbotron-fluid" style="background-image: url(/static/images/compbg.jpg)">
+<div class="jumbotron-fluid">
 	<div class="row">
 		<div class="col-lg-12 text-center mt-5">
 			<img src="/static/images/bg1.png" class="img-fluid" alt="Responsive image" width="350">
-			<h1 class="mt-2">#1 remote tech jobs, viewed-daily.</h1>
+			<h1 class="mt-2">#1 Remote tech jobs, <span class="badge badge-primary"> viewed-daily</span>.</h1>
 			<ul class="list-unstyled">
-				<button class="btn btn-danger mt-3 btn-lg rounded" onclick="location.href='{% url 'jobs:create-job' %}'"><h4>Post a job for $199</h4></button>
+				<button class="btn btn-danger mt-5 btn-lg rounded" onclick="location.href='{% url 'jobs:create-job' %}'"><h4>Post a job for $199</h4></button>
 			</ul>
 		</div>
 	</div>
 </div>
 
-<div class="container col-sm-8 mt-5">
+<div class="container col-sm-8 mt-4">
 	<div class="card border-0">
 		<h3 class="text-dark mt-2"><img src="/static/images/trending.svg" class="img-fluid" alt="Responsive image" width="55"><a href="#" style="color: #343a40"> Featured Remote Jobs</a>
 			<!-- <span class="card-text float-right"><small class="text-white">{{job.last_update}}</small></span> -->
 			<span class="card-text"><small class="text-muted col-sm-8"> Last updated 3 mins ago</small></span>
 		</h3>
 		{% for job in jobs_list %}
-		<div class="card-body shadow-sm rounded mt-3 border"> 
+		<div class="card-body shadow-sm rounded mt-3 border alert alert-warning"> 
 			<div class="float-right">
 				<img src="/media/{{job.get_job_company}}" alt="Girl in a jacket" width="100" height="80">
 			</div>
@@ -31,7 +31,7 @@
 				<span class="badge badge-primary"> Python </span>
 				<h6 class="card-title nav-item text-muted">{{job.job_type}} ({{job.headquarters}})</h6>
 			</h4>
-			<p class="card-text text-truncate" style="max-width: 1000px;">
+			<p class="card-text text-dark text-truncate" style="max-width: 1000px;">
 				{{job.description}}
 			</p>
 		</div>
