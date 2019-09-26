@@ -65,7 +65,10 @@ class CompanyViewModel():
 
 		company = Company.objects.get(email=email)
 
-		return True
+		if company:
+			return True
+		else:
+			return False
 
 
 	def save_to_company(self, company):
