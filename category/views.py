@@ -21,4 +21,5 @@ def categories(request, categoryId):
 
 	return render(request, 'category/category.html',
 				 {'jobs_list':jobs_list,
+				  'categories':categories,
 				  'category_list':category_list})

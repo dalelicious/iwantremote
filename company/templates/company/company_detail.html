@@ -2,9 +2,16 @@
 
 {% block content_additions %}
 
-<div class="container mt-5">
-	<a href="/jobs/" class="btn btn-dark">Back to all jobs</a>
+<div class="row justify-content-md-center" style="padding-top: 100px">
+  <div class="col-sm-4">
+    <a href="/jobs/" class="" style="color: #343a40"><img src="/static/assets/vendor/iconic/svg/arrow-thick-left.svg"> Back to all jobs</a>
+  </div>
+  <div class="col-lg-3">
+    <a href="/jobs/" class="float-right" style="color: #343a40"> See more Software Engineering Jobs <img src="/static/assets/vendor/iconic/svg/arrow-thick-right.svg"></a>
+  </div>
 </div>
+<div class="row justify-content-md-center mt-3">
+<div class="col-sm-7">
 <div class="container mt-3">
 	<div class="card shadow">
 		<div class="card-body">
@@ -15,11 +22,16 @@
 			<i class="text-muted">Location</i><br>
 			<i class="text-muted">Jobs Posted: {{job_posted}}</i><br>
 			<i class="text-muted"><a href="http://{{company.website}}" target="_blank">{{company.website}}</i></a>
-			<p class="card-text mt-5">
+			 <div class="row">
+             		<div class="col"><hr></div>
+             </div>
+			<p class="card-text">
 				{{company.description}}
 			</p>
 		</div>
 	</div>
+</div>
+</div>
 </div>
 
 {% endblock %}

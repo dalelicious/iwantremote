@@ -2,22 +2,22 @@
 
 {% block content_additions %}
 
-<div class="jumbotron bg-white">
+<div class="jumbotron-fluid" style="background-image: url(/static/images/compbg.jpg)">
   <div class="row">
-    <div class="col-lg-12 text-center">
-      <h1 class="mt-2 text-dark-50">All Remote Companies.</h1>
-      <p class="lead card-text">A list of remote-first and remote-friendly companies. Find the right fit for you from our library of amazing remote companies.
+    <div class="col-lg-12 text-center mt-5">
+      <img src="/static/images/footer.png" class="img-fluid" alt="Responsive image" width="350">
+      <h1 class="mt-2 text-dark">All Remote Companies.</h1>
+      <p class="card-text">A list of remote-friendly companies. Find the right jobs for you from our listings of amazing remote companies.
       <ul class="list-unstyled">
       </ul>
     </div>
   </div>
 </div>
-
-<div class="container">
+<div class="container mt-5">
   <div class="card" style="max-width: 1200px;">
-    <div class="row no-gutters">
+    <div class="row no-gutters shadow">
       {% for company in company_list %}
-      <div class="col-md-3 rounded">
+      <div class="col-md-3 rounded border-bottom">
         <!-- <img src={{company.logo}} class="card-img" alt="..."> -->
         <a href="{% url 'company:company-detail' company.id %}">
           <img src="/static/images/google.png" class="card-img" alt="...">
