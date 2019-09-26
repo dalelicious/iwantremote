@@ -6,7 +6,7 @@
 	<div class="row">
 		<div class="col-lg-12 text-center mt-5">
 			<img src="/static/images/bg1.png" class="img-fluid" alt="Responsive image" width="350">
-			<h1 class="mt-2 text-dark">Find remote jobs in {{categories.name}}. </h1>
+			<h1 class="mt-2 text-dark">Find remote jobs in <span class="rounded badge-primary"> {{ categories.name }}</span>.</h1>
 			<ul class="list-unstyled">
 				<button class="btn btn-danger mt-3 btn-lg rounded" onclick="location.href='{% url 'jobs:create-job' %}'"><h4>Post a job for $199</h4></button>
 			</ul>

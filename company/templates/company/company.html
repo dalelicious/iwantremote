@@ -17,12 +17,7 @@
   <div class="card" style="max-width: 1200px;">
     <div class="row no-gutters shadow">
       {% for company in company_list %}
-<<<<<<< HEAD
-      <div class="col-md-3 rounded border-bottom">
-        <!-- <img src={{company.logo}} class="card-img" alt="..."> -->
-=======
       <div class="col-md-3 rounded">
->>>>>>> 0d97c7d9d8f1989108c3214e9291402f63a46bef
         <a href="{% url 'company:company-detail' company.id %}">
           <img src="/media/{{company.logo}}" class="card-img" alt="...">
         </a>
