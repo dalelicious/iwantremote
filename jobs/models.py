@@ -1,4 +1,7 @@
+# Django
 from django.db import models
+
+from company.models import Company
 
 # Create your models here.
 class Jobs(models.Model):
@@ -12,3 +15,11 @@ class Jobs(models.Model):
 	link = models.CharField(max_length=50, null=True)
 	description = models.CharField(max_length=50, null=True)
 	create_date = models.DateTimeField()
+
+
+	@property
+	def get_job_company(self):
+
+		company = Company.objects.get(email=self.company)
+
+		return company.logo

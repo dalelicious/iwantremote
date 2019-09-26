@@ -50,7 +50,7 @@ class JobsViewModel():
 		job.description = job_description
 		job.create_date = timezone.now()
 
-		self.save_to_jobs(job)		
+		self.save_to_jobs(job)
 
 
 	def save_to_jobs(self, job):
@@ -58,3 +58,6 @@ class JobsViewModel():
 		"""
 
 		job.save()
+
+
+		

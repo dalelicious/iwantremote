@@ -44,7 +44,7 @@ def create_job(request):
 		job_description = request.POST['job_description']
 
 		name = request.POST['company_name']
-		logo = request.POST['logo']
+		logo = request.FILES['logo']
 		tagline = request.POST['tagline']
 		website = request.POST['website']
 		email = request.POST['email']
