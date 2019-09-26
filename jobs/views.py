@@ -44,7 +44,7 @@ def create_job(request):
 		job_description = request.POST['job_description']
 
 		name = request.POST['company_name']
-		logo = request.POST['logo']
+		logo = request.FILES['logo']
 		tagline = request.POST['tagline']
 		website = request.POST['website']
 		email = request.POST['email']
@@ -52,12 +52,7 @@ def create_job(request):
 
 		job.create_new_job(email, title, category, job_type, headquarters, region, link, job_description)
 
-		company_exist = company.company_exist(email)
-		
-		if company_exist:
-			pass
-		else:
-			company.create_new_company(name, logo, tagline, website, email, company_description)
+		company.create_new_company(name, logo, tagline, website, email, company_description)
 
 		return redirect('jobs:jobs')
 

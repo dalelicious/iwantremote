@@ -18,9 +18,8 @@
     <div class="row no-gutters">
       {% for company in company_list %}
       <div class="col-md-3 rounded">
-        <!-- <img src={{company.logo}} class="card-img" alt="..."> -->
         <a href="{% url 'company:company-detail' company.id %}">
-          <img src="/static/images/google.png" class="card-img" alt="...">
+          <img src="/media/{{company.logo}}" class="card-img" alt="...">
         </a>
       </div>
       <div class="col-md-8">
