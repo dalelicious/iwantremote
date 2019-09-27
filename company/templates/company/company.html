@@ -17,7 +17,7 @@
       {% for company in company_list %}
       <div class="col-md-3 rounded shadow-sm">
         <a href="{% url 'company:company-detail' company.id %}">
-          <img src="/media/images/companies/{{company.logo}}" class="card-img" alt="..." style="height: 150px">
+          <img src="/media/{{company.logo}}" class="card-img" alt="..." style="height: 150px">
         </a>
       </div>
       <div class="col-md-8">

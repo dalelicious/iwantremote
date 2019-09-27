@@ -18,7 +18,7 @@
         <div class="card-body border-0 ">
           <i class="card-title nav-item text-dark">Posted {{job.create_date|date:"M d"}}</i>
           <a href="{% url 'company:company-detail' company.id %}">
-            <img src="/media/images/companies/{{company.logo}}" class="float-right border border-secondary shadow-sm rounded-circle" width="150" height="120">
+            <img src="/media/{{company.logo}}" class="float-right border border-secondary shadow-sm rounded-circle" width="150" height="120">
           </a>
           <h1 class="card-title nav-item mt-5">{{job.title}}</h1>
           <h6 class="card-title nav-item text-muted ">{{job.job_type}} ({{job.headquarters}})
