@@ -49,6 +49,7 @@ class JobsViewModel():
 		job.link = link
 		job.description = job_description
 		job.create_date = timezone.now()
+		job.is_active = True
 
 		self.save_to_jobs(job)
 
