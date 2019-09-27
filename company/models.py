@@ -10,7 +10,7 @@ class Company(models.Model):
 
 	name = models.CharField(max_length=50, null=True)
 	email = models.CharField(max_length=50, null=True)
-	logo = models.ImageField(upload_to='images/')
+	logo = models.ImageField(upload_to='images/companies/')
 	tagline = models.CharField(max_length=50, null=True)
 	website = models.CharField(max_length=50, null=True)
 	description = models.CharField(max_length=50, null=True)
