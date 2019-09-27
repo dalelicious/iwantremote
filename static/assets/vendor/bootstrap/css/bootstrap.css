@@ -54,8 +54,8 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-size: 1rem;
+  font-family: Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1.1rem;
   font-weight: 400;
   line-height: 1.5;
   color: #212529;
@@ -1761,7 +1761,7 @@ pre code {
 
 .table .thead-dark th {
   color: #fff;
-  background-color: #343a40;
+  background-color: #fff;
   border-color: #454d55;
 }
 
@@ -1773,7 +1773,7 @@ pre code {
 
 .table-dark {
   color: #fff;
-  background-color: #343a40;
+  background-color: #fff;
 }
 
 .table-dark th,
@@ -2421,13 +2421,13 @@ fieldset:disabled a.btn {
 
 .btn-primary {
   color: #fff;
-  background-color: #fff;
+  background-color: #007bff;
   border-color: #fff;
 }
 
 .btn-primary:hover {
   color: #fff;
-  background-color: #fff;
+  background-color: #007bff;
   border-color: #fff;
 }
 
@@ -2669,8 +2669,8 @@ fieldset:disabled a.btn {
 
 .btn-dark {
   color: #fff;
-  background-color: #343a40;
-  border-color: #343a40;
+  background-color: #fff;
+  border-color: #fff;
 }
 
 .btn-dark:hover {
@@ -2685,8 +2685,8 @@ fieldset:disabled a.btn {
 
 .btn-dark.disabled, .btn-dark:disabled {
   color: #fff;
-  background-color: #343a40;
-  border-color: #343a40;
+  background-color: #fff;
+  border-color: #fff;
 }
 
 .btn-dark:not(:disabled):not(.disabled):active, .btn-dark:not(:disabled):not(.disabled).active,
@@ -2949,14 +2949,14 @@ fieldset:disabled a.btn {
 }
 
 .btn-outline-dark {
-  color: #343a40;
-  border-color: #343a40;
+  color: #fff;
+  border-color: #fff;
 }
 
 .btn-outline-dark:hover {
   color: #fff;
-  background-color: #343a40;
-  border-color: #343a40;
+  background-color: #fff;
+  border-color: #fff;
 }
 
 .btn-outline-dark:focus, .btn-outline-dark.focus {
@@ -2971,8 +2971,8 @@ fieldset:disabled a.btn {
 .btn-outline-dark:not(:disabled):not(.disabled):active, .btn-outline-dark:not(:disabled):not(.disabled).active,
 .show > .btn-outline-dark.dropdown-toggle {
   color: #fff;
-  background-color: #343a40;
-  border-color: #343a40;
+  background-color: #fff;
+  border-color: #fff;
 }
 
 .btn-outline-dark:not(:disabled):not(.disabled):active:focus, .btn-outline-dark:not(:disabled):not(.disabled).active:focus,
@@ -3268,12 +3268,12 @@ input[type="button"].btn-block {
   color: #343a40;
   text-align: inherit;
   white-space: nowrap;
-  background-color: #343a40;
+  background-color: #fff;
   border: 0;
 }
 
 .dropdown-item:hover, .dropdown-item:focus {
-  color: #343a40;
+  color: #fff;
   text-decoration: none;
   background-color: #343a40;
 }
