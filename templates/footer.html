@@ -1,19 +1,31 @@
-<div class="sticky-bottom footer-copyright mt-5 text-center py-4 text-white bg-dark">
-<section class="home-newsletter">
-	<div class="container">
+<div class="sticky-bottom py-4 mt-5 text-white bg-dark">
 		<div class="row">
-			<div class="container col-sm-6">
-				<div class="single">
-					<h4>Subscribe to get weekly job updates</h4>
-			<div class="input-group">
-         		<input type="email" class="form-control" placeholder="Enter your email">
-        			 <span class="input-group-btn">
-         		<button class="btn btn-success" type="submit"> Subscribe</button>
-       		  </span>
-          	</div>
+			<div class="col-md-6 ml-auto offset-md-3">
+				<section class="home-newsletter">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-10">
+							<div class="single">
+								<h2>Subscribe to get weekly jobs</h2>
+							<div class="input-group">
+						         <input type="email" class="form-control-lg" placeholder="Enter your email">
+						         <span class="input-group-btn">
+						         <button class="btn btn-success btn-theme btn-lg" type="submit">Subscribe</button>
+						         </span>
+						          </div>
+							</div>
+						</div>
+					</div>
+				</div>
+				</section>
 			</div>
-		</div>
+		<div class="col-4">
+				<h2>2,200<span class="small"> Jobs Posted</span></h2>
+         		<ul class="list-unstyled">
+			<button class="btn btn-danger btn-lg rounded" onclick="location.href='{% url 'jobs:create-job' %}'">Post a job for $199</button>
+		</ul>
+         </div>
 	</div>
 </div>
-</section>
-</div>
+
+
