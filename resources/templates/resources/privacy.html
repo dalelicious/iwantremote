@@ -1,0 +1,91 @@
+{% extends "main.html" %}
+
+{% block content_additions %}
+
+<div class="row justify-content-md-center mt-5">
+  <div class="col-sm-4">
+    <a href="/jobs/" class="" style="color: #343a40"><img src="/static/assets/vendor/iconic/svg/arrow-thick-left.svg"> Back to all jobs</a>
+  </div>
+  <div class="col-lg-3">
+    <a href="/jobs/" class="float-right" style="color: #343a40"> See more Software Engineering Jobs <img src="/static/assets/vendor/iconic/svg/arrow-thick-right.svg"></a>
+  </div>
+</div>
+
+<div class="row justify-content-md-center mt-5">
+  <div class="col-sm-7">
+    <div class="container">
+      <div class="card border-0">
+        <div class="card-body border-0">
+          <i class="card-title nav-item text-dark">Posted Date</i>
+          <a href="#">
+            <img src="#" class="float-right shadow rounded-circle" width="150" height="120">
+          </a>
+          <h1 class="card-title nav-item mt-5">Title</h1>
+          <h6 class="card-title nav-item text-muted ">job type/headquarters
+            <span class="badge badge-primary"> Devops </span>
+            <span class="badge badge-primary"> Django </span>
+            <span class="badge badge-primary"> Python </span>
+          </h6>
+          <div class="row">
+             <div class="col"><hr></div>
+          </div>
+          <!-- Start Job Description from database with correct format -->
+          <!-- {{job.job_description}} -->
+          <h4 class="card-title nav-item mt-3">About:</h4>
+          <p class="card-text">
+            At Close, we're building the sales communication platform of the future. With our roots as the very first sales CRM to include built-in calling, we're leading the industry toward eliminating manual processes and helping companies to close more deals(faster). Since our founding in 2013, we've grown to become a profitable, 100% globally distributed team of ~33 high-performing, happy people that are dedicated to building a product our customers love..
+          </p>
+          <p>
+            Our backend tech stack currently consists of Python Flask/Gunicorn web apps with our TaskTiger scheduler handling many of the backend asynchronous processing tasks.  Our data stores include MongoDB, Elasticsearch, PostgreSQL, MySQL, and Redis.  Our infrastructure runs on AWS using a combination of managed services like RDS and ElastiCache as well as EC2 instances managed by Puppet, Ansible, and Terraform.  Today we manage hundreds of EC2 instances and thousands of Docker containers on our Kubernetes clusters.
+          </p>
+
+          <h4 class="card-title nav-item mt-5">We're looking for:</h4>
+          <p class="card-text">
+            <ul>
+              <li>Building out our Kubernetes infrastructure to include additional services, increased redundancy/scalability, and harnessing new k8s features</li>
+              <li>Tighten security across our infrastructure</li>
+              <li>Improve our CI/CD process making builds/deployments faster and safer</li>
+            </ul>
+          </p>
+
+          <h4 class="card-title nav-item mt-5">Help us for:</h4>
+          <p class="card-text">
+            <ul>
+              <li>Building out our Kubernetes infrastructure to include additional services, increased redundancy/scalability, and harnessing new k8s features</li>
+              <li>Tighten security across our infrastructure</li>
+              <li>Improve our CI/CD process making builds/deployments faster and safer</li>
+            </ul>  
+          </p>
+          <p class="card-text">
+            Will develop information systems by studying operations; designing, developing and installing software solutions; support and developing software team. The Senior Software Engineer will lead a team of developers responsible for building new and support existing websites.
+          </p>
+          <h4 class="card-title nav-item mt-5">What  you will do</h4>
+          <p class="card-text">
+            We come from 13 countries and 15 states; a collection of talented humans rich in diverse backgrounds, lifestyles, and cultures. Twice a year we meet up somewhere around the world to spend time with one another. We see these retreats as an opportunity to strengthen the social fiber of our community..
+          </p>
+          <!-- End Job Description from database with correct format -->
+          <div class="row mt-5">
+              <div class="col"></div>
+              <div class="col-auto">
+                  <button type="button" class="btn btn-danger btn-lg rounded" onclick="#">Apply for this Position</button></div>
+              <div class="col"></div>
+          </div>
+          <div class="container justify-content-md-center">
+          </div> 
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container col-sm-7 mt-3">
+    <div class="card-body bg-light border"> 
+      <h5 class="card-title nav-item">Help us maintain the quality of jobs posted on IWantRemote. Is this job not remote?
+      <ul class="list-unstyled">
+        <button type="button" class="btn btn-primary mt-3 btn-lg rounded">Let us know</button>
+      </ul>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

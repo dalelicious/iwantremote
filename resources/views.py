@@ -7,3 +7,8 @@ from django.shortcuts 		import redirect
 def blog(request):
 
 	return render(request, 'resources/blog.html')
+
+
+def privacy(request):
+
+	return render(request, 'resources/privacy.html')
