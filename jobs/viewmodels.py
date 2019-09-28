@@ -26,6 +26,15 @@ class JobsViewModel():
 		return jobs_list
 
 
+	def get_featured_jobs_list(self):
+		""" Get all featured jobs
+		"""
+
+		jobs_list = Jobs.objects.filter(is_featured=True)
+
+		return jobs_list
+
+
 	def get_jobs_list_by_category(self, categoryId):
 		""" Get all jobs by category
 		"""
@@ -35,7 +44,7 @@ class JobsViewModel():
 		return jobs_list
 
 
-	def create_new_job(self, email, title, category, job_type, headquarters, region, link, job_description):
+	def create_new_job(self, email, title, category, job_type, headquarters, region, link, job_description, is_featured):
 		""" Create new job
 		"""
 
@@ -50,6 +59,7 @@ class JobsViewModel():
 		job.description = job_description
 		job.create_date = timezone.now()
 		job.is_active = True
+		job.is_featured = is_featured
 
 		self.save_to_jobs(job)
 

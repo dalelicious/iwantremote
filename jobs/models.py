@@ -15,6 +15,7 @@ class Jobs(models.Model):
 	link = models.CharField(max_length=50, null=True)
 	description = models.CharField(max_length=50, null=True)
 	create_date = models.DateTimeField()
+	is_featured = models.BooleanField(null=True)
 	is_active = models.BooleanField(null=True)
 
 

@@ -16,7 +16,7 @@ categories = CategoryViewModel()
 
 def jobs(request):
 
-	jobs_list = job.get_jobs_list()
+	jobs_list = job.get_featured_jobs_list()
 	category_list = categories.get_category_list()
 
 	return render(request, 'jobs/jobs.html',
@@ -42,6 +42,9 @@ def create_job(request):
 		region = request.POST['region']
 		link = request.POST['link']
 		job_description = request.POST['job_description']
+		is_featured = request.POST['featured']
+
+		print(is_featured)
 
 		name = request.POST['company_name']
 		logo = request.FILES['logo']
@@ -50,7 +53,7 @@ def create_job(request):
 		email = request.POST['email']
 		company_description = request.POST['company_description']
 
-		job.create_new_job(email, title, category, job_type, headquarters, region, link, job_description)
+		job.create_new_job(email, title, category, job_type, headquarters, region, link, job_description, is_featured)
 
 		company.create_new_company(name, logo, tagline, website, email, company_description)
 
