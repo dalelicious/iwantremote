@@ -87,11 +87,8 @@
 												<h6>Email<span style="color:red;">*</span></h6>
 												<input type="email" name="email" class="form-control form-control-lg" required>
 											</div>
-											<label class="switch">
-												<input id="is_featured" type="checkbox" name="featured" value="True">
-												<input id="not_featured" type="hidden" name="featured" value="False">
-												<span class="slider round"></span>
-											</label>
+											
+											<input type="checkbox" id="is_featured" name="featured">checkbox
 										</div>
 										<button type="submit" name="create" class="btn-lg btn-danger mt-3">Submit this job</button>
 									</form>
@@ -110,9 +107,14 @@
 {% block page_vendor_js_additions %}
 
 <script type="text/javascript">
-	if(document.getElementById("is_featured").checked) {
-	    document.getElementById('not_featured').disabled = true;
-	}
+	$("#is_featured").click(function () {
+	    if ($(this).prop("checked")) {
+	        $("#is_featured").val("True");
+	    }
+	    else {
+	        $("#is_featured").val("False");
+	    }
+	});
 </script>
 
 {% endblock %}

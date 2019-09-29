@@ -46,9 +46,12 @@ def create_job(request):
 		region = request.POST['region']
 		link = request.POST['link']
 		job_description = request.POST['job_description']
-		is_featured = request.POST['featured']
+		if 'featured' in request.POST:
+			is_featured = request.POST['featured']
+		else:
+			is_featured = False
 
-		print(request.POST['featured'])
+		print(is_featured)
 
 		name = request.POST['company_name']
 		logo = request.FILES['logo']
