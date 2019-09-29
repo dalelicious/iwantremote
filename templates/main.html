@@ -16,8 +16,16 @@
   <meta name="twitter:card" content="summary_large_image">
   <!-- HTML Meta -->
   <meta name="description" content="Find your next remote jobs in software, support, engineering and many more...">
-  <meta name="author" content="iwantremote">
-  <title>IWantRemote | Remote Tech Jobs</title>
+  <meta name="author" content="iwantremote">  
+  {% if job.title %}
+    <title>{{job.title}} | IWantRemote</title>
+  {% elif company.name %}
+    <title>{{company.name}} | IWantRemote</title>
+  {% elif categories.name %}
+    <title>{{categories.name}} | IWantRemote</title>
+  {% else %}
+    <title>Remote Tech Jobs</title>
+  {% endif %}
   <!-- Bootstrap core CSS -->
   <link href="/static/assets/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
   <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -37,6 +45,8 @@
   <!-- Footer -->
   {% include "footer.html" %}
   <!-- End Footer -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
   <!-- Bootstrap core JavaScript -->
   <script src="/static/assets/vendor/jquery/jquery.slim.min.js"></script>
