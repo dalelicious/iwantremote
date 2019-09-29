@@ -31,10 +31,10 @@
 
 <div class="container col-sm-8 mt-4">
 	<div class="card border-0">
-		<h3 class="text-dark mt-2"><img src="/static/images/trending.svg" class="img-fluid" alt="Responsive image" width="55"><a href="#" style="color: #343a40"> Featured Remote Jobs</a>
+		<h3 class="text-dark mt-2"><img src="/static/images/trending.svg" class="img-fluid" alt="Responsive image" width="55"><a href="#" style="color: #343a40"> Featured Remote Jobs<span class="small"> (123)</a></span>
 		    	
 			<!-- <span class="card-text float-right"><small class="text-white">{{job.last_update}}</small></span> -->
-			<span class="card-text"><small class="text-muted col-sm-8"> Last updated 3 mins ago</small></span>
+			<span class="card-text"><small class="text-muted mt-2 float-right"> Last updated 3 mins ago</small></span>
 
 		</h3>
 		{% for job in jobs_list %}
@@ -59,9 +59,9 @@
 {% for category in category_list %}
 <div class="container col-sm-8 mt-5">
 	<div class="card border-0">
-		<h3 class="text-dark mt-2"><img src="/media/{{category.cat_image}}" class="img-fluid" alt="Responsive image" width="55"><a href="{% url 'category:categories' category.id %}" style="color: #343a40"> {{category.name}} Remote Jobs</a>
+		<h3 class="text-dark mt-2"><img src="/media/{{category.cat_image}}" class="img-fluid" alt="Responsive image" width="55"><a href="{% url 'category:categories' category.id %}" style="color: #343a40"> {{category.name}} Remote Jobs<span class="small"> (123)</a></span>
 			<!-- <span class="card-text float-right"><small class="text-white">{{job.last_update}}</small></span> -->
-			<span class="card-text"><small class="text-muted col-sm-8"> Last updated 3 mins ago</small></span>
+			<span class="card-text"><small class="text-muted mt-2 float-right"> Last updated 3 mins ago</small></span>
 		</h3>
 		{% for job in category.jobs_per_category %}
 			{% if job.is_featured %}
