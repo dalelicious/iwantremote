@@ -1,1 +1,23 @@
-{{blog.title}}
+{% extends "main.html" %}
+
+{% block content_additions %}
+
+<div class="container">
+<div class="row">
+  <div class="col-lg-8">
+    <h1 class="mt-4">{{blog.title}}</h1>
+    <p>Posted on {{blog.create_date}}</p>
+    <hr>
+      <img class="img-fluid rounded" src="/media/{{blog.blog_image}}" alt="Responsive image">
+    <hr>
+    <p class="lead"><p>{{blog.content}}</p>
+      <hr>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+</div>
+
+{% endblock %}
+
