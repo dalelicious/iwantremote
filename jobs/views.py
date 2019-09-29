@@ -16,11 +16,13 @@ categories = CategoryViewModel()
 
 def jobs(request):
 
+	all_jobs = len(job.get_jobs_list())
 	jobs_list = job.get_featured_jobs_list()
 	category_list = categories.get_category_list()
 
 	return render(request, 'jobs/jobs.html',
-				 {'jobs_list':jobs_list,
+				 {'all_jobs':all_jobs,
+				  'jobs_list':jobs_list,
 				  'category_list':category_list})
 
 
@@ -28,10 +30,12 @@ def create_job(request):
 
 	if request.method == "GET":
 
+		all_jobs = len(job.get_jobs_list())
 		category_list = categories.get_category_list()
 
 		return render(request, 'jobs/create_jobs.html',
-					 {'category_list':category_list})
+					 {'all_jobs':all_jobs,
+					  'category_list':category_list})
 
 	else:
 
@@ -63,11 +67,13 @@ def create_job(request):
 def job_detail(request, jobId):
 
 	job_detail = job.get_job_id(jobId)
+	all_jobs = len(job.get_jobs_list())
 	category_list = categories.get_category_list()
 	company_detail = company.get_company_by_job_id(jobId)
 
 	return render(request, 'jobs/job_detail.html',
 				 {'job':job_detail,
+				  'all_jobs':all_jobs,
 				  'company':company_detail,
 				  'category_list':category_list})
 
