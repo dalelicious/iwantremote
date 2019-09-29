@@ -18,11 +18,13 @@ def jobs(request):
 
 	all_jobs = len(job.get_jobs_list())
 	jobs_list = job.get_featured_jobs_list()
+	total_featured_jobs = len(jobs_list)
 	category_list = categories.get_category_list()
 
 	return render(request, 'jobs/jobs.html',
 				 {'all_jobs':all_jobs,
 				  'jobs_list':jobs_list,
+				  'total_featured_jobs':total_featured_jobs,
 				  'category_list':category_list})
 
 

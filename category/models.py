@@ -14,3 +14,11 @@ class Category(models.Model):
 		jobs_per_category = Jobs.objects.filter(category=self.id).order_by('-id')[:3][::-1]
 
 		return jobs_per_category
+
+
+	@property
+	def total_jobs_per_category(self):
+
+		total_jobs_per_category = len(Jobs.objects.filter(category=self.id))
+
+		return total_jobs_per_category
