@@ -26,6 +26,15 @@ class JobsViewModel():
 		return jobs_list
 
 
+	def get_job_results(self, search):
+		""" Get job search results
+		"""
+
+		jobs_list = Jobs.objects.filter(title__icontains=search)
+
+		return jobs_list
+
+
 	def get_featured_jobs_list(self):
 		""" Get all featured jobs
 		"""

@@ -48,7 +48,7 @@ def create_job(request):
 		job_description = request.POST['job_description']
 		is_featured = request.POST['featured']
 
-		print(is_featured)
+		print(request.POST['featured'])
 
 		name = request.POST['company_name']
 		logo = request.FILES['logo']
