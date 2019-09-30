@@ -69,17 +69,15 @@
 										<input type="text" name="company_name" class="form-control form-control-lg col-md-12" required>
 										<p class="text-muted">Enter your company or organization’s name.</p>
 										<h6 class="card-title mt-3">Company Description<span style="color:red;">*</span></h6>
-										<textarea class="form-control form-control-lg col-md-12" name="company_description" rows="6" required></textarea>
-										<div class="card-title mt-3 form-row">
-											<div class="form-group col-md-6">
-												<h6 for="card-title mt-3">Company Logo<span style="color:red;">*</span></h6>
-												<input type="file" name="logo" class="form-control form-control-lg col-md-12" required>
-												<p class="text-muted">It’s highly recommended to upload 250x150</p>
-											</div>
-											<div class="form-group col-md-6">
-												<h6>Tagline</h6>
-												<input type="text" name="tagline" class="form-control form-control-lg">
-											</div>
+										<textarea class="form-control form-control-lg col-md-12 mb-3" name="company_description" rows="6" required></textarea>
+										<h6 for="card-title">Company Logo<span style="color:red;">*</span></h6>
+										<div class="form-group custom-file">
+											<input type="file" name="logo" class="custom-file-input" id="customFile">
+											<label class="custom-file-label form-control form-control-lg" for="customFile" style="background-color: #f6f6f6;">Upload Logo</label>
+										</div>
+										<div class="form-group mt-3">
+											<h6>Tagline</h6>
+											<input type="text" name="tagline" class="form-control form-control-lg">
 										</div>
 										<div class="card-title mt-3 form-row">
 											<div class="form-group col-md-6">
