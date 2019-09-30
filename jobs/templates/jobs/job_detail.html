@@ -16,24 +16,24 @@
     <div class="container">
       <div class="card border-0">
         <div class="card-body border-0">
-          <i class="card-title nav-item text-dark">Posted {{job.create_date|date:"M d"}}</i>
+          <i class="text-muted">Posted {{job.create_date|date:"M d"}}</i>
           <a href="{% url 'company:company-detail' company.id %}">
-            <img src="/media/{{company.logo}}" class="float-right shadow-sm img-thumbnail" alt="Responsive image" style="max-width: 200px" style="max-height: 150px">
+            <img src="/media/{{company.logo}}" class="float-right shadow-sm img-thumbnail" alt="Responsive image" style="max-width: 150px" style="max-height: 150px">
           </a>
           <h1 class="card-title nav-item mt-5">{{job.title}}</h1>
           <h6 class="card-title nav-item text-muted ">{{job.job_type}} ({{job.region}})
-            <span class="badge badge-primary"> Devops </span>
-            <span class="badge badge-primary"> Django </span>
-            <span class="badge badge-primary"> Python </span>
+            <span class="badge badge-pill badge-primary"> Devops </span>
+            <span class="badge badge-pill badge-primary"> Django </span>
+            <span class="badge badge-pill badge-primary"> Python </span>
           </h6>
-          <div class="row p-4">
+          <div class="row">
               <div class="col"><hr></div>
               <div class="col-auto"><button type="button" class="btn btn-danger btn-md rounded" onclick="location.href='https://{{job.link}}'">Apply for this Position</button></div>
               <div class="col"><hr></div>
           </div>
           <!-- Start Job Description from database with correct format -->
           <!-- {{job.job_description}} -->
-          <h4 class="card-title nav-item mt-3">About:</h4>
+          <h4 class="card-title nav-item mt-2">About:</h4>
           <p class="card-text">
             <pre>{{job.description}}</pre>
           </p>
@@ -89,7 +89,7 @@
     </div>
   </div>
 </div>
-<div class="container col-sm-6" style="padding-top: 5rem">
+<div class="container col-sm-6" style="padding-top: 3rem">
     <div class="card-body text-center alert alert-secondary border"> 
       <h6 class="card-title">Help us maintain the quality of jobs posted on IWantRemote. Is this job not remote?</h6>
       <ul class="list-unstyled">
