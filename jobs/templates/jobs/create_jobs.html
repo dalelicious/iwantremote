@@ -24,7 +24,7 @@
 									<form method="post" action="{% url 'jobs:create-job' %}" enctype="multipart/form-data">
 										{% csrf_token %}
 										<h6 class="required-field float-right">Required Fields <span style="color:red;">*</span></h6>
-										<h4 class="card-title nav-item">Tell us about your job</h4>
+										<h3 class="card-title nav-item">Tell us about your job</h3>
 										<h6 class="card-title mt-3">Position<span style="color:red;">*</span></h6>
 										<input type="text"  name="title" placeholder="e.g Software Engineer" class="form-control form-control-lg col-md-12" style="background-color: #f6f6f6;" required>
 										<div class="card-title mt-3 form-row">
@@ -64,7 +64,7 @@
 										<h6 class="card-title mt-3">Job Description<span style="color:red;">*</span></h6>
 										<textarea class="form-control form-control-lg col-md-12" name="job_description" rows="6" required>
 										</textarea>
-										<h4 class="card-title nav-item mt-5">Tell us about your Company</h4>
+										<h3 class="card-title nav-item mt-5">Tell us about your Company</h3>
 										<h6 class="card-title mt-3">Name<span style="color:red;">*</span></h6>
 										<input type="text" name="company_name" class="form-control form-control-lg col-md-12" required>
 										<p class="text-muted">Enter your company or organization’s name.</p>
@@ -90,10 +90,24 @@
 												<h6>Email<span style="color:red;">*</span></h6>
 												<input type="email" name="email" class="form-control form-control-lg" required>
 											</div>
-											
-											<input type="checkbox" id="is_featured" name="featured">checkbox
-										</div>
-										<button type="submit" name="create" class="btn-lg btn-danger mt-3">Submit this job</button>
+			    							<div class="card-body rounded" style="padding-top: 50px">
+			     								 <div class="row">
+			      									<h5 class="col-md-12 alert alert-success text-center text-dark">Get more visibility! Be at our top and #1 featured category and get highlighted!</h5>
+			      							<div class="card-title text-center">
+			       							 		<div class="col-md-12">
+			           								 <img src="/static/images/highlight.png" class="img-fluid" alt="Responsive image">
+			            								<input type="checkbox" id="is_featured" name="featured"> Featured this job for <span class="badge badge-pill badge-primary">$29 only.</span>
+			       								 </div>
+				    						   </div>
+				     						 </div>
+			     								 <div class="row">
+			      								 <div class="card-title text-center">
+			       							 <div class="col-md-12">
+			           								 <img src="/static/images/nooption.png" class="img-fluid" alt="Responsive image">
+			            								<input type="checkbox" id="is_featured" name="featured"> Continue to regular post.
+			       								 </div>
+				     						 </div>
+										<button type="submit" name="create" class="btn-lg btn-danger mt-3">Next: Preview Ad post</button>
 									</form>
 								</div>
 							</div>

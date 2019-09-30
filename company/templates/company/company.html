@@ -12,55 +12,25 @@
     </div>
   </div>
 </div>
-
-<div class="container border-0 mt-5">
-  <div class="container col-sm-12 mt-4">
-       <form action="">
-          <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <button id="button-addon2" type="submit" class="btn btn-link text-warning"><i class="fa fa-search"></i></button>
-              </div>
-              <input type="search" placeholder="team-size, headquarters, tags, title..." aria-describedby="button-addon2" class="form-control border-0 bg-light">
-            </div>
+  {% for company in company_list %}
+  <div class="container col-sm-8 mt-3">
+    <div class="border card-body rounded shadow-sm">
+      <div class="row">
+        <div class="col-md-2 border-0">
+          <a href="{% url 'company:company-detail' company.id %}">
+            <img src="/media/{{company.logo}}" class="w-75 p-2"></a>
           </div>
-        </form>
-  </div>
-          <div class="container col-lg">
-            <div class="card-body">
-              <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                  <thead class="bg-dark text-light">
-                    <tr>
-                      <th>Logo</th>
-                      <th>Name</th>
-                      <th>Description</th>
-                      <th>Headquarters</th>
-                      <th>Jobs Posted</th>
-                      <th>Website</th>
-                      <th>Team-size</th>
-                    </tr>
-                  </thead>
-                   {% for company in company_list %}
-                  <tbody>
-                    <tr>
-                      <td><a href="{% url 'company:company-detail' company.id %}">
-                        <img src="/media/{{company.logo}}" class="shadow-sm rounded-circle card-img" alt="Responsive image" style="max-width: 4rem">
-                      </a></td>
-                      <td>{{company.name}}</td>
-                      <td class="text-truncate"  style="max-width: 100px;">{{company.description}}</td>
-                      <td>Edinburgh</td>
-                      <td>{{company.job_posted}}</td>
-                      <td>{{company.website}}</td>
-                      <td>11-50</td>
-                    </tr>
-                  </tbody>
-                    {% endfor %}
-                </table>
-              </div>
+          <div class="col-md-10">
+            <div class="card-block">
+              <p class="text-muted float-right">posted: 012312</p>
+              <h4 class="card-title">{{company.name}}</h4>
+              <span class="small">{{company.tagline}}</span>
             </div>
           </div>
         </div>
       </div>
+    </div>
+     {% endfor %}
+  </div>
 
 {% endblock %}
