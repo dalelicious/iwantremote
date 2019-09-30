@@ -30,7 +30,7 @@
           <!-- {{job.job_description}} -->
           <h4 class="card-title nav-item mt-3">About:</h4>
           <p class="card-text">
-            <pre>{{job.description}}</pre>
+            {{job.description|linebreaks}}
           </p>
           <p>
             Our backend tech stack currently consists of Python Flask/Gunicorn web apps with our TaskTiger scheduler handling many of the backend asynchronous processing tasks.  Our data stores include MongoDB, Elasticsearch, PostgreSQL, MySQL, and Redis.  Our infrastructure runs on AWS using a combination of managed services like RDS and ElastiCache as well as EC2 instances managed by Puppet, Ansible, and Terraform.  Today we manage hundreds of EC2 instances and thousands of Docker containers on our Kubernetes clusters.
