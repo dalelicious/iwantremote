@@ -3,34 +3,66 @@
 {% block content_additions %}
 
 <div class="jumbotron row justify-content-md-center">
-  <div class="col-sm-9">
-    <div class="container">
-    <a href="/jobs/" class="" style="color: #343a40"><img src="/static/assets/vendor/iconic/png/caret-left-2x.png"> Back to all jobs</a>
-  </div>
-  </div>
-</div>
-<div class="row justify-content-md-center">
-<div class="col-sm-12">
-<div class="container mt-3">
-	<div class="card border-0">
-		<div class="card-body rounded shadow py-3 border-primary">
-			<h2 class="card-title mb-3">{{company.name}}
-				<img src="/media/{{company.logo}}" class="float-right shadow-sm img-thumbnail" alt="Responsive image" style="max-width: 200px">
-				<h4 class="card-title mb-3">Company Tagline</h4>
-			</h2>
-			<i class="text-muted">Location</i><br>
-			<i class="text-muted">Jobs Posted: {{job_posted}}</i><br>
-			<i class="text-muted"><a href="http://{{company.website}}" target="_blank">{{company.website}}</i></a>
-			 <div class="row">
-             		<div class="col"><hr></div>
-             </div>
-			<p class="card-text" style="padding-bottom: 150px">
-				{{company.description}}
-			</p>
+	<div class="col-sm-9">
+		<div class="container">
+			<a href="/jobs/" class="" style="color: #343a40"><img src="/static/assets/vendor/iconic/png/caret-left-2x.png"> Back to all jobs</a>
 		</div>
 	</div>
 </div>
+<div class="row justify-content-md-center">
+	<div class="col-sm-12">
+		<div class="container mt-3">
+			<div class="card border-0">
+				<div class="card-body rounded shadow py-3 border-primary">
+					<h2 class="card-title mb-3">{{company.name}}
+						<img src="/media/{{company.logo}}" class="float-right shadow-sm img-thumbnail" alt="Responsive image" style="max-width: 200px">
+						<h4 class="card-title mb-3">Company Tagline</h4>
+					</h2>
+					<i class="text-muted">Location</i><br>
+					<i class="text-muted">Jobs Posted: {{job_posted}}</i><br>
+					<i class="text-muted"><a href="http://{{company.website}}" target="_blank">{{company.website}}</i></a>
+					 <div class="row">
+		             		<div class="col"><hr></div>
+		             </div>
+					<p class="card-text" style="padding-bottom: 150px">
+						{{company.description}}
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
+
+<div class="container col-sm-7 mt-4">
+	<div class="card border-0">
+		<h4 class="text-dark mt-2">All {{company.name}} Jobs<span class="small"> ({{job_posted}})</a></span>
+		    	
+			<!-- <span class="card-text float-right"><small class="text-white">{{job.last_update}}</small></span> -->
+			<span class="card-text"><small class="text-muted mt-2 float-right"> Last updated 3 mins ago</small></span>
+		</h4>
+		{% for job in job_posted_by_company %}
+		<a href="{% url 'jobs:job-detail' job.id %}" style="color: #343a40; text-decoration: none;">
+			{% if job.is_featured %}
+				<div class="card-body-1 shadow rounded mt-3 border-left-warning"> 
+			{% else %}
+				<div class="card-body-1 shadow rounded py-3 border-left-primary mt-3"> 
+			{% endif %}
+				<div class="float-right">
+					<img src="/media/{{job.get_job_company}}" alt="Girl in a jacket" width="100" height="80">
+				</div>
+				<h4 class="card-title nav-item text-truncate" style="max-width: 700px;" >{{job.title}}
+					<span class="badge badge-warning"> Featured </span>
+					<span class="badge badge-warning"> Django </span>
+					<span class="badge badge-warning"> Python </span>
+					<h6 class="card-title nav-item text-muted">{{job.job_type}} ({{job.headquarters}})</h6>
+				</h4>
+				<p class="card-text text-dark text-truncate" style="max-width: 1000px;">
+					{{job.description}}
+				</p>
+			</div>
+		</a>
+		{% endfor %}
+	</div>
 </div>
 
 {% endblock %}
