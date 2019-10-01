@@ -64,7 +64,9 @@
 
 
 										<h6 class="card-title mt-3">Job Description<span style="color:red;">*</span></h6>
-										<div class="btn-toolbar" data-role="editor-toolbar" data-target="#editor">
+										<textarea class="form-control form-control-lg col-md-12" name="job_description" rows="6" required>
+										</textarea>
+<!-- 										<div class="btn-toolbar" data-role="editor-toolbar" data-target="#editor">
 											<div class="btn-group">
 												<a class="btn dropdown-toggle" data-toggle="dropdown" title="Font"><i class="icon-font"></i><b class="caret"></b></a>
 												<ul class="dropdown-menu">
@@ -103,8 +105,8 @@
 										</div>
 
 										<div id="editor" contenteditable="true" spellcheck="false" data-gramm="false" name="job_description" style="overflow:scroll; max-height:300px;">
-											Go ahead&hellip;
-										</div>
+											go ahead
+										</div> -->
 
 
 										<h3 class="card-title nav-item mt-5">Tell us about your Company</h3>
@@ -214,8 +216,6 @@
 			});
 		};
 		initToolbarBootstrapBindings();  
-		// $('#editor').wysiwyg({ fileUploadError: showErrorAlert} );
-		window.prettyPrint && prettyPrint();
 	});	
 </script>
 

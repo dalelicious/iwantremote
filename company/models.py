@@ -13,7 +13,7 @@ class Company(models.Model):
 	logo = models.ImageField(upload_to='images/companies/')
 	tagline = models.CharField(max_length=50, null=True)
 	website = models.CharField(max_length=50, null=True)
-	description = models.CharField(max_length=50, null=True)
+	description = models.CharField(max_length=200, null=True)
 
 
 	# @property
