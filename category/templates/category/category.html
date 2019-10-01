@@ -5,7 +5,7 @@
 <div class="jumbotron-fluid" style="background-image: url()">
 	<div class="row">
 		<div class="col-lg-12 text-center mt-5">
-			<img src="/static/images/laptop.png" class="img-fluid" alt="Responsive image" width="350">
+			<img src="/static/images/laptop.png" class="img-fluid" alt="Responsive image" width="250">
 			<h1 class="mt-2 text-dark">Find remote jobs in <span class="rounded badge border border-dark badge-primary"> {{ categories.name }}</span></h1>
 			<ul class="list-unstyled">
 				<button class="btn btn-danger mt-4 btn-lg rounded" onclick="location.href='{% url 'jobs:create-job' %}'">Post a job for $199</button>
@@ -13,7 +13,7 @@
 		</div>
 	</div>
 </div>
-<div class="container col-sm-8 mt-4">
+<div class="container col-sm-7 mt-4">
 	<div class="card border-0">
 		<h3 class="text-dark mt-2"><img src="/media/{{categories.cat_image}}" class="img-fluid" alt="Responsive image" width="55">{{categories.name}}<span class="small"> ({{categories.total_jobs_per_category}})</a></span>
 			<!-- <span class="card-text float-right"><small class="text-white">{{job.last_update}}</small></span> -->
