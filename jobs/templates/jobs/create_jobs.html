@@ -26,11 +26,11 @@
 										<h6 class="required-field float-right">Required Fields <span style="color:red;">*</span></h6>
 										<h3 class="card-title nav-item">Tell us about your job</h3>
 										<h6 class="card-title mt-3">Position<span style="color:red;">*</span></h6>
-										<input type="text"  name="title" placeholder="e.g Software Engineer" class="form-control form-control-lg col-md-12" style="background-color: #f6f6f6;" required>
+										<input type="text" id="title" name="title" placeholder="e.g Software Engineer" class="form-control form-control-lg col-md-12" style="background-color: #f6f6f6;">
 										<div class="card-title mt-3 form-row">
 											<div class="form-group col-md-6">
 												<h6 for="card-title mt-3">Category<span style="color:red;">*</span></h6>
-												<select name="category" class="form-control col-md-12 form-control-lg" required>
+												<select name="category" class="form-control col-md-12 form-control-lg">
 												{% for category in category_list %}
 													<option value="{{category.id}}">{{category.name}}</option>
 												{% endfor %}
@@ -45,26 +45,26 @@
 											</div>
 										</div>
 										<h6 class="card-title">Tags<span style="color:red;">*</span></h6>
-										<input type="text" name="link" placeholder="eg. python, django, aws..." class="form-control col-md-12" style="background-color: #f6f6f6;" 		required>
+										<input type="text" name="link" placeholder="eg. python, django, aws..." class="form-control col-md-12" style="background-color: #f6f6f6;">
 										<div class="card-title mt-3 form-row">
 											<div class="form-group col-md-6">
 												<h6 for="card-title mt-3">Headquarters<span style="color:red;">*</span></h6>
-												<input type="text" name="headquarters" class="form-control col-md-12 form-control-lg" required>
+												<input type="text" name="headquarters" class="form-control col-md-12 form-control-lg">
 												<p class="text-muted">Location of your business</p>
 											</div>
 											<div class="form-group col-md-6">
 												<h6>Regional Restrictions <span style="color:red;">*</span></h6>
-												<input type="text" name="region" class="form-control form-control-lg" required>
+												<input type="text" name="region" class="form-control form-control-lg">
 												<p class="text-muted">Example: “North America Only”,   “P.S.T. Only”</p>
 											</div>
 										</div>
 										<h6 class="card-title">Apply Link<span style="color:red;">*</span></h6>
-										<input type="text" name="link" class="form-control col-md-12" required>
+										<input type="text" name="link" class="form-control col-md-12">
 										<p class="text-muted">Example: https://mybusiness.com/careers/apply or employee@email.com</p>
 
 
 										<h6 class="card-title mt-3">Job Description<span style="color:red;">*</span></h6>
-										<textarea class="form-control form-control-lg col-md-12" name="job_description" rows="6" required>
+										<textarea class="form-control form-control-lg col-md-12" name="job_description" rows="6">
 										</textarea>
 <!-- 										<div class="btn-toolbar" data-role="editor-toolbar" data-target="#editor">
 											<div class="btn-group">
@@ -111,10 +111,10 @@
 
 										<h3 class="card-title nav-item mt-5">Tell us about your Company</h3>
 										<h6 class="card-title mt-3">Name<span style="color:red;">*</span></h6>
-										<input type="text" name="company_name" class="form-control form-control-lg col-md-12" required>
+										<input type="text" name="company_name" class="form-control form-control-lg col-md-12">
 										<p class="text-muted">Enter your company or organization’s name.</p>
 										<h6 class="card-title mt-3">Company Description<span style="color:red;">*</span></h6>
-										<textarea class="form-control form-control-lg col-md-12 mb-3" name="company_description" rows="6" required></textarea>
+										<textarea class="form-control form-control-lg col-md-12 mb-3" name="company_description" rows="6"></textarea>
 										<h6 for="card-title">Company Logo<span style="color:red;">*</span></h6>
 										<div class="form-group custom-file">
 											<input type="file" name="logo" class="custom-file-input" id="customFile">
@@ -127,29 +127,28 @@
 										<div class="card-title mt-3 form-row">
 											<div class="form-group col-md-6">
 												<h6 for="card-title mt-3">Company Website<span style="color:red;">*</span></h6>
-												<input type="text" name="website" class="form-control form-control-lg col-md-12" required>
+												<input type="text" name="website" class="form-control form-control-lg col-md-12">
 											</div>
 											<div class="form-group col-md-6">
 												<h6>Email<span style="color:red;">*</span></h6>
 												<input type="email" name="email" class="form-control form-control-lg" required>
 											</div>
-			    							<div class="card-body rounded" style="padding-top: 50px">
-			     								 <div class="row">
-			      									<h5 class="col-md-12 alert alert-success text-center text-dark">Get more visibility! Be at our top and #1 featured category and get highlighted!</h5>
-			      							<div class="card-title text-center">
-			       							 		<div class="col-md-12">
-			           								 <img src="/static/images/highlight.png" class="img-fluid" alt="Responsive image">
-			            								<input type="checkbox" id="is_featured" name="featured"> Featured this job for <span class="badge badge-pill badge-primary">$29 only.</span>
-			       								 </div>
-				    						   </div>
-				     						 </div>
-			     								 <div class="row">
-			      								 <div class="card-title text-center">
-			       							 <div class="col-md-12">
-			           								 <img src="/static/images/nooption.png" class="img-fluid" alt="Responsive image">
-			            								<input type="checkbox" id="is_featured" name="featured"> Continue to regular post.
-			       								 </div>
-				     						 </div>
+										</div>
+
+										<div class="card-body rounded" style="padding-top: 50px">
+											<div class="row">
+												<h5 class="col-md-12 alert alert-success text-center text-dark">Get more visibility! Be at our top and #1 featured category and get highlighted!</h5>
+											</div>
+										</div>
+
+										<div class="card-title text-center">
+											<div class="col-md-12">
+												<img src="/static/images/highlight.png" class="img-fluid" alt="Responsive image">
+												<input type="checkbox" id="is_featured" name="featured"> Feature this job for <span class="badge badge-pill badge-primary">$29 only.</span>
+												<input id="not_featured" type="hidden" name="featured" value="False">
+											</div>
+										</div>
+										<!-- <button class="btn-lg btn-danger mt-3" data-toggle="modal" data-target="#viewPreview">Next: Preview Ad post</button> -->
 										<button type="submit" name="create" class="btn-lg btn-danger mt-3">Next: Preview Ad post</button>
 									</form>
 								</div>
@@ -161,6 +160,26 @@
 		</div>
 	</div>
 </section>
+
+<!-- <div class="modal hide fade text-left" tabindex="-1" role="dialog" id="viewPreview" aria-labelledby="myModalLabel1" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel1">Ad Preview</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+            	<input type="text" name="jobTitle" id="jobTitle">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">No</button>
+                <button type="submit" class="btn btn-primary">Yes</button>
+            </div>
+        </div>
+    </div>
+</div> -->
 
 {% endblock %}
 
@@ -196,27 +215,32 @@
 		$("#job_type_id").val(job_type_selected);
 	});
 
-	$(function(){
-		function initToolbarBootstrapBindings() {
-			var fonts = ['Serif', 'Sans', 'Arial', 'Arial Black', 'Courier', 
-			'Courier New', 'Comic Sans MS', 'Helvetica', 'Impact', 'Lucida Grande', 'Lucida Sans', 'Tahoma', 'Times',
-			'Times New Roman', 'Verdana'],
-			fontTarget = $('[title=Font]').siblings('.dropdown-menu');
-			$.each(fonts, function (idx, fontName) {
-				fontTarget.append($('<li><a data-edit="fontName ' + fontName +'" style="font-family:\''+ fontName +'\'">'+fontName + '</a></li>'));
-			});
-			$('a[title]').tooltip({container:'body'});
-			$('.dropdown-menu input').click(function() {return false;})
-			.change(function () {$(this).parent('.dropdown-menu').siblings('.dropdown-toggle').dropdown('toggle');})
-			.keydown('esc', function () {this.value='';$(this).change();});
+	// $(function(){
+	// 	function initToolbarBootstrapBindings() {
+	// 		var fonts = ['Serif', 'Sans', 'Arial', 'Arial Black', 'Courier', 
+	// 		'Courier New', 'Comic Sans MS', 'Helvetica', 'Impact', 'Lucida Grande', 'Lucida Sans', 'Tahoma', 'Times',
+	// 		'Times New Roman', 'Verdana'],
+	// 		fontTarget = $('[title=Font]').siblings('.dropdown-menu');
+	// 		$.each(fonts, function (idx, fontName) {
+	// 			fontTarget.append($('<li><a data-edit="fontName ' + fontName +'" style="font-family:\''+ fontName +'\'">'+fontName + '</a></li>'));
+	// 		});
+	// 		$('a[title]').tooltip({container:'body'});
+	// 		$('.dropdown-menu input').click(function() {return false;})
+	// 		.change(function () {$(this).parent('.dropdown-menu').siblings('.dropdown-toggle').dropdown('toggle');})
+	// 		.keydown('esc', function () {this.value='';$(this).change();});
 
-			$('[data-role=magic-overlay]').each(function () { 
-				var overlay = $(this), target = $(overlay.data('target')); 
-				overlay.css('opacity', 0).css('position', 'absolute').offset(target.offset()).width(target.outerWidth()).height(target.outerHeight());
-			});
-		};
-		initToolbarBootstrapBindings();  
-	});	
+	// 		$('[data-role=magic-overlay]').each(function () { 
+	// 			var overlay = $(this), target = $(overlay.data('target')); 
+	// 			overlay.css('opacity', 0).css('position', 'absolute').offset(target.offset()).width(target.outerWidth()).height(target.outerHeight());
+	// 		});
+	// 	};
+	// 	initToolbarBootstrapBindings();  
+	// });
+
+	// $('#viewPreview').on('shown.bs.modal', function () {
+	// 	var myTitle = $(this).data('title');
+	// 	$(".modal-body #jobTitle").val(myTitle);
+	// });
 </script>
 
 {% endblock %}
