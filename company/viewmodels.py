@@ -44,6 +44,18 @@ class CompanyViewModel():
 		return job_posted
 
 
+	def check_company_exist(self, email):
+		""" Check if email exist
+		"""
+
+		company = Company.objects.filter(email=email)
+
+		if len(company) > 0:
+			return True
+		else:
+			return False
+
+
 	def create_new_company(self, name, logo, tagline, website, email, company_description):
 		""" Create new company
 		"""
