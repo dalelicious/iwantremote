@@ -3,39 +3,43 @@
 {% block content_additions %}
 
 <div class="row justify-content-md-center mt-5">
-  <div class="col-sm-7">
-    <a href="/jobs/" class="" style="color: #343a40"><img src="/static/assets/vendor/iconic/svg/arrow-thick-left.svg"> Back to all jobs</a>
+  <div class="col-sm-7 mt-4">
+    <div class="container mt-3">
+    <a href="/jobs/" class="" style="color: #343a40"><img src="/static/assets/vendor/iconic/png/caret-left-2x.png"> Back to all jobs</a>
+  </div>
   </div>
 </div>
 
 <div class="row justify-content-md-center mt-5">
   <div class="col-sm-7">
+    <div class="row-sm-2">
     <div class="container">
       <div class="card border-0">
         <div class="card-body border-0">
-          <i class="card-title nav-item text-dark">Posted {{job.create_date|date:"M d"}}</i>
+          <i class="text-muted">Posted {{job.create_date|date:"M d"}}</i>
           <a href="{% url 'company:company-detail' company.id %}">
-            <img src="/media/{{company.logo}}" class="float-right shadow-sm rounded-circle img-thumbnail" alt="Responsive image" style="max-width: 200px" style="max-height: 150px">
+            <img src="/media/{{company.logo}}" class="float-right shadow-sm img-thumbnail" alt="Responsive image" style="max-width: 180px" style="max-height: 200px">
           </a>
           <h1 class="card-title nav-item mt-5">{{job.title}}</h1>
           <h6 class="card-title nav-item text-muted ">{{job.job_type}} ({{job.region}})
-            <span class="badge badge-primary"> Devops </span>
-            <span class="badge badge-primary"> Django </span>
-            <span class="badge badge-primary"> Python </span>
           </h6>
+          <h5><span class="badge badge-pill badge-primary"> Devops </span>
+            <span class="badge badge-pill badge-primary"> Django </span>
+            <span class="badge badge-pill badge-primary"> Python </span></h5>
           <div class="row">
-             <div class="col"><hr></div>
+              <div class="col"><hr></div>
+              <div class="col-auto"><button type="button" class="btn btn-danger btn-md rounded" onclick="location.href='https://{{job.link}}'">Apply for this Position</button></div>
+              <div class="col"><hr></div>
           </div>
           <!-- Start Job Description from database with correct format -->
           <!-- {{job.job_description}} -->
-          <h4 class="card-title nav-item mt-3">About:</h4>
+          <h4 class="card-title nav-item mt-2">About:</h4>
           <p class="card-text">
             {{job.description|linebreaks}}
           </p>
           <p>
             Our backend tech stack currently consists of Python Flask/Gunicorn web apps with our TaskTiger scheduler handling many of the backend asynchronous processing tasks.  Our data stores include MongoDB, Elasticsearch, PostgreSQL, MySQL, and Redis.  Our infrastructure runs on AWS using a combination of managed services like RDS and ElastiCache as well as EC2 instances managed by Puppet, Ansible, and Terraform.  Today we manage hundreds of EC2 instances and thousands of Docker containers on our Kubernetes clusters.
           </p>
-
           <h4 class="card-title nav-item mt-5">We're looking for:</h4>
           <p class="card-text">
             <ul>
@@ -44,7 +48,6 @@
               <li>Improve our CI/CD process making builds/deployments faster and safer</li>
             </ul>
           </p>
-
           <h4 class="card-title nav-item mt-5">Help us for:</h4>
           <p class="card-text">
             <ul>
@@ -60,11 +63,22 @@
           <p class="card-text">
             We come from 13 countries and 15 states; a collection of talented humans rich in diverse backgrounds, lifestyles, and cultures. Twice a year we meet up somewhere around the world to spend time with one another. We see these retreats as an opportunity to strengthen the social fiber of our community..
           </p>
-          <!-- End Job Description from database with correct format -->
-          <div class="row mt-5">
+          <div class="float-right">
+                <button type="button" class="btn btn-primary btn-sm btn-fb"><i class="fa fa-facebook-f pr-1"></i></button>
+                  <button type="button" class="btn btn-success btn-sm btn-slack">
+                    <i class="fa fa-slack"></i></button>
+                  <button type="button" class="btn btn-info btn-sm btn-tw">
+                    <i class="fa fa-twitter"></i></button>
+                  <button type="button" class="btn btn-primary btn-sm btn-tw">
+                    <i class="fa fa-linkedin"></i></button>
+                  <button type="button" class="btn btn-danger btn-sm btn-tw">
+                    <i class="fa fa-pinterest"></i></button>
+                </button>
+          </div>
+          <div class="row-2 mt-4">
               <div class="col"></div>
               <div class="col-auto">
-                  <button type="button" class="btn btn-danger btn-lg rounded" onclick="location.href='https://{{job.link}}'">Apply for this Position</button></div>
+                  <button type="button" class="btn btn-danger btn-md rounded" onclick="location.href='https://{{job.link}}'">Apply for this Position</button></div>
               <div class="col"></div>
           </div>
           <div class="container justify-content-md-center">
@@ -74,12 +88,11 @@
     </div>
   </div>
 </div>
-
-<div class="container col-sm-7 mt-3">
-    <div class="card-body bg-light border"> 
-      <h5 class="card-title nav-item">Help us maintain the quality of jobs posted on IWantRemote. Is this job not remote?
+<div class="col-sm-6" style="padding-top: 3rem">
+    <div class="text-center alert alert-secondary"> 
+      <h6 class="">Help us maintain the quality of jobs posted on IWantRemote. Is this job not remote?</h6>
       <ul class="list-unstyled">
-        <button type="button" class="btn btn-primary mt-3 btn-lg rounded">Let us know</button>
+        <button type="button" class="mt-2 btn btn-success btn-md rounded">Let us know</button>
       </ul>
     </div>
   </div>
