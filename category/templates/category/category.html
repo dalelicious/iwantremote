@@ -15,10 +15,10 @@
 </div>
 <div class="container col-sm-7 mt-4">
 	<div class="card border-0">
-		<h3 class="text-dark mt-2"><img src="/media/{{categories.cat_image}}" class="img-fluid" alt="Responsive image" width="55">{{categories.name}}<span class="small"> ({{categories.total_jobs_per_category}})</a></span>
+		<h5 class="text-dark mt-2"><img src="/media/{{categories.cat_image}}" class="img-fluid" alt="Responsive image" width="55">{{categories.name}}<span class="small"> ({{categories.total_jobs_per_category}})</a></span>
 			<!-- <span class="card-text float-right"><small class="text-white">{{job.last_update}}</small></span> -->
 			<span class="card-text"><small class="text-muted col-sm-8"> Last updated 3 mins ago</small></span>
-		</h3>
+		</h5>
 		{% for job in jobs_list %}
 			<a href="{% url 'jobs:job-detail' job.id %}" style="color: #343a40; text-decoration: none;">
 			{% if job.is_featured %}
@@ -35,9 +35,6 @@
 						<span class="badge badge-primary"> Python </span>
 						<h6 class="card-title nav-item text-muted">{{job.job_type}} ({{job.headquarters}})</h6>
 					</h4>
-					<p class="card-text text-truncate" style="max-width: 1000px;">
-						{{job.description}}
-					</p>
 				</div>
 		</a>
 		{% endfor %}
