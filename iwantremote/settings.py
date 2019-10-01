@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'category',
     'resources',
     'feedback',
+    'subscriber',
 ]
 
 MIDDLEWARE = [

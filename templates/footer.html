@@ -1,30 +1,33 @@
 <div class="sticky-bottom py-4 mt-5 text-white bg-dark">
-		<div class="row">
-			<div class="col-md-6 ml-auto offset-md-3">
-				<section class="home-newsletter">
+	<div class="row">
+		<div class="col-md-6 ml-auto offset-md-3">
+			<section class="home-newsletter">
 				<div class="container">
 					<div class="row">
 						<div class="col">
 							<div class="single">
 								<h2>Subscribe to get weekly jobs</h2>
-							<div class="input-group">
-						         <input type="email" class="form-control-lg" placeholder="Enter your email"  style="margin-right: 0.2rem">
-						         <span class="input-group-btn">
-						         <button class="btn btn-success btn-theme btn-lg" type="submit">Subscribe</button>
-						         </span>
-						          </div>
+								<div class="input-group">
+									<form method="POST" action="{% url 'subscriber:add-subscriber' %}">
+										{% csrf_token %}
+										<input type="email" name="email" class="form-control-lg" placeholder="Enter your email"  style="margin-right: 0.2rem">
+										<span class="input-group-btn">
+											<button class="btn btn-success btn-theme btn-lg" type="submit">Subscribe</button>
+										</span>
+									</form>
+								</div>
 							</div>
-						</div>
+						</div>	
 					</div>
 				</div>
-				</section>
-			</div>
+			</section>
+		</div>
 		<div class="col-4">
-				<h2>{{ all_jobs }}<span class="small"> Jobs Posted</span></h2>
-         		<ul class="list-unstyled">
-			<button class="btn btn-danger btn-lg rounded" onclick="location.href='{% url 'jobs:create-job' %}'">Post a job for $199</button>
-		</ul>
-         </div>
+			<h2>{{ all_jobs }}<span class="small"> Jobs Posted</span></h2>
+			<ul class="list-unstyled">
+				<button class="btn btn-danger btn-lg rounded" onclick="location.href='{% url 'jobs:create-job' %}'">Post a job for $199</button>
+			</ul>
+		</div>
 	</div>
 </div>
 
