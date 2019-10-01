@@ -10,7 +10,7 @@
 	</div>
 </div>
 <div class="row justify-content-md-center">
-	<div class="col-sm-12">
+	<div class="col-sm-8">
 		<div class="container mt-3">
 			<div class="card border-0">
 				<div class="card-body rounded shadow py-3 border-primary">
@@ -33,11 +33,9 @@
 	</div>
 </div>
 
-<div class="container col-sm-7 mt-4">
+<div class="container col-sm-8 mt-5">
 	<div class="card border-0">
-		<h4 class="text-dark mt-2">All {{company.name}} Jobs<span class="small"> ({{job_posted}})</a></span>
-		    	
-			<!-- <span class="card-text float-right"><small class="text-white">{{job.last_update}}</small></span> -->
+		<h4 class="text-dark mt-5">All {{company.name}} Jobs<span class="small"> ({{job_posted}})</a></span>
 			<span class="card-text"><small class="text-muted mt-2 float-right"> Last updated 3 mins ago</small></span>
 		</h4>
 		{% for job in job_posted_by_company %}
