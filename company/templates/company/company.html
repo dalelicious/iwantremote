@@ -8,29 +8,28 @@
       <img src="/static/images/footer.png" class="img-fluid" alt="Responsive image" width="350">
       <h1 class="h3 mb-2 text-gray-800">1000+ Remote Companies we &#10084;</h1>
       <p class="mb-4">Find the best hiring companies all over the world.</p>
-      </ul>
     </div>
   </div>
 </div>
-  {% for company in company_list %}
+{% for company in company_list %}
+<a href="{% url 'company:company-detail' company.id %}" style="color: #343a40; text-decoration: none;">
   <div class="container col-sm-6 mt-3">
     <div class="border card-body rounded shadow-sm">
       <div class="row">
         <div class="col-md-2 border-0">
-          <a href="{% url 'company:company-detail' company.id %}">
-            <img src="/media/{{company.logo}}" class="w-75 p-2"></a>
-          </div>
-          <div class="col-md-10">
-            <div class="card-block">
-              <p class="text-muted float-right">Jobs posted:{{job_posted}}</p>
-              <h4 class="card-title">{{company.name}}</h4>
-              <span class="small">{{company.tagline}}</span>
-            </div>
+          <img src="/media/{{company.logo}}" class="w-75 p-2">
+        </div>
+        <div class="col-md-10">
+          <div class="card-block">
+            <p class="text-muted float-right">Jobs posted:{{job_posted}}</p>
+            <h4 class="card-title">{{company.name}}</h4>
+            <span class="small">{{company.tagline}}</span>
           </div>
         </div>
       </div>
     </div>
-     {% endfor %}
   </div>
+</a>
+{% endfor %}
 
 {% endblock %}
