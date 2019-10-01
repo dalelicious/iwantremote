@@ -218,6 +218,10 @@ img {
   border-left: 0.25rem solid #1cc88a !important;
 }
 
+.border-right-success {
+  border-right: 0.25rem solid #1cc88a !important;
+}
+
 .border-bottom-success {
   border-bottom: 0.25rem solid #1cc88a !important;
 }
@@ -4691,6 +4695,12 @@ input[type="button"].btn-block {
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
   padding: 1.25rem;
+}
+
+.card-body-company {
+  -ms-flex: 1 auto;
+  flex: 1 auto;
+  padding: 1.2rem;
 }
 
 .card-title {
