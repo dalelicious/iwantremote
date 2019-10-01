@@ -39,7 +39,7 @@ class CompanyViewModel():
 		"""
 
 		company = Company.objects.get(id=companyId)
-		job_posted = len(Jobs.objects.filter(company=company.email))
+		job_posted = Jobs.objects.filter(company=company.email)
 
 		return job_posted
 
