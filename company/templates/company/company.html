@@ -13,16 +13,16 @@
 </div>
 {% for company in company_list %}
 <a href="{% url 'company:company-detail' company.id %}" style="color: #343a40; text-decoration: none;">
-  <div class="container col-sm-6 mt-3">
+  <div class="container col-sm-6 mt-1">
     <div class="border card-body-company rounded shadow-sm">
       <div class="row">
         <div class="col-md-2 border-0">
-          <img src="/media/{{company.logo}}" class="w-75 p-2">
+          <img src="/media/{{company.logo}}" class="w-75">
         </div>
         <div class="col-md-10">
           <div class="card-block">
             <p class="text-muted float-right">Jobs posted:{{job_posted}}</p>
-            <h4 class="card-title">{{company.name}}</h4>
+            <h5 class="card-title">{{company.name}}</h5>
             <span class="small">{{company.tagline}}</span>
           </div>
         </div>

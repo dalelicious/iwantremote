@@ -6,6 +6,7 @@
   <div class="col-sm-7">
     <div class="container">
     <a href="/jobs/" style="color: #343a40"><img src="/static/assets/vendor/iconic/png/caret-left-2x.png"> Back to all jobs</a>
+    <h1 class="card-title nav-item mt-3">Category Name</h1>
   </div>
   </div>
 </div>
@@ -15,19 +16,17 @@
     <div class="container">
       <div class="card border-0">
         <div class="card-body border-0">
-          <i class="text-muted">Posted {{job.create_date|date:"M d"}}</i>
+          <h6 class="text-muted">Posted {{job.create_date|date:"M d"}}</h6>
           <a href="{% url 'company:company-detail' company.id %}">
             <img src="/media/{{company.logo}}" class="float-right shadow-sm img-thumbnail" alt="Responsive image" style="max-width: 180px" style="max-height: 200px">
           </a>
-          <h1 class="card-title nav-item mt-5">{{job.title}}</h1>
-          <h6 class="card-title nav-item text-muted ">{{job.job_type}} ({{job.region}})
+          <h1 class="card-title nav-item mt-2">{{job.title}}</h1>
+          <h6 class="card-title nav-item text-dark ">{{job.job_type}} ({{job.region}})
           </h6>
           <h5><span class="badge badge-pill badge-primary"> Devops </span>
             <span class="badge badge-pill badge-primary"> Django </span>
             <span class="badge badge-pill badge-primary"> Python </span></h5>
           <div class="row">
-              <div class="col"><hr></div>
-              <div class="col-auto"><button type="button" class="btn btn-danger btn-md rounded" onclick="location.href='https://{{job.link}}'">Apply for this Position</button></div>
               <div class="col"><hr></div>
           </div>
           <!-- Start Job Description from database with correct format -->
@@ -36,7 +35,7 @@
           <p class="card-text">
             {{job.description|linebreaks}}
           </p>
-          <div class="float-right">
+          <div class="float-left">
                 <button type="button" class="btn btn-primary btn-sm btn-fb"><i class="fa fa-facebook-f pr-1"></i></button>
                   <button type="button" class="btn btn-success btn-sm btn-slack">
                     <i class="fa fa-slack"></i></button>
@@ -48,10 +47,10 @@
                     <i class="fa fa-pinterest"></i></button>
                 </button>
           </div>
-          <div class="row-2 mt-1">
+          <div class="float-right">
               <div class="col"></div>
               <div class="col-auto">
-                  <button type="button" class="btn btn-danger btn-md rounded" onclick="location.href='https://{{job.link}}'">Apply for this Position</button></div>
+                  <button type="button" class="btn btn-danger btn-lg rounded" onclick="location.href='https://{{job.link}}'">Apply for this Position</button></div>
               <div class="col"></div>
           </div>
           <div class="container justify-content-md-center">

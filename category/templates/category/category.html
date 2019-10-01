@@ -22,19 +22,19 @@
 		{% for job in jobs_list %}
 			<a href="{% url 'jobs:job-detail' job.id %}" style="color: #343a40; text-decoration: none;">
 			{% if job.is_featured %}
-				<div class="card-body box shadow rounded mt-3 border-left-warning"> 
+				<div class="card-body-1 box shadow rounded py-4 mt-2 border-left-warning"> 
 			{% else %}
-				<div class="card-body box shadow rounded py-3 border-left-primary mt-3"> 
+				<div class="card-body-1 box shadow rounded border-left-primary py-4 mt-2"> 
 			{% endif %} 
 					<div class="float-right">
 						<img src="/media/{{job.get_job_company}}" alt="Girl in a jacket" width="100" height="80">
 					</div>
-					<h4 class="card-title nav-item ">{{job.title}}
+					<h5 class="card-title nav-item ">{{job.title}}
 						<span class="badge badge-primary"> Devops </span>
 						<span class="badge badge-primary"> Django </span>
 						<span class="badge badge-primary"> Python </span>
 						<h6 class="card-title nav-item text-muted">{{job.job_type}} ({{job.headquarters}})</h6>
-					</h4>
+					</h5>
 				</div>
 		</a>
 		{% endfor %}

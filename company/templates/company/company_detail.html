@@ -35,25 +35,25 @@
 
 <div class="container col-sm-8 mt-5">
 	<div class="card border-0">
-		<h4 class="text-dark mt-5">All {{company.name}} Jobs<span class="small"> ({{job_posted}})</a></span>
+		<h4 class="text-dark mt-3">All {{company.name}} Jobs<span class="small"> ({{job_posted}})</a></span>
 			<span class="card-text"><small class="text-muted mt-2 float-right"> Last updated 3 mins ago</small></span>
 		</h4>
 		{% for job in job_posted_by_company %}
 		<a href="{% url 'jobs:job-detail' job.id %}" style="color: #343a40; text-decoration: none;">
 			{% if job.is_featured %}
-				<div class="card-body-1 shadow rounded mt-3 border-left-warning"> 
+				<div class="card-body-1 shadow rounded py-4 mt-2 border-left-warning"> 
 			{% else %}
-				<div class="card-body-1 shadow rounded py-3 border-left-primary mt-3"> 
+				<div class="card-body-1 shadow rounded border-left-primary py-4 mt-2"> 
 			{% endif %}
 				<div class="float-right">
 					<img src="/media/{{job.get_job_company}}" alt="Girl in a jacket" width="100" height="80">
 				</div>
-				<h4 class="card-title nav-item text-truncate" style="max-width: 700px;" >{{job.title}}
+				<h5 class="card-title nav-item text-truncate" style="max-width: 700px;" >{{job.title}}
 					<span class="badge badge-warning"> Featured </span>
 					<span class="badge badge-warning"> Django </span>
 					<span class="badge badge-warning"> Python </span>
 					<h6 class="card-title nav-item text-muted">{{job.job_type}} ({{job.headquarters}})</h6>
-				</h4>
+				</h5>
 			</div>
 		</a>
 		{% endfor %}
