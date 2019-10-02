@@ -25,11 +25,11 @@
 										{% csrf_token %}
 										<h6 class="required-field float-right">Required Fields <span style="color:red;">*</span></h6>
 										<h3 class="card-title nav-item">Tell us about your job</h3>
-										<h6 class="card-title mt-3">Position<span style="color:red;">*</span></h6>
+										<h6 class="card-title mt-3">Position<span style="color:red;"> *</span></h6>
 										<input type="text" id="title" name="title" placeholder="e.g Software Engineer" class="form-control form-control-lg col-md-12" style="background-color: #f6f6f6;">
 										<div class="card-title mt-3 form-row">
 											<div class="form-group col-md-6">
-												<h6 for="card-title mt-3">Category<span style="color:red;">*</span></h6>
+												<h6 for="card-title mt-3">Category<span style="color:red;"> *</span></h6>
 												<select name="category" class="form-control col-md-12 form-control-lg">
 												{% for category in category_list %}
 													<option value="{{category.id}}">{{category.name}}</option>
@@ -37,33 +37,31 @@
 												</select>
 											</div>
 											<div class="form-group col-md-6">
-												<h6>Job Type<span style="color:red;">*</span></h6>
+												<h6>Job Type<span style="color:red;"> *</span></h6>
 												<input type="checkbox" id="fulltime_type" name="fulltime" class="job_type"> Fulltime
 												<input type="checkbox" id="contract_type" name="contract" class="job_type"> Contract
 												<input type="checkbox" id="project_type" name="project" class="job_type"> Project
 												<input type="text" name="job_type" id="job_type_id" value="">
 											</div>
 										</div>
-										<h6 class="card-title">Tags<span style="color:red;">*</span></h6>
+										<h6 class="card-title">Tags<span style="color:red;"> *</span></h6>
 										<input type="text" name="link" placeholder="eg. python, django, aws..." class="form-control col-md-12" style="background-color: #f6f6f6;">
 										<div class="card-title mt-3 form-row">
 											<div class="form-group col-md-6">
-												<h6 for="card-title mt-3">Headquarters<span style="color:red;">*</span></h6>
+												<h6 for="card-title mt-3">Headquarters<span style="color:red;"> *</span></h6>
 												<input type="text" name="headquarters" class="form-control col-md-12 form-control-lg">
-												<p class="text-muted">Location of your business</p>
+												<p class="text-muted">Location of your company</p>
 											</div>
 											<div class="form-group col-md-6">
-												<h6>Regional Restrictions <span style="color:red;">*</span></h6>
+												<h6>Regional Restrictions <span style="color:red;"> *</span></h6>
 												<input type="text" name="region" class="form-control form-control-lg">
 												<p class="text-muted">Example: “North America Only”,   “P.S.T. Only”</p>
 											</div>
 										</div>
-										<h6 class="card-title">Apply Link<span style="color:red;">*</span></h6>
-										<input type="text" name="link" class="form-control col-md-12">
+										<h6 class="card-title" >Apply Link<span style="color:red;">*</span></h6>
+										<input type="text" name="link" class="form-control form-control-lg col-md-12" style="background: #f6f6f6">
 										<p class="text-muted">Example: https://mybusiness.com/careers/apply or employee@email.com</p>
-
-
-										<h6 class="card-title mt-3">Job Description<span style="color:red;">*</span></h6>
+										<h6 class="card-title mt-3">Job Description<span style="color:red;"> *</span></h6>
 										<textarea class="form-control form-control-lg col-md-12" name="job_description" rows="6">
 										</textarea>
 <!-- 										<div class="btn-toolbar" data-role="editor-toolbar" data-target="#editor">
@@ -110,15 +108,15 @@
 
 
 										<h3 class="card-title nav-item mt-5">Tell us about your Company</h3>
-										<h6 class="card-title mt-3">Name<span style="color:red;">*</span></h6>
-										<input type="text" name="company_name" class="form-control form-control-lg col-md-12">
+										<h6 class="card-title mt-3">Name<span style="color:red;"> *</span></h6>
+										<input type="text" name="company_name" class="form-control form-control-lg col-md-12" style="background: #f6f6f6">
 										<p class="text-muted">Enter your company or organization’s name.</p>
-										<h6 class="card-title mt-3">Company Description<span style="color:red;">*</span></h6>
+										<h6 class="card-title mt-3">Company Description<span style="color:red;"> *</span></h6>
 										<textarea class="form-control form-control-lg col-md-12 mb-3" name="company_description" rows="6"></textarea>
-										<h6 for="card-title">Company Logo<span style="color:red;">*</span></h6>
+										<h6 for="card-title">Company Logo<span style="color:red;"> *</span></h6>
 										<div class="custom-file">
 											<input type="file" name="logo" class="custom-file-input" id="customFile">
-											<label class="custom-file-label form-control form-control-lg" for="customFile"> Choose file </label>
+											<label class="custom-file-label text-center form-control form-control-lg" for="customFile" style="background: #f6f6f6"> Choose file </label>
 										</div>
 										<div class="form-group mt-3">
 											<h6>Tagline</h6>
@@ -126,11 +124,11 @@
 										</div>
 										<div class="card-title mt-3 form-row">
 											<div class="form-group col-md-6">
-												<h6 for="card-title mt-3">Company Website<span style="color:red;">*</span></h6>
+												<h6 for="card-title mt-3">Company Website<span style="color:red;"> *</span></h6>
 												<input type="text" name="website" class="form-control form-control-lg col-md-12">
 											</div>
 											<div class="form-group col-md-6">
-												<h6>Email<span style="color:red;">*</span></h6>
+												<h6>Email<span style="color:red;"> *</span></h6>
 												<input type="email" name="email" class="form-control form-control-lg" required>
 											</div>
 										</div>
@@ -160,7 +158,6 @@
 	</div>
 </section>
 
-<!-- Upload Image Script -->
 
 
 
