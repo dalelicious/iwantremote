@@ -2,10 +2,10 @@
 
 {% block content_additions %}
 
-<div class="jumbotron row justify-content-md-center">
+<div class="jumbotron row justify-content-md-center py-5 alert-secondary" style="background-image: url(/static/images/e.png); background-size: 20%;">
 	<div class="col-sm-9">
 		<div class="container">
-			<a href="/jobs/" class="" style="color: #343a40"><img src="/static/assets/vendor/iconic/png/caret-left-2x.png"> Back to all jobs</a>
+			<a href="/jobs/" class="" style="color: white"><img src="/static/assets/vendor/iconic/png/caret-left-2x.png"> Back to all jobs</a>
 		</div>
 	</div>
 </div>
@@ -13,17 +13,17 @@
 	<div class="col-sm-8">
 		<div class="container mt-3">
 			<div class="card border-0">
-				<div class="card-body rounded shadow py-3 border-primary">
+				<div class="card-body rounded bg-light shadow-sm py-3 border-primary">
 					<h2 class="card-title mb-3">{{company.name}}
 						<img src="/media/{{company.logo}}" class="float-right shadow-sm img-thumbnail" alt="Responsive image" style="max-width: 200px">
-						<h4 class="card-title mb-3">Company Tagline</h4>
 					</h2>
-					<i class="text-muted">Location</i><br>
+					<i class="text-muted"><img src="/static/assets/vendor/iconic/png/location-2x.png"> {{job.headquarters}}</i><br>
 					<i class="text-muted">Jobs Posted: {{job_posted}}</i><br>
 					<i class="text-muted"><a href="http://{{company.website}}" target="_blank">{{company.website}}</i></a>
 					 <div class="row">
 		             		<div class="col"><hr></div>
 		             </div>
+		             <h4 class="card-title mb-3">Company Tagline</h4>
 					<p class="card-text" style="padding-bottom: 150px">
 						{{company.description}}
 					</p>
@@ -33,7 +33,7 @@
 	</div>
 </div>
 
-<div class="container col-sm-8 mt-5">
+<div class="container col-sm-7 mt-5">
 	<div class="card border-0">
 		<h4 class="text-dark mt-3">All {{company.name}} Jobs<span class="small"> ({{job_posted}})</a></span>
 			<span class="card-text"><small class="text-muted mt-2 float-right"> Last updated 3 mins ago</small></span>

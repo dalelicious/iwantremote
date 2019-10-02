@@ -3,7 +3,7 @@
 		<div class="col-md-6 ml-auto offset-md-3">
 				<div class="container">
 					<div class="row">
-						<div class="col-md-7">
+						<div class="col-md-6">
 							<div class="single">
 								<h4>Subscribe to get weekly jobs</h4>
 									<form class="input-group" method="POST" action="{% url 'subscriber:add-subscriber' %}">
@@ -20,15 +20,13 @@
 		</div>
 		<div class="col-4">
 			<h3>{{ all_jobs }}<span class="small"> Jobs Posted</span></h3>
-			<ul class="list-unstyled">
 				<button class="btn btn-danger btn-md rounded" onclick="location.href='{% url 'jobs:create-job' %}'">Post a job today</button>
-			</ul>
 		</div>
 	</div>
 </div>
-
-<div class="bg-secondary footer-copyright text-center text-white py-3">© 2019 Copyright |
-		<span class="text-white">IWantRemote.com</span>
+		
+<div class="bg-dark footer-copyright text-center text-white-50 py-3">© 2019 Copyright |
+		<span class="text-white-50">IWantRemote.com</span>
 </div>
 
 
