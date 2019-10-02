@@ -59,6 +59,13 @@
   <!-- markdown test -->
   <script src="/static/assets/vendor/bootstrap-wysiwyg/external/jquery.hotkeys.js"></script>
   <script src="/static/assets/vendor/bootstrap-wysiwyg/bootstrap-wysiwyg.js"></script>
+  <!-- file upload -->
+  <script>
+      $(".custom-file-input").on("change", function() {
+           var fileName = $(this).val().split("\\").pop();
+      $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+         });
+  </script>
 
   {% block page_vendor_js_additions %}{% endblock %}
 
