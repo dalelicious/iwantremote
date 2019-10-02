@@ -3,6 +3,7 @@ from django.utils 	import timezone
 
 # Jobs
 from . models 		import Jobs
+from category.models import Category
 
 
 class JobsViewModel():
@@ -42,6 +43,19 @@ class JobsViewModel():
 		jobs_list = Jobs.objects.filter(is_featured=True)
 
 		return jobs_list
+
+
+	def get_category_name(self, jobId):
+		""" Get category name by job id
+		"""
+
+		category_list = Category.objects.all()
+		job = Jobs.objects.get(id=jobId)
+
+		for category in category_list:
+			if category.id == job.category:
+
+				return category.name
 
 
 	def get_jobs_list_by_category(self, categoryId):

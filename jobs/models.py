@@ -25,3 +25,11 @@ class Jobs(models.Model):
 		company = Company.objects.get(email=self.company)
 
 		return company.logo
+
+
+	@property
+	def get_company_name(self):
+
+		company = Company.objects.get(email=self.company)
+
+		return company.name

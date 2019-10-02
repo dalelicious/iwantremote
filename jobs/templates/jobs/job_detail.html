@@ -6,7 +6,7 @@
   <div class="col-sm-8">
     <div class="container">
     <a href="/jobs/" style="color: white"><img src="/static/assets/vendor/iconic/png/caret-left-2x.png"> Back to all jobs</a>
-    <h2 class="card-title nav-item mt-3" style="color: white">Category Name</h2>
+    <h1 class="card-title nav-item text-center mt-3" style="color: white">{{category_name}}</h1>
   </div>
   </div>
 </div>
@@ -63,7 +63,7 @@
 </div>
 <div class="col-sm-2" style="padding-top: 3rem">
     <div class="text-center alert alert-secondary"> 
-      <h6 class="">Help us maintain the quality of jobs posted on IWantRemote. Is this job not remote?</h6>
+      <h6 class="">Help us maintain the quality of jobs posted on IWantRemote. <br><br>Is this job not remote?</h6>
       <ul class="list-unstyled">
         <button type="button" class="mt-2 btn btn-success btn-md rounded" onclick="location.href='{% url 'feedback:feedback' %}'">Let us know</button>
       </ul>

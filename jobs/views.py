@@ -80,6 +80,7 @@ def create_job(request):
 def job_detail(request, jobId):
 
 	job_detail = job.get_job_id(jobId)
+	category_name = job.get_category_name(jobId)
 	all_jobs = len(job.get_jobs_list())
 	category_list = categories.get_category_list()
 	company_detail = company.get_company_by_job_id(jobId)
@@ -88,6 +89,7 @@ def job_detail(request, jobId):
 				 {'job':job_detail,
 				  'all_jobs':all_jobs,
 				  'company':company_detail,
+				  'category_name':category_name,
 				  'category_list':category_list})
 
 
