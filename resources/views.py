@@ -33,4 +33,7 @@ def blog_detail(request, blogId):
 
 def privacy(request):
 
-	return render(request, 'resources/privacy.html')
+	category_list = categories.get_category_list()
+
+	return render(request, 'resources/privacy.html',
+				 {'category_list':category_list})
