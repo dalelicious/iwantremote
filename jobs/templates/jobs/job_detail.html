@@ -2,10 +2,9 @@
 
 {% block content_additions %}
 
-<div class="jumbotron row justify-content-md-center py-5 alert-secondary" style="background-image: url(/static/images/e.png); background-size: 20%;">
+<div class="jumbotron bg-dark row justify-content-md-center py-5 alert-secondary">
   <div class="col-sm-8">
     <div class="container">
-    <a href="/jobs/" style="color: white"><img src="/static/assets/vendor/iconic/png/caret-left-2x.png"> Back to all jobs</a>
     <h1 class="card-title nav-item text-center mt-3" style="color: white">{{category_name}}</h1>
   </div>
   </div>
@@ -14,10 +13,11 @@
 <div class="row justify-content-md-center">
   <div class="col-sm-6">
     <div class="row-sm-2">
+       <a href="/jobs/" style="color: black"><img src="/static/assets/vendor/iconic/png/caret-left-2x.png"> Back to all jobs</a>
     <div class="container">
       <div class="card border-0">
         <div class="card-body border-0">
-          <h6 class="text-muted">Posted {{job.create_date|date:"M d"}}</h6>
+          <h6 class="text-muted mt-3">Posted {{job.create_date|date:"M d"}}</h6>
           <a href="{% url 'company:company-detail' company.id %}">
             <img src="/media/{{company.logo}}" class="float-right shadow-sm img-thumbnail" alt="Responsive image" style="max-width: 180px" style="max-height: 200px">
           </a>
@@ -61,9 +61,10 @@
     </div>
   </div>
 </div>
-<div class="col-sm-2" style="padding-top: 3rem">
-    <div class="text-center alert alert-secondary"> 
-      <h6 class="">Help us maintain the quality of jobs posted on IWantRemote. <br><br>Is this job not remote?</h6>
+<div class="col-sm-2">
+  <a href="/jobs/" style="color: black">See more {{category_name}} jobs <img src="/static/assets/vendor/iconic/png/caret-right-2x.png"></a>
+    <div class="text-center alert alert-secondary mt-5"> 
+      <h6 class="">Help us maintain the quality of jobs posted on IWantRemote. <br><br> Is this job not remote?</h6>
       <ul class="list-unstyled">
         <button type="button" class="mt-2 btn btn-success btn-md rounded" onclick="location.href='{% url 'feedback:feedback' %}'">Let us know</button>
       </ul>
