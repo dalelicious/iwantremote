@@ -44,8 +44,9 @@
 				<h5 class="card-title nav-item text-muted">{{job.get_company_name}}</h5>
 				<h5 class="card-title nav-item text-truncate" style="max-width: 700px;" >{{job.title}}
 					<span class="badge badge-warning float-right" style="font-size: medium"> Featured </span>
-					<span class="badge badge-pill badge-primary" style="font-size: small"> Django </span>
-					<span class="badge badge-pill badge-primary" style="font-size: small"> Python </span>
+					{% for tag in job.get_job_tags %}
+						<span class="badge badge-pill badge-primary" style="font-size: small"> {{tag}} </span>
+					{% endfor %}
 					<h6 class="card-title nav-item text-muted">{{job.job_type}} ({{job.region}})</h6>
 				</h5>
 			</div>
@@ -73,9 +74,9 @@
 						</div>
 						<h5 class="card-title nav-item text-muted">{{job.get_company_name}}</h5>
 						<h5 class="card-title nav-item text-truncate" style="max-width: 700px;" >{{job.title}}
-							<span class="small badge badge-pill badge-primary" style="font-size: small"> Devops </span>
-							<span class="badge badge-pill badge-primary" style="font-size: small"> Django </span>
-							<span class="badge badge-pill badge-primary" style="font-size: small"> Python </span>
+							{% for tag in job.get_job_tags %}
+								<span class="badge badge-pill badge-primary" style="font-size: small"> {{tag}} </span>
+							{% endfor %}
 							<h6 class="card-title nav-item text-muted">{{job.job_type}} ({{job.region}})</h6>
 						</h5>
 					</div>

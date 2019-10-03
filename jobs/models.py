@@ -1,3 +1,5 @@
+import re
+
 # Django
 from django.db import models
 
@@ -10,6 +12,7 @@ class Jobs(models.Model):
 	title = models.CharField(max_length=50, null=True)
 	category = models.IntegerField(null=True)
 	job_type = models.CharField(max_length=50, null=True)
+	tags = models.CharField(max_length=50, null=True)
 	headquarters = models.CharField(max_length=50, null=True)
 	region = models.CharField(max_length=50, null=True)
 	link = models.CharField(max_length=50, null=True)
@@ -33,3 +36,12 @@ class Jobs(models.Model):
 		company = Company.objects.get(email=self.company)
 
 		return company.name
+
+
+	@property
+	def get_job_tags(self):
+
+		job_tags = self.tags
+		tags_list = re.sub("[^\w]", " ", job_tags).split()
+
+		return tags_list

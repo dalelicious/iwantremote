@@ -44,6 +44,7 @@ def create_job(request):
 		title = request.POST['title']
 		category = request.POST['category']
 		job_type = request.POST['job_type']
+		tags = request.POST['tags']
 		headquarters = request.POST['headquarters']
 		region = request.POST['region']
 		link = request.POST['link']
@@ -66,11 +67,11 @@ def create_job(request):
 
 		if company_exist:
 
-			job.create_new_job(email, title, category, job_type, headquarters, region, link, job_description, is_featured)
+			job.create_new_job(email, title, category, job_type, tags, headquarters, region, link, job_description, is_featured)
 
 		else:
 
-			job.create_new_job(email, title, category, job_type, headquarters, region, link, job_description, is_featured)
+			job.create_new_job(email, title, category, job_type, tags, headquarters, region, link, job_description, is_featured)
 
 			company.create_new_company(name, logo, tagline, website, email, company_description)
 

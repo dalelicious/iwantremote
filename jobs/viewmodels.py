@@ -67,7 +67,7 @@ class JobsViewModel():
 		return jobs_list
 
 
-	def create_new_job(self, email, title, category, job_type, headquarters, region, link, job_description, is_featured):
+	def create_new_job(self, email, title, category, job_type, tags, headquarters, region, link, job_description, is_featured):
 		""" Create new job
 		"""
 
@@ -76,6 +76,7 @@ class JobsViewModel():
 		job.title = title
 		job.category = category
 		job.job_type = job_type
+		job.tags = tags
 		job.headquarters = headquarters
 		job.region = region
 		job.link = link
