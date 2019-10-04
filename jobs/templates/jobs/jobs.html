@@ -38,7 +38,7 @@
 		<a href="{% url 'jobs:job-detail' job.id %}" style="color: #343a40; text-decoration: none;">
 			<div class="card-body-1 shadow-sm py-3 rounded mt-3 border-left-warning"> 
 				<div class="float-right">
-					<img src="/media/{{job.get_job_company}}" alt="Girl in a jacket" width="100" height="80">
+					<img src="/media/{{job.get_job_company}}" alt="Responsive image" style="max-width: 100px">
 				</div>
 				<h6 class="card-title nav-item">{{job.get_company_name}}</h6>
 				<h5 class="card-title nav-item text-truncate" style="max-width: 700px;">{{job.title}}
@@ -67,7 +67,7 @@
 					<div class="card-body-1 shadow-sm rounded py-3 rounded mt-3 border-left-primary"> 
 				{% endif %}
 						<div class="float-right">
-							<img src="/media/{{job.get_job_company}}" alt="Girl in a jacket" width="100" height="80">
+								<img src="/media/{{job.get_job_company}}" alt="Responsive image" style="max-width: 100px">
 						</div>
 						<h6 class="card-title nav-item">{{job.get_company_name}}</h6>
 						<h5 class="card-title nav-item text-truncate" style="max-width: 700px;" >{{job.title}}

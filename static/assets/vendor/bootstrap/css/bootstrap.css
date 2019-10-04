@@ -154,13 +154,13 @@ sup {
 }
 
 a {
-  color: #fff;
+  color: black;
   text-decoration: none;
   background-color: transparent;
 }
 
 a:hover {
-  color: #fff;
+  color: black;
   text-decoration: underline;
 }
 
