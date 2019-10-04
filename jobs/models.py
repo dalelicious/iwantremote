@@ -12,6 +12,7 @@ class Jobs(models.Model):
 	title = models.CharField(max_length=50, null=True)
 	category = models.IntegerField(null=True)
 	job_type = models.CharField(max_length=50, null=True)
+	salary = models.CharField(max_length=50, null=True)
 	tags = models.CharField(max_length=50, null=True)
 	headquarters = models.CharField(max_length=50, null=True)
 	region = models.CharField(max_length=50, null=True)

@@ -21,9 +21,11 @@
           <a href="{% url 'company:company-detail' company.id %}">
             <img src="/media/{{company.logo}}" class="float-right shadow-sm img-thumbnail" alt="Responsive image" style="max-width: 180px" style="max-height: 200px">
           </a>
-          <h1 class="card-title nav-item mt-2">{{job.title}}</h1>
-          <h6 class="card-title nav-item text-dark ">{{job.job_type}} ({{job.region}})
-          </h6>
+          <h1 class="card-title nav-item mt-4">{{job.title}}</h1>
+          <p class="card-title nav-item text-dark ">{{job.job_type}} ({{job.region}})
+          </p>
+          <p class="card-title nav-item text-dark-50 ">Salary: {{job.salary}}
+          </p>
           {% for tag in job.get_job_tags %}
             <h5 class="badge badge-pill badge-primary"> {{tag}} </h5>
           {% endfor %}
