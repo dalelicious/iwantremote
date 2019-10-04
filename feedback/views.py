@@ -13,6 +13,10 @@ def feedback(request):
 
 	return render(request, 'feedback/feedback.html')
 
+def confirmation(request):
+
+	return render(request, 'feedback/confirmation.html')
+
 
 def create_feedback(request):
 
@@ -22,4 +26,4 @@ def create_feedback(request):
 
 	feedbacks.create_new_feedback(name, job_title, content)
 
-	return redirect('jobs:jobs')
+	return redirect('feedback:confirmation')
