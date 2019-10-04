@@ -240,7 +240,7 @@ background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
 }
 
 .border-left-warning {
-  border-left: 0.25rem solid #ffc107 !important;
+  border-left: 0.25rem solid #ffbb33 !important;
 }
 
 .border-bottom-warning {
@@ -5167,7 +5167,7 @@ a.badge-info:focus, a.badge-info.focus {
 
 .badge-warning {
   color: #fff;
-  background-color: #ffc107;
+  background-color: #ffbb33;
 }
 
 a.badge-warning:hover, a.badge-warning:focus {
