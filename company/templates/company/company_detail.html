@@ -1,17 +1,10 @@
 {% extends "main.html" %}
 
 {% block content_additions %}
-
-<div class="bg-dark jumbotron row justify-content-md-center py-5 alert-secondary">
-	<div class="col-sm-9">
-		<div class="container">
-			<a href="/jobs/" class="" style="color: white"><img src="/static/assets/vendor/iconic/png/caret-left-2x.png"> Back to all jobs</a>
-		</div>
-	</div>
-</div>
-<div class="row justify-content-md-center">
+<div class="row justify-content-md-center" style="padding-top: 80px">
 	<div class="col-sm-8">
-		<div class="container mt-3">
+		<a href="/jobs/" class="" style="color: black"><img src="/static/assets/vendor/iconic/png/caret-left-2x.png"> Back to all jobs</a>
+		<div class="container mt-5">
 			<div class="card border-0">
 				<div class="card-body rounded bg-light shadow-sm py-3 border-primary">
 					<h2 class="card-title mb-3">{{company.name}}
