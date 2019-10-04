@@ -42,7 +42,9 @@
 				</div>
 				<h6 class="card-title nav-item">{{job.get_company_name}}</h6>
 				<h5 class="card-title nav-item text-truncate" style="max-width: 700px;" >{{job.title}}
-					<span class="badge badge-warning float-right" style="font-size: medium"> Featured </span>
+					{% if job.is_featured %}
+						<span class="badge badge-warning float-right" style="font-size: medium"> Featured </span>
+					{% endif %}
 					{% for tag in job.get_job_tags %}
 						<span class="badge badge-pill badge-primary" style="font-size: small"> {{tag}} </span>
 					{% endfor %}
@@ -73,6 +75,9 @@
 						</div>
 						<h6 class="card-title nav-item">{{job.get_company_name}}</h6>
 						<h5 class="card-title nav-item text-truncate" style="max-width: 700px;" >{{job.title}}
+							{% if job.is_featured %}
+								<span class="badge badge-warning float-right" style="font-size: medium"> Featured </span>
+							{% endif %}
 							{% for tag in job.get_job_tags %}
 								<span class="badge badge-pill badge-primary" style="font-size: small"> {{tag}} </span>
 							{% endfor %}
