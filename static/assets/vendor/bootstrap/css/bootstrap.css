@@ -198,6 +198,11 @@ img {
   border-style: none;
 }
 
+.bg-dark-gradient {
+background-color: #485461;
+background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
+}
+
 .border-left-primary {
   border-left: 0.25rem solid #4e73df !important;
 }
