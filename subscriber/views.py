@@ -8,6 +8,9 @@ from . viewmodels 			import SubscriberViewModel
 
 subscribers = SubscriberViewModel()
 
+def confirmation(request):
+
+	return render(request, 'subscriber/confirmation.html')
 
 def add_subscriber(request):
 
@@ -15,4 +18,5 @@ def add_subscriber(request):
 
 	subscribers.add_new_subscriber(email)
 
-	return redirect('jobs:jobs')
+	return redirect('subscriber:sub_confirmation')
+

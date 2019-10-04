@@ -10,7 +10,7 @@
 										{% csrf_token %}
 										<input type="email" name="email" class="form-control form-control-md" placeholder="What's your email?">
 										<span class="input-group-append">
-											<button class="btn btn-success btn-theme btn-md" type="submit">Subscribe</button>
+											<button class="btn btn-success btn-theme btn-md" type="submit" onclick="location.href='{% url 'subscriber:sub_confirmation' %}'">Subscribe</button>
 										</span>
 									</form>
 							</div>
