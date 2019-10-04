@@ -4,5 +4,6 @@ from django.db import models
 class Feedback(models.Model):
 
 	name = models.CharField(max_length=50, null=True)
+	job_title = models.CharField(max_length=50, null=True)
 	content = models.CharField(max_length=200, null=True)
 	create_date = models.DateTimeField()
