@@ -5166,7 +5166,7 @@ a.badge-info:focus, a.badge-info.focus {
 }
 
 .badge-warning {
-  color: #212529;
+  color: #fff;
   background-color: #ffc107;
 }
 
