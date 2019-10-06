@@ -9,11 +9,11 @@ from category.models import Category
 class JobsViewModel():
 
 
-	def get_job_id(self, jobId):
-		""" Get job id
+	def get_job_name(self, jobName):
+		""" Get job title
 		"""
 
-		job = Jobs.objects.get(id=jobId)
+		job = Jobs.objects.get(slugTitle=jobName)
 
 		return job
 
@@ -45,24 +45,24 @@ class JobsViewModel():
 		return jobs_list
 
 
-	def get_category_name(self, jobId):
-		""" Get category name by job id
+	def get_category_name(self, jobName):
+		""" Get category name by job name
 		"""
 
 		category_list = Category.objects.all()
-		job = Jobs.objects.get(id=jobId)
+		job = Jobs.objects.get(slugTitle=jobName)
 
 		for category in category_list:
-			if category.id == job.category:
+			if category.slugCatName == job.category:
 
 				return category.name
 
 
-	def get_jobs_list_by_category(self, categoryId):
+	def get_jobs_list_by_category(self, categoryName):
 		""" Get all jobs by category
 		"""
 
-		jobs_list = Jobs.objects.filter(category=categoryId, is_active=True).order_by('-create_date')
+		jobs_list = Jobs.objects.filter(category=categoryName, is_active=True).order_by('-create_date')
 
 		return jobs_list
 
@@ -74,6 +74,7 @@ class JobsViewModel():
 		job = Jobs()
 		job.company = email
 		job.title = title
+		job.slugTitle = title.replace(" ", "-").lower()
 		job.category = category
 		job.job_type = job_type
 		job.salary = salary

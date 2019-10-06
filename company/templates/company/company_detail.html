@@ -31,7 +31,7 @@
 		<h4 class="text-dark mt-3">All {{company.name}} Jobs<span class="small"> ({{job_posted}})</a></span>
 		</h4>
 		{% for job in job_posted_by_company %}
-		<a href="{% url 'jobs:job-detail' job.id %}" style="color: #343a40; text-decoration: none;">
+		<a href="{% url 'jobs:job-detail' job.slugTitle %}" style="color: #343a40; text-decoration: none;">
 			{% if job.is_featured %}
 				<div class="text-dark card-body-1 shadow-sm rounded py-3 mt-3 alert-primary border-left-primary">  
 			{% else %}

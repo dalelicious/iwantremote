@@ -10,7 +10,8 @@ class Jobs(models.Model):
 
 	company = models.CharField(max_length=50, null=True)
 	title = models.CharField(max_length=50, null=True)
-	category = models.IntegerField(null=True)
+	slugTitle = models.CharField(max_length=50, null=True)
+	category = models.CharField(max_length=50, null=True)
 	job_type = models.CharField(max_length=50, null=True)
 	salary = models.CharField(max_length=50, null=True)
 	tags = models.CharField(max_length=50, null=True)

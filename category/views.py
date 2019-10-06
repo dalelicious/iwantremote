@@ -12,11 +12,11 @@ job = JobsViewModel()
 category = CategoryViewModel()
 
 
-def categories(request, categoryId):
+def categories(request, categoryName):
 
 	all_jobs = len(job.get_jobs_list())
-	categories = category.get_category_by_id(categoryId)
-	jobs_list = job.get_jobs_list_by_category(categoryId)
+	categories = category.get_category_by_name(categoryName)
+	jobs_list = job.get_jobs_list_by_category(categoryName)
 	category_list = category.get_category_list()
 
 

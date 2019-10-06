@@ -14,7 +14,7 @@
           <a class="navbar-brand dropdown-toggle" data-toggle="dropdown" href="#">Categories</a>
           <div class="dropdown-menu">
             {% for category in category_list %}
-              <a class="dropdown-item" href="{% url 'category:categories' category.id %}">{{category.name}}</a>
+              <a class="dropdown-item" href="{% url 'category:categories' category.slugCatName %}">{{category.name}}</a>
             {% endfor %}
           </div>
         </li>

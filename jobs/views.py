@@ -95,13 +95,13 @@ def create_job(request):
 		return redirect('jobs:jobs')
 
 
-def job_detail(request, jobId):
+def job_detail(request, jobName):
 
-	job_detail = job.get_job_id(jobId)
-	category_name = job.get_category_name(jobId)
+	job_detail = job.get_job_name(jobName)
+	category_name = job.get_category_name(jobName)
 	all_jobs = len(job.get_jobs_list())
 	category_list = categories.get_category_list()
-	company_detail = company.get_company_by_job_id(jobId)
+	company_detail = company.get_company_by_job_name(jobName)
 
 	return render(request, 'jobs/job_detail.html',
 				 {'job':job_detail,

@@ -36,7 +36,7 @@
 			<span class="card-text"><small class="text-muted mt-2 float-right"> Last updated 3 mins ago</small></span>
 		</h5>
 		{% for job in jobs_list %}
-		<a href="{% url 'jobs:job-detail' job.id %}" style="color: #343a40; text-decoration: none;">
+		<a href="{% url 'jobs:job-detail' job.slugTitle %}" style="color: #343a40; text-decoration: none;">
 			<div class="text-dark card-body-1 alert alert-primary shadow-sm py-3 rounded border-left-primary"> 
 				<div class="float-right">
 					<img src="/media/{{job.get_job_company}}" alt="Responsive image" style="max-width: 100px">
