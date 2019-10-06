@@ -36,7 +36,7 @@
           <!-- {{job.job_description}} -->
           <h4 class="card-title nav-item mt-2">About:</h4>
           <p class="card-text">
-            {{job.description|linebreaks}}
+            {{job.description|safe}}
           </p>
           <div class="float-left mt-4">
                 Share this job: <br><button type="button" class="btn btn-primary btn-sm btn-linkedin"><i class="fa fa-linkedin pr-1"></i></button>
