@@ -5,7 +5,7 @@
 					<div class="row">
 						<div class="col-md-6">
 							<div class="single">
-								<h3>Subscribe to get weekly jobs</h3>
+								<h4>Subscribe to get weekly jobs</h4>
 									<form class="input-group" method="POST" action="{% url 'subscriber:add-subscriber' %}">
 										{% csrf_token %}
 										<input type="email" name="email" class="form-control form-control-md" placeholder="What's your email?" required>
@@ -26,21 +26,21 @@
 </div>
 
 
-<div class="bg-light footer-copyright text-center text-dark-50 mt-2 py-1">
-	<div class="col"><a href="\privacy\">Terms & Privacy</a> | <a href="mailto:info@iwantremote.com">Contact</a>
+<div class="bg-light footer-copyright text-center text-dark-50 mt-2">
+	<div class="col small"><a href="\privacy\">Terms & Privacy</a> | <a href="mailto:info@iwantremote.com">Contact</a>
 		<div class="mt-2">
-                <button type="button" class="btn btn-primary rounded-circle btn-sm btn-fb" onclick="location.href='https://www.facebook.com/IWantRemote-123799179009952'"><i class="fa fa-facebook-f pr-1"></i></button>
-                  <button type="button" class="btn btn-success rounded-circle btn-sm btn-slack">
+                <button type="button" class="rounded-circle btn-sm btn-fb" onclick="location.href='https://www.facebook.com/IWantRemote-123799179009952'"><i class="fa fa-facebook-f pr-1"></i></button>
+                  <button type="button" class="rounded-circle btn-sm btn-slack">
                     <i class="fa fa-slack"></i></button>
-                  <button type="button" class="btn btn-info rounded-circle btn-sm btn-tw" onclick="location.href='https://twitter.com/iwantremote'">
+                  <button type="button" class="rounded-circle btn-sm btn-tw" onclick="location.href='https://twitter.com/iwantremote'">
                     <i class="fa fa-twitter"></i></button>
-                  <button type="button" class="btn btn-primary rounded-circle btn-sm btn-tw">
+                  <button type="button" class="rounded-circle btn-sm btn-tw">
                     <i class="fa fa-linkedin"></i></button>
-                  <button type="button" class="btn btn-danger rounded-circle btn-sm btn-tw">
+                  <button type="button" class="rounded-circle btn-sm btn-tw">
                     <i class="fa fa-pinterest"></i></button>
                 </button>
           </div>
-	</div><h6 class="text-dark mt-2 "> © 2019 Copyright | IWantRemote.com</h6> 
+	</div><h6 class="text-dark mt-2 small"> © 2019 Copyright</h6> 
 </div>
 
 

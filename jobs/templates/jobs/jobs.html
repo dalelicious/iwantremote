@@ -42,6 +42,7 @@
 				</div>
 				<h6 class="card-title nav-item">{{job.get_company_name}}</h6>
 				<h5 class="card-title nav-item text-truncate" style="max-width: 700px;">{{job.title}}
+					{{job.create_date|date:"M d"}}
 					{% if job.is_featured %}
 						<span class="badge badge-warning float-right" style="font-size: medium; margin-right: 50px;"> Featured </span>
 					{% endif %} </h5>
@@ -69,6 +70,7 @@
 						</div>
 						<h6 class="card-title nav-item">{{job.get_company_name}}</h6>
 						<h5 class="card-title nav-item text-truncate" style="max-width: 700px;" >{{job.title}}
+							{{job.create_date|date:"M d"}}
 							{% if job.is_featured %}
 								<span class="badge badge-warning float-right" style="font-size: medium; margin-right: 50px;"> Featured </span>
 							{% endif %}

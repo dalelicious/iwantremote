@@ -40,7 +40,7 @@ class JobsViewModel():
 		""" Get all featured jobs
 		"""
 
-		jobs_list = Jobs.objects.filter(is_featured=True).order_by('-create_date')
+		jobs_list = Jobs.objects.filter(is_featured=True, is_active=True).order_by('-create_date')
 
 		return jobs_list
 
@@ -62,7 +62,7 @@ class JobsViewModel():
 		""" Get all jobs by category
 		"""
 
-		jobs_list = Jobs.objects.filter(category=categoryId).order_by('-create_date')
+		jobs_list = Jobs.objects.filter(category=categoryId, is_active=True).order_by('-create_date')
 
 		return jobs_list
 

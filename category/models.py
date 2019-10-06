@@ -11,7 +11,7 @@ class Category(models.Model):
 	@property
 	def jobs_per_category(self):
 
-		jobs_per_category = Jobs.objects.filter(category=self.id).order_by('-create_date')[:3]
+		jobs_per_category = Jobs.objects.filter(category=self.id, is_active=True).order_by('-create_date')[:3]
 
 		return jobs_per_category
 
@@ -19,6 +19,6 @@ class Category(models.Model):
 	@property
 	def total_jobs_per_category(self):
 
-		total_jobs_per_category = len(Jobs.objects.filter(category=self.id))
+		total_jobs_per_category = len(Jobs.objects.filter(category=self.id, is_active=True))
 
 		return total_jobs_per_category
