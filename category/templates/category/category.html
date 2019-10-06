@@ -20,18 +20,17 @@
 		{% for job in jobs_list %}
 			<a href="{% url 'jobs:job-detail' job.id %}" style="color: #343a40; text-decoration: none;">
 			{% if job.is_featured %}
-				<div class="card-body-1 box shadow-sm rounded py-3 mt-3 border-left-warning"> 
+				<div class="text-dark card-body-1 mt-2 alert alert-primary shadow-sm py-3 rounded border-left-primary">  
 			{% else %}
-				<div class="card-body-1 box shadow-sm rounded border-left-primary py-3 mt-3"> 
+				<div class="text-dark card-body-1 shadow-sm rounded py-3 rounded mt-3 border-left-secondary">  
 			{% endif %} 
 					<div class="float-right">
 							<img src="/media/{{job.get_job_company}}" alt="Responsive image" style="max-width: 100px">
 					</div>
 					<h6 class="card-title nav-item text-truncate" style="max-width: 700px;">{{job.get_company_name}}</h6>
 					<h5 class="card-title nav-item ">{{job.title}}
-						{{job.create_date|date:"M d"}}
 						{% if job.is_featured %}
-							<span class="badge badge-warning float-right" style="font-size: medium; margin-right: 50px;"> Featured </span>
+							<span class="badge badge-primary float-right" style="font-size: medium; margin-right: 50px;"> Featured </span>
 						{% endif %} </h5>
 						<h6 class="small card-title nav-item text-muted">{{job.job_type}} ({{job.headquarters}})</h6>
 					</h5>
