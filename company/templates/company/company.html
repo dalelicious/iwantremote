@@ -12,8 +12,8 @@
   </div>
 </div>
 {% for company in company_list %}
-<a href="{% url 'company:company-detail' company.id %}" style="color: #343a40; text-decoration: none;">
   <div class="container col-sm-6 mt-1">
+    <a href="{% url 'company:company-detail' company.id %}" style="color: #343a40; text-decoration: none;">
     <div class="border card-body-company rounded shadow-sm">
       <div class="row">
         <div class="col-md-2 border-0">
@@ -28,8 +28,8 @@
         </div>
       </div>
     </div>
+    </a>
   </div>
-</a>
 {% endfor %}
 
 {% endblock %}
