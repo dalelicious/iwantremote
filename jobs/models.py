@@ -17,7 +17,7 @@ class Jobs(models.Model):
 	headquarters = models.CharField(max_length=50, null=True)
 	region = models.CharField(max_length=50, null=True)
 	link = models.CharField(max_length=50, null=True)
-	description = models.CharField(max_length=200, null=True)
+	description = models.TextField(null=True)
 	create_date = models.DateTimeField()
 	is_featured = models.BooleanField(null=True)
 	is_active = models.BooleanField(null=True)
