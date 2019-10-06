@@ -8,7 +8,7 @@
 			<div class="card border-0">
 				<div class="card-body rounded bg-light shadow-sm py-3 border-primary">
 					<h2 class="card-title mb-3">{{company.name}}
-						<img src="/media/{{company.logo}}" class="float-right shadow-sm img-thumbnail" alt="Responsive image" style="max-width: 200px">
+						<img src="/media/{{company.logo}}" class="float-right shadow-sm img-thumbnail" alt="Responsive image" style="max-width: 200px;">
 					</h2>
 					<i class="text-muted"><img src="/static/assets/vendor/iconic/png/location-2x.png"> {{job.headquarters}}</i><br>
 					<i class="text-muted">Jobs Posted: {{job_posted}}</i><br>
@@ -33,9 +33,9 @@
 		{% for job in job_posted_by_company %}
 		<a href="{% url 'jobs:job-detail' job.slugTitle %}" style="color: #343a40; text-decoration: none;">
 			{% if job.is_featured %}
-				<div class="text-dark card-body-1 shadow-sm rounded py-3 mt-3 alert-primary border-left-primary">  
+				<div class="card-body-1 shadow-sm rounded py-3 mt-3 border-left-warning"> 
 			{% else %}
-				<div class="text-dark card-body-1 shadow-sm rounded py-3 rounded mt-3 border-left-secondary">   
+				<div class="card-body-1 shadow-sm rounded border-left-primary py-3 mt-3"> 
 			{% endif %}
 				<div class="float-right">
 					<img src="/media/{{job.get_job_company}}" alt="Responsive image" style="max-width: 100px">
@@ -43,7 +43,7 @@
 				<h6 class="card-title nav-item">{{job.get_company_name}}</h6>
 				<h5 class="card-title nav-item text-truncate" style="max-width: 700px;">{{job.title}}
 					{% if job.is_featured %}
-						<span class="badge badge-warning float-right" style="font-size: medium; margin-right: 50px;"> Featured </span>
+						<span class="text-dark badge badge-warning float-right" style="font-size: medium; margin-right: 50px;"> Featured </span>
 					{% endif %} </h5>
 					<h6 class="small card-title nav-item text-muted">{{job.job_type}} ({{job.headquarters}})</h6>
 				</h5>

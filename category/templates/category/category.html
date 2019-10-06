@@ -6,7 +6,7 @@
 	<div class="row">
 		<div class="col-lg-12 text-center mt-5">
 			<img src="/static/images/laptop.png" class="img-fluid" alt="Responsive image" width="250">
-			<h1 class="mt-2 text-dark">Find remote jobs in <span class="rounded badge border border-dark badge-primary"> {{ categories.name }}</span></h1>
+			<h2 class="mt-2 text-dark">Find remote jobs in <u class="list-unstyled"> {{ categories.name }}</u></h2>
 			<ul class="list-unstyled">
 				<button class="btn btn-danger mt-4 btn-lg rounded" onclick="location.href='{% url 'jobs:create-job' %}'">Post a job for $199</button>
 			</ul>
@@ -15,14 +15,14 @@
 </div>
 <div class="container col-sm-7 mt-4">
 	<div class="card border-0">
-		<h5 class="text-dark mt-2"><img src="/media/{{categories.cat_image}}" class="img-fluid" alt="Responsive image" width="55">{{categories.name}}<span class="small"> ({{categories.total_jobs_per_category}})</a></span>
+		<h5 class="text-dark mt-2"><img src="/media/{{categories.cat_image}}" class="img-fluid" alt="Responsive image" width="55">{{categories.name}} <span class="small">({{categories.total_jobs_per_category}})</a></span>
 		</h5>
 		{% for job in jobs_list %}
 			<a href="{% url 'jobs:job-detail' job.slugTitle %}" style="color: #343a40; text-decoration: none;">
 			{% if job.is_featured %}
-				<div class="text-dark card-body-1 mt-2 alert alert-primary shadow-sm py-3 rounded border-left-primary">  
+				<div class="card-body-1 box shadow-sm rounded py-3 mt-3 border-left-warning"> 
 			{% else %}
-				<div class="text-dark card-body-1 shadow-sm rounded py-3 rounded mt-3 border-left-secondary">  
+				<div class="card-body-1 box shadow-sm rounded border-left-primary py-3 mt-3"> 
 			{% endif %} 
 					<div class="float-right">
 							<img src="/media/{{job.get_job_company}}" alt="Responsive image" style="max-width: 100px">
@@ -30,7 +30,7 @@
 					<h6 class="card-title nav-item text-truncate" style="max-width: 700px;">{{job.get_company_name}}</h6>
 					<h5 class="card-title nav-item ">{{job.title}}
 						{% if job.is_featured %}
-							<span class="badge badge-primary float-right" style="font-size: medium; margin-right: 50px;"> Featured </span>
+							<span class="text-dark badge badge-warning float-right" style="font-size: medium; margin-right: 50px;"> Featured </span>
 						{% endif %} </h5>
 						<h6 class="small card-title nav-item text-muted">{{job.job_type}} ({{job.headquarters}})</h6>
 					</h5>
