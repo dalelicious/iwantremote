@@ -16,7 +16,8 @@
 </div>
 
 <div class="container col-sm-7 mt-4">
-	     <form action="">
+	     <form method="POST" action="{% url 'jobs:jobs' %}">
+	     {% csrf_token %}
           <div class="bg-light rounded rounded-pill shadow-sm mb-4">
             <div class="input-group">
               <div class="input-group-prepend">

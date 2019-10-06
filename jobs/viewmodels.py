@@ -27,7 +27,7 @@ class JobsViewModel():
 		return jobs_list
 
 
-	def get_job_results(self, search):
+	def get_jobs_result_list(self, search):
 		""" Get job search results
 		"""
 

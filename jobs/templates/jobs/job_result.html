@@ -1,0 +1,60 @@
+{% extends "main.html" %}
+
+{% block content_additions %}
+
+<div class="jumbotron-fluid">
+	<div class="row">
+		<div class="col-lg-12 text-center mt-5">
+			<img src="/static/images/bg1.png" class="img-fluid" alt="Responsive image" width="200">
+			<h1 class="mt-2">Remote tech jobs, <span class="border border-dark badge badge-primary"> viewed-daily.</span></h1>
+			<p>Every generation seeks flexible work options. Find amazing list of remote tech jobs today.</p>
+			<ul class="list-unstyled">
+				<button class="btn btn-danger mt-3 btn-lg rounded" onclick="location.href='{% url 'jobs:create-job' %}'">Post a job for $199</button>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div class="container col-sm-7 mt-4">
+	     <form method="POST" action="{% url 'jobs:jobs' %}">
+	     {% csrf_token %}
+          <div class="bg-light rounded rounded-pill shadow-sm mb-4">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <button id="button-addon2" type="submit" class="btn btn-link text-warning"><i class="fa fa-search"></i></button>
+              </div>1
+              <input type="search" placeholder="Job contents, Position, Title..." name="search" aria-describedby="button-addon2" class="form-control border-0 bg-light">
+            </div>
+          </div>
+        </form>
+</div>
+
+<div class="container col-sm-7 mt-4">
+	<div class="card border-0">
+		<h5 class="text-dark mt-2"><img src="/static/images/trending.svg" class="img-fluid" alt="Responsive image" width="55"><a href="#" style="color: #343a40">Remote Jobs<span class="small"> (0)</a></span>
+			<span class="card-text"><small class="text-muted mt-2 float-right"> Last updated 3 mins ago</small></span>
+		</h5>
+		{% for job in jobs_list %}
+		<a href="{% url 'jobs:job-detail' job.id %}" style="color: #343a40; text-decoration: none;">
+			{% if job.is_featured %}
+				<div class="card-body-1 shadow-sm rounded py-3 mt-3 border-left-warning"> 
+			{% else %}
+				<div class="card-body-1 shadow-sm rounded py-3 rounded mt-3 border-left-primary"> 
+			{% endif %}
+					<div class="float-right">
+						<img src="/media/{{job.get_job_company}}" alt="Responsive image" style="max-width: 100px">
+					</div>
+					<h6 class="card-title nav-item">{{job.get_company_name}}</h6>
+					<h5 class="card-title nav-item text-truncate" style="max-width: 700px;">{{job.title}}
+						{{job.create_date|date:"M d"}}
+						{% if job.is_featured %}
+							<span class="badge badge-warning float-right" style="font-size: medium; margin-right: 50px;"> Featured </span>
+						{% endif %} </h5>
+						<h6 class="small card-title nav-item text-muted">{{job.job_type}} ({{job.region}})</h6>
+				</div>
+		</a>
+		{% endfor %}
+	</div>
+</div>
+
+{% endblock %}
