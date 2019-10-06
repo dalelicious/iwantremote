@@ -29,7 +29,6 @@
 <div class="container col-sm-7 mt-5">
 	<div class="card border-0">
 		<h4 class="text-dark mt-3">All {{company.name}} Jobs<span class="small"> ({{job_posted}})</a></span>
-			<span class="card-text"><small class="text-muted mt-2 float-right"> Last updated 3 mins ago</small></span>
 		</h4>
 		{% for job in job_posted_by_company %}
 		<a href="{% url 'jobs:job-detail' job.id %}" style="color: #343a40; text-decoration: none;">
@@ -43,6 +42,9 @@
 				</div>
 				<h6 class="card-title nav-item">{{job.get_company_name}}</h6>
 				<h5 class="card-title nav-item text-truncate" style="max-width: 700px;">{{job.title}}
+					{% if job.is_featured %}
+						<span class="badge badge-warning float-right" style="font-size: medium; margin-right: 50px;"> Featured </span>
+					{% endif %} </h5>
 					<h6 class="small card-title nav-item text-muted">{{job.job_type}} ({{job.headquarters}})</h6>
 				</h5>
 			</div>

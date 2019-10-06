@@ -56,7 +56,7 @@
   </div>
 </div>
 <div class="col-sm-2">
-  <a href="/jobs/" style="color: black">See more {{category_name}} jobs <img src="/static/assets/vendor/iconic/png/caret-right-2x.png"></a>
+  <a href="{% url 'category:categories' job.category %}" style="color: black">See more {{category_name}} jobs <img src="/static/assets/vendor/iconic/png/caret-right-2x.png"></a>
     <div class="text-center alert alert-secondary mt-5"> 
       <h6 class="">Help us maintain the quality of jobs posted on IWantRemote. <br><br> Is this job not remote?</h6>
       <ul class="list-unstyled">

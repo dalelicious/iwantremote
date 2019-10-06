@@ -9,7 +9,7 @@ class CategoryViewModel():
 		""" Get all category
 		"""
 
-		category_list = Category.objects.all()
+		category_list = Category.objects.all().order_by('name')
 
 		return category_list
 
