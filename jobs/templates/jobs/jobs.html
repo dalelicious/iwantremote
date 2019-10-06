@@ -59,7 +59,7 @@
 		<h5 class="text-dark mt-2"><img src="/media/{{category.cat_image}}" class="img-fluid" alt="Responsive image" width="55"><a href="{% url 'category:categories' category.id %}" style="color: #343a40"> {{category.name}} <span class="small"> ({{category.total_jobs_per_category}})</a></span>
 		</h5>
 		{% for job in category.jobs_per_category %}
-			<a href="{% url 'jobs:job-detail' job.id %}" style="color: #343a40; text-decoration: none;">
+			<a href="{% url 'jobs:job-detail' job.slugTitle %}" style="color: #343a40; text-decoration: none;">
 				{% if job.is_featured %}
 					<div class="card-body-1 shadow-sm rounded py-3 mt-3 border-left-warning"> 
 				{% else %}
