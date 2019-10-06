@@ -6,20 +6,20 @@ from jobs.models import Jobs
 class CompanyViewModel():
 
 
-	def get_company_by_id(self, companyId):
-		""" Get company id
+	def get_company_by_name(self, companyName):
+		""" Get company name
 		"""
 
-		company = Company.objects.get(id=companyId)
+		company = Company.objects.get(slugName=companyName)
 
 		return company
 
 
-	def get_company_by_job_id(self, jobId):
-		""" Get company by job id
+	def get_company_by_job_name(self, jobName):
+		""" Get company by job name
 		"""
 
-		job = Jobs.objects.get(id=jobId)
+		job = Jobs.objects.get(slugTitle=jobName)
 		company = Company.objects.get(email=job.company)
 
 		return company
@@ -34,11 +34,11 @@ class CompanyViewModel():
 		return company_list
 
 
-	def get_all_job_posted(self, companyId):
+	def get_all_job_posted(self, companyName):
 		""" Get all job posted
 		"""
 
-		company = Company.objects.get(id=companyId)
+		company = Company.objects.get(slugName=companyName)
 		job_posted = Jobs.objects.filter(company=company.email)
 
 		return job_posted
@@ -62,6 +62,7 @@ class CompanyViewModel():
 
 		company = Company()
 		company.name = name
+		company.slugName = name.replace(" ", "-").lower()
 		company.logo = logo
 		company.tagline = tagline
 		company.website = website

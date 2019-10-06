@@ -26,12 +26,12 @@ def companies(request):
 				  'category_list':category_list})
 
 
-def company_detail(request, companyId):
+def company_detail(request, companyName):
 
 	all_jobs = len(job.get_jobs_list())
-	company_detail = company.get_company_by_id(companyId)
-	job_posted = len(company.get_all_job_posted(companyId))
-	job_posted_by_company = company.get_all_job_posted(companyId)
+	company_detail = company.get_company_by_name(companyName)
+	job_posted = len(company.get_all_job_posted(companyName))
+	job_posted_by_company = company.get_all_job_posted(companyName)
 	category_list = category.get_category_list()
 
 	return render(request, 'company/company_detail.html',

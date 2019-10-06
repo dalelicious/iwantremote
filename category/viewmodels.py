@@ -14,10 +14,10 @@ class CategoryViewModel():
 		return category_list
 
 
-	def get_category_by_id(self, categoryId):
-		""" Get all category by id
+	def get_category_by_name(self, categoryName):
+		""" Get all category by name
 		"""
 
-		category = Category.objects.get(id=categoryId)
+		category = Category.objects.get(slugCatName=categoryName)
 
 		return category
