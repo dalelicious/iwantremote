@@ -14,7 +14,7 @@
   <div class="col-sm-6">
     <div class="row-sm-2">
        <a href="/jobs/" style="color: black"><img src="/static/assets/vendor/iconic/png/caret-left-2x.png"> Back to all jobs</a>
-    <div class="container">
+    <div class="container" align="justify">
       <div class="card border-0">
         <div class="card-body border-0">
           <h6 class="text-muted mt-5">Posted {{job.create_date|date:"M d"}}</h6>
@@ -27,14 +27,13 @@
           <p class="card-title nav-item text-dark-50 ">Salary: {{job.salary}}
           </p>
           {% for tag in job.get_job_tags %}
-            <h5 class="badge badge-pill badge-primary"> {{tag}} </h5>
+            <h5 class="badge badge-pill badge-secondary"> {{tag}} </h5>
           {% endfor %}
           <div class="row">
               <div class="col"><hr></div>
           </div>
           <!-- Start Job Description from database with correct format -->
           <!-- {{job.job_description}} -->
-          <h4 class="card-title nav-item mt-2">About:</h4>
           <p class="card-text">
             {{job.description|safe}}
           </p>
@@ -45,7 +44,7 @@
           <div class="float-right mt-5">
               <div class="col"></div>
               <div class="col-auto">
-                  <button type="button" class="btn btn-danger btn-lg rounded" onclick="location.href='{{job.link}}'">Apply for this Position</button></div>
+                  <button type="button" class="btn btn-    btn-lg rounded" onclick="location.href='{{job.link}}'">Apply for this Position</button></div>
               <div class="col"></div>
           </div>
               <div class="container justify-content-md-center">

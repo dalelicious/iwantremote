@@ -21,7 +21,7 @@
           <div class="bg-light rounded rounded-pill shadow-sm mb-4">
             <div class="input-group">
               <div class="input-group-prepend">
-                <button id="button-addon2" type="submit" class="btn btn-link text-warning"><i class="fa fa-search" style="color: black;"></i></button>
+                <button id="button-addon2" type="submit" class="btn btn-link text-warning"><i class="fa fa-search"></i></button>
               </div>
               <input type="search" placeholder="Job contents, Position, Title..." name="search" aria-describedby="button-addon2" class="form-control border-0 bg-light">
             </div>
@@ -37,14 +37,14 @@
 		</h5>
 		{% for job in jobs_list %}
 		<a href="{% url 'jobs:job-detail' job.id %}" style="color: #343a40; text-decoration: none;">
-			<div class="text-dark card-body-1 alert alert-primary shadow-sm py-3 rounded border-left-primary"> 
+			<div class="card-body-1 shadow-sm py-3 rounded mt-3 border-left-warning"> 
 				<div class="float-right">
 					<img src="/media/{{job.get_job_company}}" alt="Responsive image" style="max-width: 100px">
 				</div>
 				<h6 class="card-title nav-item">{{job.get_company_name}}</h6>
 				<h5 class="card-title nav-item text-truncate" style="max-width: 700px;">{{job.title}}
 					{% if job.is_featured %}
-						<span class="badge badge-primary float-right" style="font-size: medium; margin-right: 50px;"> Featured </span>
+						<span class="badge badge-warning float-right" style="font-size: medium; margin-right: 50px;"> Featured </span>
 					{% endif %} </h5>
 					<h6 class="small card-title nav-item text-muted">{{job.job_type}} ({{job.region}})</h6>
 			</div>
@@ -61,9 +61,9 @@
 		{% for job in category.jobs_per_category %}
 			<a href="{% url 'jobs:job-detail' job.id %}" style="color: #343a40; text-decoration: none;">
 				{% if job.is_featured %}
-					<div class="text-dark card-body-1 shadow-sm rounded py-3 mt-3 alert-primary border-left-primary"> 
+					<div class="card-body-1 shadow-sm rounded py-3 mt-3 border-left-warning"> 
 				{% else %}
-					<div class="text-dark card-body-1 shadow-sm rounded py-3 rounded mt-3 border-left-secondary"> 
+					<div class="card-body-1 shadow-sm rounded py-3 rounded mt-3 border-left-primary"> 
 				{% endif %}
 						<div class="float-right">
 								<img src="/media/{{job.get_job_company}}" alt="Responsive image" style="max-width: 100px">
@@ -71,7 +71,7 @@
 						<h6 class="card-title nav-item">{{job.get_company_name}}</h6>
 						<h5 class="card-title nav-item text-truncate" style="max-width: 700px;" >{{job.title}}
 							{% if job.is_featured %}
-								<span class="badge badge-primary float-right" style="font-size: medium; margin-right: 50px;"> Featured </span>
+								<span class="badge badge-warning float-right" style="font-size: medium; margin-right: 50px;"> Featured </span>
 							{% endif %}
 							<h6 class="small card-title nav-item text-muted">{{job.job_type}} ({{job.region}})</h6>
 						</h5>
