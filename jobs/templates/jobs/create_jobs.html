@@ -38,10 +38,9 @@
 											</div>
 											<div class="form-group col-md-6">
 												<h6>Job Type<span style="color:red;"> *</span></h6>
-												<input type="checkbox" id="fulltime_type" name="fulltime" class="job_type"> Fulltime
-												<input type="checkbox" id="contract_type" name="contract" class="job_type"> Contract
-												<input type="checkbox" id="project_type" name="project" class="job_type"> Project
-												<input type="hidden" name="job_type" id="job_type_id" value="">
+												<input type="checkbox" value="Fulltime" name="job_type"> Fulltime
+												<input type="checkbox" value="Contract" name="job_type"> Contract
+												<input type="checkbox" value="Project" name="job_type"> Project
 											</div>
 										</div>
 										<div class="card-title form-row">
@@ -159,21 +158,8 @@
 	    }
 	});
 
-	$('#fulltime_type, #contract_type, #project_type').on('click', function(){
-		var $fulltime_checked = $('#fulltime_type').is(':checked');
-		var $contract_checked = $('#contract_type').is(':checked');
-		var $project_checked = $('#project_type').is(':checked');
-		var job_type_selected = '';
-
-		if($fulltime_checked){
-			job_type_selected = 'Fulltime';
-		}else if($contract_checked){
-			job_type_selected = 'Contract';
-		}else if($project_checked){
-			job_type_selected = 'Project';
-		}
-
-		$("#job_type_id").val(job_type_selected);
+	$('input.job_type').on('change', function() {
+		$('input.job_type').not(this).prop('checked', false);
 	});
 
 	// $('#viewPreview').on('shown.bs.modal', function () {
