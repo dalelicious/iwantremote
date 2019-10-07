@@ -17,13 +17,13 @@
   </div>
   <ul class="list-unstyled list-inline text-center bg-dark-gradie">
     <li class="list-inline-item col-md-3">
-      <h5 class="text-uppercase">Subscribe to get weekly updates!<form class="input-group" method="POST" action="{% url 'subscriber:add-subscriber' %}">
+      <h6 class="text-uppercase">Get job alert as soon as they are posted!<form class="input-group" method="POST" action="{% url 'subscriber:add-subscriber' %}">
 										{% csrf_token %}
 										<input type="email" name="email" class="form-control form-control-md mt-2" placeholder="What's your email?" required>
 										<span class="input-group-append">
 											<button class="mt-2 btn btn-success btn-theme btn-md" type="submit">Subscribe</button>
 										</span>
-									</form> </h5>
+									</form> </h6>
     </li>
   </ul>
   <ul class="text-white-50 list-unstyled list-inline text-center">
