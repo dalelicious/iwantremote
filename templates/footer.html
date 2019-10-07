@@ -1,46 +1,54 @@
-<div class="sticky-bottom py-5 mt-5 text-white bg-dark-gradient">
-	<div class="row">
-		<div class="col-md-6 ml-auto offset-md-3">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-6">
-							<div class="single">
-								<h4>Subscribe to get weekly jobs</h4>
-									<form class="input-group" method="POST" action="{% url 'subscriber:add-subscriber' %}">
-										{% csrf_token %}
-										<input type="email" name="email" class="form-control form-control-md" placeholder="What's your email?" required>
-										<span class="input-group-append">
-											<button class="btn btn-success btn-theme btn-md" type="submit">Subscribe</button>
-										</span>
-									</form>
-							</div>
-						</div>	
-					</div>
-				</div>
-		</div>
-		<div class="col-4">
-			<h3>{{ all_jobs }} <span class="small">Jobs Posted</span></h3>
+<footer class="page-footer text-white font-small bg-dark pt-4 mt-5" style="padding-top: 50px">
+  <div class="container text-center text-md-left">
+    <div class="row">
+      <div class="col-md-4 mx-auto">
+        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Our Goal</h5>
+        <p>Helping employees and companies save money. It’s likely we’re about to see more remote jobs in the tech market.</p>
+      </div>
+      <div class="col-md-2 mx-auto">
+      </div>
+      <div class="col-md-2 mx-auto">
+        <h5 class="font-weight-bold text-uppercase mt-3 mb-2">{{ all_jobs }},212</h5>
+        <h3><span class="small mt-3 mb-4">Jobs Posted</span></h3>
 				<button class="btn btn-danger btn-md rounded" onclick="location.href='{% url 'jobs:create-job' %}'">Post a job today</button>
 		</div>
-	</div>
-</div>
-
-
-<div class="bg-light footer-copyright text-center text-dark-50 mt-2">
-	<div class="col small"><a href="\privacy\">Terms & Privacy</a> | <a href="mailto:info@iwantremote.com">Contact</a>
-		<div class="mt-2">
-                <button type="button" class="rounded-circle btn-sm btn-fb" onclick="location.href='https://www.facebook.com/IWantRemote-123799179009952'"><i class="fa fa-facebook-f pr-1"></i></button>
-                  <button type="button" class="rounded-circle btn-sm btn-slack">
-                    <i class="fa fa-slack"></i></button>
-                  <button type="button" class="rounded-circle btn-sm btn-tw" onclick="location.href='https://twitter.com/iwantremote'">
-                    <i class="fa fa-twitter"></i></button>
-                  <button type="button" class="rounded-circle btn-sm btn-tw">
-                    <i class="fa fa-linkedin"></i></button>
-                  <button type="button" class="rounded-circle btn-sm btn-tw">
-                    <i class="fa fa-pinterest"></i></button>
-                </button>
-          </div>
-	</div><h6 class="text-dark mt-2 small"> © 2019 Copyright</h6> 
-</div>
+      </div>
+    </div>
+  </div>
+  <ul class="list-unstyled list-inline text-center bg-dark-gradie">
+    <li class="list-inline-item col-md-3">
+      <h5 class="text-uppercase">Subscribe to get weekly updates!<form class="input-group" method="POST" action="{% url 'subscriber:add-subscriber' %}">
+										{% csrf_token %}
+										<input type="email" name="email" class="form-control form-control-md mt-2" placeholder="What's your email?" required>
+										<span class="input-group-append">
+											<button class="mt-2 btn btn-success btn-theme btn-md" type="submit">Subscribe</button>
+										</span>
+									</form> </h5>
+    </li>
+  </ul>
+  <ul class="text-white-50 list-unstyled list-inline text-center">
+    <!-- Facebook -->
+          <a href="https://www.facebook.com/IWantRemote-123799179009952" class="fb-ic" target="_blank">
+            <i class="fa fa-facebook-f fa-lg white-text mr-4"> </i>
+          </a>
+          <!-- Twitter -->
+          <a href="https://twitter.com/iwantremote" class="tw-ic" target="_blank">
+            <i class="fa fa-twitter fa-lg white-text mr-4"> </i>
+          </a>
+          <!-- Google +-->
+          <a href="" class="slack-ic">
+            <i class="fa fa-slack fa-lg white-text mr-4" target="_blank"> </i>
+          </a>
+          <!--Linkedin -->
+          <a href="" class="li-ic">
+            <i class="fa fa-linkedin fa-lg white-text mr-4" target="_blank"> </i>
+          </a>
+          <!--Pinterest-->
+          <a href="" class="pin-ic">
+            <i class="fa fa-pinterest fa-lg white-text" target="_blank"> </i>
+          </a>
+  </ul>
+  <div class="text-white-50 footer-copyright text-center">Copyright © 2019 </div>
+</footer>
 
 
