@@ -19,7 +19,7 @@
         <div class="card-body border-0">
           <h6 class="text-muted mt-5">Posted {{job.create_date|date:"M d"}}</h6>
           <a href="{% url 'company:company-detail' company.slugName %}">
-            <img src="/media/{{company.logo}}" class="float-right shadow-sm img-thumbnail" alt="Responsive image" style="max-width: 180px" style="max-height: 200px">
+            <img src="/media/{{company.logo}}" class="float-right shadow-sm img-thumbnail" alt="Responsive image" style="max-width: 130px" style="max-height: 130px">
           </a>
           <h2 class="card-title nav-item mt-4">{{job.title}}</h2>
           <p class="card-title nav-item text-dark-50">{{job.job_type}} ({{job.region}})

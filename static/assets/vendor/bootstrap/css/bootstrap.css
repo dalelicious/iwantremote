@@ -2055,6 +2055,7 @@ select.form-control:focus::-ms-value {
   font-size: 1.25rem;
   line-height: 1.5;
   border-radius: 0.3rem;
+  background-color: #f6f6f6;
 }
 
 select.form-control[size], select.form-control[multiple] {
@@ -2644,7 +2645,7 @@ fieldset:disabled a.btn {
   border-color: #10707f;
 }
 
-.tagsinput,.tagsinput *{box-sizing:border-box}
+
 .tagsinput{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;background:#fff;font-family:Open Sans;font-size:1.1rem;font-weight: 400;line-height:30px;color:#556270;padding:5px 5px 0;border:1px solid #ced4da;border-radius:3px}
 .tagsinput.focus{border-color:#ccc}
 .tagsinput .tag{position:relative;background:#007bff;display:block;max-width:100%;word-wrap:break-word;color:#fff;padding:5px 30px 5px 5px;border-radius:2px;margin:0 5px 5px 0}

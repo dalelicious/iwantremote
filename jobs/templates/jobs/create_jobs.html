@@ -36,11 +36,20 @@
 												{% endfor %}
 												</select>
 											</div>
-											<div class="custom-control custom-checkbox col-md-6">
+											<div class="custom-control custom-checkbox">
 												<h6>Job Type<span style="color:red;"> *</span></h6>
-												<input type="checkbox" value="Fulltime" name="job_type"> Fulltime
-												<input type="checkbox" value="Contract" name="job_type"> Contract
-												<input type="checkbox" value="Project" name="job_type"> Project
+												<div class="custom-control custom-radio custom-control-inline mt-2">
+												  <input type="radio" id="customRadioInline1" value="Fulltime" name="job_type" class="custom-control-input">
+												  <label class="custom-control-label" for="customRadioInline1">Fulltime</label>
+											</div>
+											<div class="custom-control custom-radio custom-control-inline">
+												  <input type="radio" id="customRadioInline2" value="Contract" name="job_type" class="custom-control-input">
+												  <label class="custom-control-label" for="customRadioInline2">Contract</label>
+											</div>
+											<div class="custom-control custom-radio custom-control-inline">
+												  <input type="radio" id="customRadioInline3" value="Project" name="job_type" class="custom-control-input">
+												  <label class="custom-control-label" for="customRadioInline3">Project</label>
+											</div>
 											</div>
 										</div>
 										<div class="card-title form-row">
@@ -48,9 +57,11 @@
 												<h6 for="card-title mt-3">Salary Range</h6>
 												<input type="text" name="salary" placeholder="e.g $40-50k/yr" class="form-control col-md-12 form-control-lg">
 											</div>
+											<div class="form-group col-md-6">
+												<h6 for="card-title mt-3">Tags</h6>
+												<input name="tags" class="form-control form-control-lg"id="form-tags-1">
+											</div>
 										</div>
-										<div class="card-title">Tags<span style="color:red;"> *</span></div>
-										<input name="tags" id="form-tags-1">
 										<div class="card-title mt-3 form-row">
 											<div class="form-group col-md-6">
 												<h6 for="card-title mt-3">Headquarters<span style="color:red;"> *</span></h6>
