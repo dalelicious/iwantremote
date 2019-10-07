@@ -2,30 +2,40 @@
 
 {% block content_additions %}
 
-<div class="jumbotron-fluid">
-  <div class="row">
-    <div class="col-lg-12 text-center mt-5">
-      <h1 class="mb-4">Blogs we &#10084;</h1>
-      </ul>
-    </div>
-  </div>
-</div>
-
- <div class="container col-sm-8">
-      {% for blog in blog_list %}
-      <div class="card shadow-sm mb-4 border">
-        <img class="card-img-top mb-1 p-1 jumbotron-fluid" src="/media/{{blog.blog_image}}" alt="Card image cap">
-        <div class="card-body">
-          <h2 class="card-title">{{blog.title}}</h2>
-          <p class="card-text">{{blog.content}}</p>
-          <a href="{% url 'resources:blog-detail' blog.id %}" class="btn btn-primary">Read More</a>
-        </div>
-        <div class="card-footer text-muted">
-          Posted on {{blog.create_date}}
+<header class="masthead" style="background-image: url('/static/images/home-bg.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>Blogs we love</h1>
+            <span class="subheading"></span>
+          </div>
         </div>
       </div>
-      {% endfor %}
-  </div>
- </div>
+    </div>
+  </header>
 
-{% endblock %}
+{% for blog in blog_list %}
+ <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="post-preview">
+          <a href="{% url 'resources:blog-detail' blog.id %}">
+            <h2 class="post-title">
+             {{blog.title}}
+            </h2>
+            <h3 class="post-subtitle">
+              {{blog.content}}
+            </h3>
+          </a>
+          <p class="post-meta">Posted by
+            <a href="#">{{blog.author}}</a>
+            {{blog.create_date}}</p>
+        </div>
+        <hr>
+      </div>
+    </div>
+  </div>
+   {% endfor %}
+  {% endblock %}

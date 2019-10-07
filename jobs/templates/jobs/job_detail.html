@@ -30,7 +30,7 @@
             <span class="float-right" style="color:black;"><img src="/static/assets/vendor/iconic/png/arrow-right-2x.png"> View all jobs</span>
           </a>
           {% for tag in job.get_job_tags %}
-            <h5 class="badge badge-pill badge-secondary"> {{tag}} </h5>
+            <h4 class="badge badge-secondary"> {{tag}} </h4>
           {% endfor %}
           <div class="row">
               <div class="col"><hr></div>
@@ -41,9 +41,13 @@
             {{job.description|safe}}
           </p>
           <div class="float-left mt-2">
-                Share this job: <br><button type="button" class="btn btn-dark btn-md btn-linkedin"><i class="fa fa-linkedin"></i></button>
+                Share this job: <br>
+                <ul class="list-unstyled">
+                <button type="button" class="btn btn-dark btn-md btn-linkedin"><li class="fa fa-linkedin"></li></button>
+                <button type="button" class="btn btn-dark btn-md btn-facebook"><i class="fa fa-facebook"></i></button>
                 <button type="button" class="btn btn-dark btn-md btn-twitter"><i class="fa fa-twitter"></i></button>
                 <button type="button" class="btn btn-dark btn-md btn-slack"><i class="fa fa-slack"></i></button>
+              </ul>
           </div>
           <div class="float-right mt-4">
               <div class="col"></div>

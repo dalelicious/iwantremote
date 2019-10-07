@@ -6,7 +6,7 @@
         <p>Helping employees and companies save money. It’s likely we’re about to see more remote jobs in the tech market.</p>
       </div>
       <div class="col-md-4 mx-auto">
-        <h5 class="text-uppercase font-weight-bold text-uppercase mt-3 mb-5">Subscribe to get weekly updates<form class="input-group" method="POST" action="{% url 'subscriber:add-subscriber' %}"> 
+        <h6 class="text-uppercase font-weight-bold text-uppercase mt-3 mb-5">Subscribe to get weekly updates<form class="input-group" method="POST" action="{% url 'subscriber:add-subscriber' %}"> 
                     {% csrf_token %}
                     <input type="email" name="email" class="form-control form-control-md mt-3" placeholder="What's your email?" required>
                     <span class="input-group-append">
@@ -45,8 +45,9 @@
           <a href="" class="pin-ic">
             <i class="fa fa-pinterest fa-lg white-text" target="_blank"> </i>
           </a>
+           <div class="text-white-50 footer-copyright text-center mt-1">Copyright © 2019 </div>
   </ul>
-  <div class="text-white-50 footer-copyright text-center">Copyright © 2019 </div>
+ 
 </footer>
 
 
