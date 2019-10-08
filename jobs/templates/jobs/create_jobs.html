@@ -32,7 +32,7 @@
 												<h6 for="card-title mt-3">Category<span style="color:red;"> *</span></h6>
 												<select name="category" class="form-control col-md-12 form-control-lg">
 												{% for category in category_list %}
-													<option id="jobCategory" value="{{category.slugCatName}}">{{category.name}}</option>
+													<option value="{{category.slugCatName}}">{{category.name}}</option>
 												{% endfor %}
 												</select>
 											</div>
@@ -59,13 +59,13 @@
 											</div>
 											<div class="form-group col-md-6">
 												<h6 for="card-title mt-5">Tags</h6>
-												<input name="tags" class="form-control form-control-lg" id="form-tags-1">
+												<input id="form-tags-1" name="tags" class="form-control form-control-lg">
 											</div>
 										</div>
 										<div class="card-title mt-5 form-row">
 											<div class="form-group col-md-6">
 												<h6 for="card-title mt-5">Headquarters<span style="color:red;"> *</span></h6>
-												<input id="jobHeadquarters" type="text" name="headquarters" class="form-control col-md-12 form-control-lg">
+												<input type="text" name="headquarters" class="form-control col-md-12 form-control-lg">
 												<p class="text-muted">Location of your company</p>
 											</div>
 											<div class="form-group col-md-6">
@@ -75,7 +75,7 @@
 											</div>
 										</div>
 										<h6 class="card-title" >Apply Link<span style="color:red;">*</span></h6>
-										<input id="jobLink" type="text" name="link" class="form-control form-control-lg col-md-12" style="background: #f6f6f6">
+										<input type="text" name="link" class="form-control form-control-lg col-md-12" style="background: #f6f6f6">
 										<p class="text-muted">Example: https://mybusiness.com/careers/apply or employee@email.com</p>
 										<h6 class="card-title mt-5">Job Description<span style="color:red;"> *</span></h6>
 										<textarea id="jobDescription" name="job_description" rows="6"></textarea>
@@ -88,7 +88,7 @@
 										<br>
 										<h6 for="card-title">Company Logo<span style="color:red;"> *</span></h6>
 										<div class="custom-file">
-											<input type="file" name="logo" class="custom-file-input" id="customFile">
+											<input id="customFile" type="file" name="logo" class="custom-file-input">
 											<label class="custom-file-label text-center form-control form-control-lg" for="customFile" style="background: #f6f6f6"> Upload Logo </label>
 											<p class="text-muted mt-2">It’s highly recommended to use your Twitter or Facebook avatar.</p>
 										</div>
@@ -172,19 +172,19 @@
 
 	$(document).ready(function () {
 		$('#page-button').click(function () {
+			// var jobCreateDate = date here
 			var jobTitle = $('#jobTitle').val();
+			// var jobType = jobtype here
 			var jobSalary = $('#jobSalary').val();
 			var jobTags = $('#form-tags-1').val();
-			var jobHeadquarters = $('#jobHeadquarters').val();
 			var jobRegion = $('#jobRegion').val();
-			var jobRegion = $('#jobLink').val();
 			var jobDescription = $('#jobDescription').val();
+			var jobCompLogo = $('#customFile').val();
 			$('.modal-body').html("<p>"+jobTitle+"</p>"+"<input type='text' value='"+jobTitle+"'/>"+
 								  "<p>"+jobSalary+"</p>"+"<input type='text' value='"+jobSalary+"'/>"+
 								  "<p>"+jobTags+"</p>"+"<input type='text' value='"+jobTags+"'/>"+
-								  "<p>"+jobHeadquarters+"</p>"+"<input type='text' value='"+jobHeadquarters+"'/>"+
 								  "<p>"+jobRegion+"</p>"+"<input type='text' value='"+jobRegion+"'/>"+
-								  "<p>"+jobLink+"</p>"+"<input type='text' value='"+jobLink+"'/>"+
+								  "<p>"+jobCompLogo+"</p>"+"<input type='text' value='"+jobCompLogo+"'/>"+
 								  "<p>"+jobDescription+"</p>"+"<input type='text' value='"+jobDescription+"'/>");
 		});
 	});

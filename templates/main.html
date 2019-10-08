@@ -50,8 +50,20 @@
   {% include "footer.html" %}
   <!-- End Footer -->
 
-  <script src="https://cdn.tiny.cloud/1/lond5886rwmouepnyyoq78pqbdeq9m9fudcqe1u36owg8rnu/tinymce/5/tinymce.min.js"></script>
-  <script>tinymce.init({selector:'textarea'});</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/5.0.16/tinymce.min.js"></script>
+<!--   <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/5.0.16/plugins/advlist/plugin.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/5.0.16/plugins/advlist/plugin.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/5.0.16/plugins/lists/plugin.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/5.0.16/plugins/lists/plugin.min.js"></script> -->
+  <script>
+    tinymce.init({
+        selector:'textarea'
+        // plugins:['lists advlist'],
+        // toolbar: [
+        //   'bold italic | link image | alignleft aligncenter alignright | bullist numlist outdent indent',
+        // ]
+    });
+  </script>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
