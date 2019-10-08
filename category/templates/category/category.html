@@ -15,14 +15,14 @@
 </div>
 <div class="container col-sm-7 mt-4">
 	<div class="card border-0">
-		<h5 class="text-dark mt-2"><img src="/media/{{categories.cat_image}}" class="img-fluid" alt="Responsive image" width="55">{{categories.name}} <span class="small">({{categories.total_jobs_per_category}})</a></span>
+		<h5 class="text-dark mt-2"><img src="/media/{{categories.cat_image}}" class="img-fluid" alt="Responsive image" width="40">{{categories.name}} <span class="small">({{categories.total_jobs_per_category}})</a></span>
 		</h5>
 		{% for job in jobs_list %}
 			<a href="{% url 'jobs:job-detail' job.slugTitle %}" style="color: #343a40; text-decoration: none;">
 			{% if job.is_featured %}
-				<div class="card-body-1 box shadow-sm rounded py-3 mt-3 border-left-warning"> 
+				<div class="card-body-1 box rounded py-3 mt-3 border-left-warning"> 
 			{% else %}
-				<div class="card-body-1 box shadow-sm rounded border-left-primary py-3 mt-3"> 
+				<div class="card-body-1 box rounded border-left-primary py-3 mt-3"> 
 			{% endif %} 
 					<div class="float-right">
 							<img src="/media/{{job.get_job_company}}" alt="Responsive image" style="max-width: 100px">

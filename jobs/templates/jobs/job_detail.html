@@ -2,10 +2,10 @@
 
 {% block content_additions %}
 
-<div class="jumbotron bg-dark-gradient row justify-content-md-center py-3">
+<div class="jumbotron border-bottom row justify-content-md-center py-3">
   <div class="col-sm-8">
     <div class="container">
-    <h3 class="card-title nav-item text-center text-white mt-3" style="color: white"><span class="text-muted"></span>{{category_name}}</h3>
+    <h1 class="card-title nav-item text-center text-dark mt-3" style="color: white"><span class="text-muted"></span>{{category_name}} Jobs</h1>
   </div>
   </div>
 </div>
@@ -19,15 +19,18 @@
         <div class="card-body border-0">
           <h6 class="text-muted mt-5">Posted {{job.create_date|date:"M d"}}</h6>
           <a href="{% url 'company:company-detail' company.slugName %}">
-            <img src="/media/{{company.logo}}" class="float-right shadow-sm img-thumbnail" alt="Responsive image" style="max-width: 180px" style="max-height: 200px">
+            <img src="/media/{{company.logo}}" class="float-right shadow-sm img-thumbnail" alt="Responsive image" style="max-width: 130px" style="max-height: 130px">
           </a>
-          <h1 class="card-title nav-item mt-4">{{job.title}}</h1>
-          <p class="card-title nav-item text-dark ">{{job.job_type}} ({{job.region}})
+          <h2 class="card-title nav-item mt-4">{{job.title}}</h2>
+          <p class="card-title nav-item text-dark-50">{{job.job_type}} ({{job.region}})
           </p>
-          <p class="card-title nav-item text-dark-50 ">Salary: {{job.salary}}
+          <p class="card-title nav-item text-dark-50">Salary: {{job.salary}}
           </p>
+          <a href="{% url 'company:company-detail' company.slugName %}">
+            <span class="float-right" style="color:black;"><img src="/static/assets/vendor/iconic/png/arrow-right-2x.png"> View all jobs</span>
+          </a>
           {% for tag in job.get_job_tags %}
-            <h5 class="badge badge-pill badge-secondary"> {{tag}} </h5>
+            <h4 class="badge badge-secondary"> {{tag}} </h4>
           {% endfor %}
           <div class="row">
               <div class="col"><hr></div>
@@ -37,14 +40,19 @@
           <p class="card-text">
             {{job.description|safe}}
           </p>
-          <div class="float-left mt-4">
-                Share this job: <br><button type="button" class="btn btn-primary btn-sm btn-linkedin"><i class="fa fa-linkedin pr-1"></i></button>
-                <button type="button" class="btn btn-primary btn-sm btn-twitter"><i class="fa fa-twitter pr-1"></i></button>
+          <div class="float-left mt-2">
+                Share this job: <br>
+                <ul class="list-unstyled">
+                <button type="button" class="btn btn-dark btn-md btn-linkedin"><li class="fa fa-linkedin"></li></button>
+                <button type="button" class="btn btn-dark btn-md btn-facebook"><i class="fa fa-facebook"></i></button>
+                <button type="button" class="btn btn-dark btn-md btn-twitter"><i class="fa fa-twitter"></i></button>
+                <button type="button" class="btn btn-dark btn-md btn-slack"><i class="fa fa-slack"></i></button>
+              </ul>
           </div>
-          <div class="float-right mt-5">
+          <div class="float-right mt-4">
               <div class="col"></div>
               <div class="col-auto">
-                  <button type="button" class="btn btn-danger btn-lg rounded" onclick="location.href='{{job.link}}'">Apply for this Position</button></div>
+                  <button type="button" class="btn btn-danger btn-md rounded" onclick="location.href='{{job.link}}'">Apply for this Position</button></div>
               <div class="col"></div>
           </div>
               <div class="container justify-content-md-center">

@@ -2,22 +2,53 @@
 
 {% block content_additions %}
 
-<div class="container">
-<div class="row">
-  <div class="col-lg-8">
-    <h1 class="mt-4">{{blog.title}}</h1>
-    <p>Posted on {{blog.create_date}}</p>
-    <hr>
-      <img class="img-fluid rounded" src="/media/{{blog.blog_image}}" alt="Responsive image">
-    <hr>
-    <p class="lead"><p>{{blog.content}}</p>
-      <hr>
+<header class="masthead" style="background-image: url('/media/images/resources/getty_543265518_403059.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>{{blog.title}}</h1>
+            <span class="meta">Posted by
+              <a href="#">{{blog.author}}</a>
+              {{blog.create_date}}</span>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-  </div>
-</div>
-</div>
+  </header>
+
+<article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <p>{{blog.content}}</p>
+
+          <h2 class="section-heading">The Final Frontier</h2>
+
+          <p>There can be no thought of finishing for ‘aiming for the stars.’ Both figuratively and literally, it is a task to occupy the generations. And no matter how much progress one makes, there is always the thrill of just beginning.</p>
+
+          <p>There can be no thought of finishing for ‘aiming for the stars.’ Both figuratively and literally, it is a task to occupy the generations. And no matter how much progress one makes, there is always the thrill of just beginning.</p>
+
+          <blockquote class="blockquote">The dreams of yesterday are the hopes of today and the reality of tomorrow. Science has not yet mastered prophecy. We predict too much for the next year and yet far too little for the next ten.</blockquote>
+
+          <p>Spaceflights cannot be stopped. This is not the work of any one man or even a group of men. It is a historical process which mankind is carrying out in accordance with the natural laws of human development.</p>
+
+          <h2 class="section-heading">Reaching for the Stars</h2>
+
+          <p>As we got further and further away, it [the Earth] diminished in size. Finally it shrank to the size of a marble, the most beautiful you can imagine. That beautiful, warm, living object looked so fragile, so delicate, that if you touched it with a finger it would crumble and fall apart. Seeing this has to change a man.</p>
+
+          <a href="#">
+            <img class="img-fluid" src="img/post-sample-image.jpg" alt="">
+          </a>
+          <span class="caption text-muted">To go places and do things that have never been done before – that’s what living is all about.</span>
+
+          <p>Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds, to seek out new life and new civilizations, to boldly go where no man has gone before.</p>
+            
+        </div>
+      </div>
+    </div>
+  </article>
 
 {% endblock %}
 
