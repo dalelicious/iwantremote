@@ -21,18 +21,18 @@
 							<div class="card">
 								<h4 class="card-header bg-dark text-white text-center">Step 1. Create a Job</h4>
 								<div class="card-body shadow">
-									<form method="post" action="{% url 'jobs:create-job' %}" enctype="multipart/form-data">
-										{% csrf_token %}
+									<!-- <form method="post" action="{% url 'jobs:create-job' %}" enctype="multipart/form-data">
+										{% csrf_token %} -->
 										<h6 class="required-field float-right">Required Fields <span style="color:red;">*</span></h6>
 										<h3 class="card-title nav-item">Tell us about your job</h3>
 										<h6 class="card-title mt-3">Position<span style="color:red;"> *</span></h6>
-										<input type="text" id="textbox" name="title" placeholder="e.g Software Engineer" class="form-control form-control-lg col-md-12" style="background-color: #f6f6f6;">
+										<input type="text" id="jobTitle" name="title" placeholder="e.g Software Engineer" class="form-control form-control-lg col-md-12" style="background-color: #f6f6f6;">
 										<div class="card-title mt-3 form-row">
 											<div class="form-group col-md-6">
 												<h6 for="card-title mt-3">Category<span style="color:red;"> *</span></h6>
 												<select name="category" class="form-control col-md-12 form-control-lg">
 												{% for category in category_list %}
-													<option value="{{category.slugCatName}}">{{category.name}}</option>
+													<option id="jobCategory" value="{{category.slugCatName}}">{{category.name}}</option>
 												{% endfor %}
 												</select>
 											</div>
@@ -55,30 +55,30 @@
 										<div class="card-title form-row">
 										<div class="form-group col-md-6">
 												<h6 for="card-title mt-5">Salary Range</h6>
-												<input type="text" name="salary" placeholder="e.g $40-50k/yr" class="form-control col-md-12 form-control-lg">
+												<input type="text" id="jobSalary" name="salary" placeholder="e.g $40-50k/yr" class="form-control col-md-12 form-control-lg">
 											</div>
 											<div class="form-group col-md-6">
 												<h6 for="card-title mt-5">Tags</h6>
-												<input name="tags" class="form-control form-control-lg"id="form-tags-1">
+												<input name="tags" class="form-control form-control-lg" id="form-tags-1">
 											</div>
 										</div>
 										<div class="card-title mt-5 form-row">
 											<div class="form-group col-md-6">
 												<h6 for="card-title mt-5">Headquarters<span style="color:red;"> *</span></h6>
-												<input type="text" name="headquarters" class="form-control col-md-12 form-control-lg">
+												<input id="jobHeadquarters" type="text" name="headquarters" class="form-control col-md-12 form-control-lg">
 												<p class="text-muted">Location of your company</p>
 											</div>
 											<div class="form-group col-md-6">
 												<h6>Regional Restrictions <span style="color:red;"> *</span></h6>
-												<input type="text" name="region" class="form-control form-control-lg">
+												<input id="jobRegion" type="text" name="region" class="form-control form-control-lg">
 												<p class="text-muted">Example: “North America Only”,   “P.S.T. Only”</p>
 											</div>
 										</div>
 										<h6 class="card-title" >Apply Link<span style="color:red;">*</span></h6>
-										<input type="text" name="link" class="form-control form-control-lg col-md-12" style="background: #f6f6f6">
+										<input id="jobLink" type="text" name="link" class="form-control form-control-lg col-md-12" style="background: #f6f6f6">
 										<p class="text-muted">Example: https://mybusiness.com/careers/apply or employee@email.com</p>
 										<h6 class="card-title mt-5">Job Description<span style="color:red;"> *</span></h6>
-										<textarea name="job_description" rows="6"></textarea>
+										<textarea id="jobDescription" name="job_description" rows="6"></textarea>
 										<h3 class="card-title nav-item mt-5">Tell us about your Company</h3>
 										<h6 class="card-title mt-4">Name<span style="color:red;"> *</span></h6>
 										<input type="text" name="company_name" class="form-control form-control-lg col-md-12" style="background: #f6f6f6">
@@ -119,9 +119,9 @@
 												<input type="checkbox" id="is_featured" name="featured"> Feature this job for <span class="badge badge-pill badge-primary">$29 only.</span>
 											</div>
 										</div>
-										<!-- <button class="btn-lg btn-danger mt-3" id="page-button" data-toggle="modal" data-target="#myModal">Next: Preview Ad post</button> -->
-										<button type="submit" name="create" class="btn-lg btn-danger mt-3">Next: Preview Ad post</button>
-									</form>
+										<button class="btn-lg btn-danger mt-3" id="page-button" data-toggle="modal" data-target="#myModal">Next: Preview Ad post</button>
+										<!-- <button type="submit" name="create" class="btn-lg btn-danger mt-3">Next: Preview Ad post</button>
+									</form> -->
 								</div>
 							</div>
 						</div>
@@ -132,7 +132,7 @@
 	</div>
 </section>
 
-<!-- <div class="modal hide fade text-left" tabindex="-1" role="dialog" id="myModal" aria-labelledby="myModalLabel1" aria-hidden="true">
+<div class="modal hide fade text-left" tabindex="-1" role="dialog" id="myModal" aria-labelledby="myModalLabel1" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -142,7 +142,6 @@
                 </button>
             </div>
             <div class="modal-body">
-            	<input id="modal-text" type="text">
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary" data-dismiss="modal">No</button>
@@ -150,7 +149,7 @@
             </div>
         </div>
     </div>
-</div> -->
+</div>
 
 {% endblock %}
 
@@ -171,12 +170,24 @@
 		$('input.job_type').not(this).prop('checked', false);
 	});
 
-	// $(document).ready(function () {
-	// 	$('#page-button').click(function () {
-	// 		$('#modal-text').val($('#textbox').val());
-	// 		$('#textbox').val("");
-	// 	});
-	// });
+	$(document).ready(function () {
+		$('#page-button').click(function () {
+			var jobTitle = $('#jobTitle').val();
+			var jobSalary = $('#jobSalary').val();
+			var jobTags = $('#form-tags-1').val();
+			var jobHeadquarters = $('#jobHeadquarters').val();
+			var jobRegion = $('#jobRegion').val();
+			var jobRegion = $('#jobLink').val();
+			var jobDescription = $('#jobDescription').val();
+			$('.modal-body').html("<p>"+jobTitle+"</p>"+"<input type='text' value='"+jobTitle+"'/>"+
+								  "<p>"+jobSalary+"</p>"+"<input type='text' value='"+jobSalary+"'/>"+
+								  "<p>"+jobTags+"</p>"+"<input type='text' value='"+jobTags+"'/>"+
+								  "<p>"+jobHeadquarters+"</p>"+"<input type='text' value='"+jobHeadquarters+"'/>"+
+								  "<p>"+jobRegion+"</p>"+"<input type='text' value='"+jobRegion+"'/>"+
+								  "<p>"+jobLink+"</p>"+"<input type='text' value='"+jobLink+"'/>"+
+								  "<p>"+jobDescription+"</p>"+"<input type='text' value='"+jobDescription+"'/>");
+		});
+	});
 
 </script>
 
