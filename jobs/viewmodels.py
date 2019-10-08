@@ -31,7 +31,7 @@ class JobsViewModel():
 		""" Get job search results
 		"""
 
-		jobs_list = Jobs.objects.filter(title__icontains=search)
+		jobs_list = Jobs.objects.filter(title__icontains=search, is_active=True).order_by('-create_date')
 
 		return jobs_list
 
