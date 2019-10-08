@@ -6,9 +6,9 @@
 	<div class="row">
 		<div class="col-lg-12 text-center mt-5">
 			<img src="/static/images/laptop.png" class="img-fluid" alt="Responsive image" width="250">
-			<h2 class="mt-2 text-dark">Find remote jobs in <u class="list-unstyled"> {{ categories.name }}</u></h2>
+			<h3 class="mt-2 text-dark">Find remote jobs in <u class="list-unstyled"> {{ categories.name }}</u></h3>
 			<ul class="list-unstyled">
-				<button class="btn btn-danger mt-4 btn-lg rounded" onclick="location.href='{% url 'jobs:create-job' %}'">Post a job for $199</button>
+				<button class="btn btn-danger mt-4 btn-md rounded" onclick="location.href='{% url 'jobs:create-job' %}'">Post a job for $199</button>
 			</ul>
 		</div>
 	</div>
@@ -25,7 +25,7 @@
 				<div class="card-body-1 box rounded border-left-primary py-3 mt-3"> 
 			{% endif %} 
 					<div class="float-right">
-							<img src="/media/{{job.get_job_company}}" alt="Responsive image" style="max-width: 100px">
+							<img src="/media/{{job.get_job_company}}" alt="Responsive image" style="max-width: 50px">
 					</div>
 					<span class="text-muted small" style="z-index:15;position:relative; left:-30px; top:-10px">{{job.create_date|date:"M d"}}</span>
 					<h6 class="card-title nav-item">{{job.get_company_name}}</h6>
