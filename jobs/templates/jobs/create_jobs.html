@@ -25,9 +25,9 @@
 										{% csrf_token %}
 										<h6 class="required-field float-right">Required Fields <span style="color:red;">*</span></h6>
 										<h3 class="card-title nav-item">Tell us about your job</h3>
-										<h6 class="card-title mt-4">Position<span style="color:red;"> *</span></h6>
-										<input type="text" id="title" name="title" placeholder="e.g Software Engineer" class="form-control form-control-lg col-md-12" style="background-color: #f6f6f6;">
-										<div class="card-title mt-5 form-row">
+										<h6 class="card-title mt-3">Position<span style="color:red;"> *</span></h6>
+										<input type="text" id="textbox" name="title" placeholder="e.g Software Engineer" class="form-control form-control-lg col-md-12" style="background-color: #f6f6f6;">
+										<div class="card-title mt-3 form-row">
 											<div class="form-group col-md-6">
 												<h6 for="card-title mt-3">Category<span style="color:red;"> *</span></h6>
 												<select name="category" class="form-control col-md-12 form-control-lg">
@@ -119,6 +119,7 @@
 												<input type="checkbox" id="is_featured" name="featured"> Feature this job for <span class="badge badge-pill badge-primary">$29 only.</span>
 											</div>
 										</div>
+										<!-- <button class="btn-lg btn-danger mt-3" id="page-button" data-toggle="modal" data-target="#myModal">Next: Preview Ad post</button> -->
 										<button type="submit" name="create" class="btn-lg btn-danger mt-3">Next: Preview Ad post</button>
 									</form>
 								</div>
@@ -131,8 +132,7 @@
 	</div>
 </section>
 
-
-<!-- <div class="modal hide fade text-left" tabindex="-1" role="dialog" id="viewPreview" aria-labelledby="myModalLabel1" aria-hidden="true">
+<!-- <div class="modal hide fade text-left" tabindex="-1" role="dialog" id="myModal" aria-labelledby="myModalLabel1" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -142,7 +142,7 @@
                 </button>
             </div>
             <div class="modal-body">
-            	<input type="text" name="jobTitle" id="jobTitle">
+            	<input id="modal-text" type="text">
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary" data-dismiss="modal">No</button>
@@ -157,8 +157,6 @@
 {% block page_vendor_js_additions %}
 
 <script type="text/javascript">
-
-	$('#editor').wysiwyg();
 	
 	$("#is_featured").click(function () {
 	    if ($(this).prop("checked")) {
@@ -173,10 +171,13 @@
 		$('input.job_type').not(this).prop('checked', false);
 	});
 
-	// $('#viewPreview').on('shown.bs.modal', function () {
-	// 	var myTitle = $(this).data('title');
-	// 	$(".modal-body #jobTitle").val(myTitle);
+	// $(document).ready(function () {
+	// 	$('#page-button').click(function () {
+	// 		$('#modal-text').val($('#textbox').val());
+	// 		$('#textbox').val("");
+	// 	});
 	// });
+
 </script>
 
 {% endblock %}
