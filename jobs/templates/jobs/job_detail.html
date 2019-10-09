@@ -55,14 +55,14 @@
         <li><img src="/static/assets/vendor/iconic/png/map-marker-2x.png"> {{job.headquarters}}</li>
         <li><img src="/static/assets/vendor/iconic/png/check-2x.png"> Jobs Posted: {{all_jobs}}</li>
         <li>
-          <button type="button" class="mt-2 btn btn-primary shadow-sm border btn-sm rounded" onclick="location.href='{% url 'company:company-detail' company.slugName %}'">View company</button>
+          <button type="button" class="mt-2 btn btn-primary shadow-sm border-0 btn-sm rounded" onclick="location.href='{% url 'company:company-detail' company.slugName %}'">View company</button>
         </li>
       </ul>
     </div>
     <div class="text-center text-dark alert alert-primary mt-3"> 
       <h6 class="text-dark-50">Help us maintain the quality of jobs posted on iWantRemote. <br><br> Is this job not remote?</h6>
       <ul class="list-unstyled">
-        <button type="button" class="mt-2 btn btn-primary btn-sm shadow-sm border rounded" onclick="location.href='{% url 'feedback:feedback' %}'">Let us know</button>
+        <button type="button" class="mt-2 btn btn-primary border-0 btn-sm shadow-sm rounded" onclick="location.href='{% url 'feedback:feedback' %}'">Let us know</button>
       </ul>
     </div>
     <div class="text-center rounded mt-4"> 
