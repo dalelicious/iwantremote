@@ -204,7 +204,7 @@ background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
 }
 
 .border-left-primary {
-  border-left: 0.25rem solid #4e73df !important;
+  border-left: 0.25rem solid #007bff !important;
 }
 
 .border-bottom-primary {
@@ -2588,8 +2588,8 @@ fieldset:disabled a.btn {
 }
 
 .card-body-1 {
-  padding: 40px; /* JUST TO LOOK COOL */
-  border: 1px solid #eee;  /* JUST TO LOOK COOL */
+  padding: 50px; /* JUST TO LOOK COOL */
+  border: 2px solid #eee;  /* JUST TO LOOK COOL */
   box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px;
   transition: all .2s ease-in-out;
 }
