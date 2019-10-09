@@ -25,7 +25,7 @@
 				<div class="card-body-1 box rounded border-left-secondary py-3 mt-3"> 
 			{% endif %} 
 					<div class="float-right">
-							<img src="/media/{{job.get_job_company}}" alt="Responsive image" style="max-width: 50px">
+							<img src="/media/{{job.get_job_company}}" alt="Responsive image" style="max-width: 100px;">
 					</div>
 					<span class="text-muted small" style="z-index:15;position:relative; left:-30px; top:-10px">{{job.create_date|date:"M d"}}</span>
 					<h6 class="card-title nav-item">{{job.get_company_name}}</h6>
@@ -34,8 +34,6 @@
 							<span class="text-white badge badge-primary float-right" style="font-size: medium; margin-right: 50px;"> Featured</span>
 						{% endif %} </h5>
 						<h6 class="small card-title nav-item text-muted">{{job.job_type}} ({{job.headquarters}})</h6>
-					</h5>
-				</h5>
 				</div>
 		</a>
 		{% endfor %}

@@ -154,7 +154,7 @@ sup {
 }
 
 a {
-  color: #fff;
+  color: blue;
   text-decoration: none;
   background-color: transparent;
 }
@@ -2595,7 +2595,7 @@ fieldset:disabled a.btn {
 }
 
 .card-body-1:hover {
-  box-shadow: rgba(0, 0, 0, 0.22) 2px 19px 43px;
+  box-shadow: 0 0.325rem 0.35rem rgba(0, 0, 0, 0.15) !important;
   transform: translate3d(0px, -4px, 0px);
 }
 
@@ -5280,7 +5280,7 @@ a.badge-danger:focus, a.badge-danger.focus {
 
 .badge-light {
   color: #212529;
-  background-color: #f8f9fa;
+  background-color: #fff;
 }
 
 a.badge-light:hover, a.badge-light:focus {

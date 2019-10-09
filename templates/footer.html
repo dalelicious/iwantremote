@@ -8,9 +8,9 @@
       <div class="col-md-4 mx-auto">
         <h5 class="text-uppercase text-uppercase mt-3">Subscribe to get weekly updates<form class="input-group rounded" method="POST" action="{% url 'subscriber:add-subscriber' %}"> 
                     {% csrf_token %}
-                    <input type="email" name="email" class="form-control form-control-md mt-3" placeholder="What's your email?" required>
+                    <input type="email" name="email" class="form-control form-control-md mt-4" placeholder="What's your email?" required>
                     <span class="input-group-append">
-                      <button class="text-white mt-3 border-0 bg-primary btn btn-dark btn-md" type="submit">Subscribe</button>
+                      <button class="text-white mt-4 border-0 bg-primary btn btn-dark btn-md" type="submit">Subscribe</button>
                     </span>
                   </form> 
                   </h5>
@@ -25,26 +25,21 @@
   </div>
 </h6>
   <hr>
-  <ul class="text-white-50  list-inline text-center">
-    <!-- Facebook -->
-          <a href="https://www.facebook.com/iwantremote" class="fb-ic" target="_blank">
+  <ul class="text-white-50 list-inline text-center">
+          <a href="https://www.facebook.com/iwantremote" class="fb-ic" target="_blank" style="color: white;">
             <i class="fa fa-facebook-f fa-lg white-text mr-4"> </i>
           </a>
-          <!-- Twitter -->
-          <a href="https://twitter.com/iwantremote" class="tw-ic" target="_blank">
+          <a href="https://twitter.com/iwantremote" class="tw-ic" target="_blank" style="color: white;">
             <i class="fa fa-twitter fa-lg white-text mr-4"> </i>
           </a>
-          <!-- Google +-->
           <a href="" class="slack-ic">
-            <i class="fa fa-slack fa-lg white-text mr-4" target="_blank"> </i>
+            <i class="fa fa-slack fa-lg white-text mr-4" target="_blank" style="color: white;"> </i>
           </a>
-          <!--Linkedin -->
           <a href="" class="li-ic">
-            <i class="fa fa-linkedin fa-lg white-text mr-4" target="_blank"> </i>
+            <i class="fa fa-linkedin fa-lg white-text mr-4" target="_blank" style="color: white;"> </i>
           </a>
-          <!--Pinterest-->
           <a href="" class="pin-ic">
-            <i class="fa fa-pinterest fa-lg white-text" target="_blank"> </i>
+            <i class="fa fa-pinterest fa-lg white-text" target="_blank" style="color: white;"> </i>
           </a>
   </ul>
    <div class="text-white-50 footer-copyright text-center">Copyright © 2019 </div>
