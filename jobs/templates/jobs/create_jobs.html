@@ -6,7 +6,7 @@
 	<div class="row">
 		<div class="col-lg-12 text-center mt-5">
 			<img src="/static/images/community.png" class="img-fluid" alt="Responsive image" width="250">
-			<h2 class="mt-2 text-dark">Reach <span class="badge badge-danger">millions</span> of remote tech workers.</h2>
+			<h3 class="mt-2 text-dark">Reach <span class="badge badge-danger">millions</span> of remote tech workers.</h3>
 		</div>
 	</div>
 </div>
@@ -19,12 +19,12 @@
 					<div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
 						<div class="container mt-3">
 							<div class="card">
-								<h4 class="card-header bg-dark text-white text-center">Step 1. Create a Job</h4>
+								<h5 class="card-header bg-dark text-white text-center">Step 1. Create a Job</h5>
 								<div class="card-body shadow">
 									<form method="post" action="{% url 'jobs:create-job' %}" enctype="multipart/form-data">
 										{% csrf_token %}
 										<h6 class="required-field float-right">Required Fields <span style="color:red;">*</span></h6>
-										<h3 class="card-title nav-item">Tell us about your job</h3>
+										<h4 class="card-title nav-item">Tell us about your job</h4>
 										<h6 class="card-title mt-3">Position<span style="color:red;"> *</span></h6>
 										<input type="text" id="textbox" name="title" placeholder="e.g Software Engineer" class="form-control form-control-lg col-md-12" style="background-color: #f6f6f6;">
 										<div class="card-title mt-3 form-row">
@@ -79,7 +79,7 @@
 										<p class="text-muted">Example: https://mybusiness.com/careers/apply or employee@email.com</p>
 										<h6 class="card-title mt-5">Job Description<span style="color:red;"> *</span></h6>
 										<textarea name="job_description" rows="6"></textarea>
-										<h3 class="card-title nav-item mt-5">Tell us about your Company</h3>
+										<h4 class="card-title nav-item mt-5">Tell us about your Company</h4>
 										<h6 class="card-title mt-4">Name<span style="color:red;"> *</span></h6>
 										<input type="text" name="company_name" class="form-control form-control-lg col-md-12" style="background: #f6f6f6">
 										<p class="text-muted">Enter your company or organization’s name.</p>
@@ -118,7 +118,7 @@
 											</div>
 										</div>
 										<!-- <button class="btn-lg btn-danger mt-3" id="page-button" data-toggle="modal" data-target="#myModal">Next: Preview Ad post</button> -->
-										<button type="submit" name="create" class="btn-lg btn-danger mt-3">Next: Preview Ad post</button>
+										<button type="submit" name="create" class="btn-md btn btn-danger mt-3">Next: Preview Ad post</button>
 									</form>
 								</div>
 							</div>

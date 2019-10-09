@@ -32,11 +32,11 @@
 
 <div class="container col-sm-7 mt-4">
 	<div class="card-0">
-		<h5 class="text-dark mt-2"><img src="/static/images/featured.png" class="img-fluid" alt="Responsive image" width="40"><a href="#" style="color: #343a40"> Featured Jobs<span class="small"> ({{total_featured_jobs}})</a></span>
-		</h5>
+		<h6 class="text-dark mt-2"><img src="/static/images/featured.png" class="img-fluid" alt="Responsive image" width="30"><a href="#" style="color: #343a40"> Featured Jobs<span class="small"> ({{total_featured_jobs}})</a></span>
+		</h6>
 		{% for job in jobs_list %}
 		<a href="{% url 'jobs:job-detail' job.slugTitle %}" style="color: #343a40; text-decoration: none;">
-			<div class="card-body-1 py-3 rounded mt-3 border-left-warning"> 
+			<div class="card-body-1 py-3 rounded mt-3 border-left-primary"> 
 				<div class="float-right">
 					<img src="/media/{{job.get_job_company}}" alt="Responsive image" style="max-width: 100px">
 				</div>
@@ -44,7 +44,7 @@
 				<h6 class="card-title nav-item">{{job.get_company_name}}</h6>
 				<h5 class="card-title nav-item">{{job.title}}
 					{% if job.is_featured %}
-						<span class="text-dark badge badge-warning float-right" style="font-size: medium; margin-right: 50px;"> Featured </span>
+						<span class="text-white badge badge-primary float-right" style="font-size: medium; margin-right: 50px;"> Featured </span>
 					{% endif %} </h5>
 					<h6 class="small card-title nav-item">{{job.job_type}} ({{job.region}})</h6>
 			</div>
@@ -56,14 +56,14 @@
 {% for category in category_list %}
 <div class="container col-sm-7 mt-5">
 	<div class="card border-0">
-		<h5 class="text-dark mt-2"><img src="/media/{{category.cat_image}}" class="img-fluid" alt="Responsive image" width="40"><a href="{% url 'category:categories' category.slugCatName %}" style="color: #343a40"> {{category.name}} <span class="small"> ({{category.total_jobs_per_category}})</a></span>
-		</h5>
+		<h6 class="text-dark mt-2"><img src="/media/{{category.cat_image}}" class="img-fluid" alt="Responsive image" width="30"><a href="{% url 'category:categories' category.slugCatName %}" style="color: #343a40"> {{category.name}} <span class="small"> ({{category.total_jobs_per_category}})</a></span>
+		</h6>
 		{% for job in category.jobs_per_category %}
 			<a href="{% url 'jobs:job-detail' job.slugTitle %}" style="color: #343a40; text-decoration: none;">
 				{% if job.is_featured %}
-					<div class="card-body-1 rounded py-3 mt-3 border-left-warning"> 
+					<div class="card-body-1 rounded py-3 mt-3 border-left-primary"> 
 				{% else %}
-					<div class="card-body-1 rounded py-3 rounded mt-3 border-left-primary"> 
+					<div class="card-body-1 rounded py-3 rounded mt-3 border-left-secondary"> 
 				{% endif %}
 						<div class="float-right">
 								<img src="/media/{{job.get_job_company}}" alt="Responsive image" style="max-width: 100px">
@@ -72,7 +72,7 @@
 						<h6 class="card-title nav-item">{{job.get_company_name}}</h6>
 						<h5 class="card-title nav-item" >{{job.title}}
 							{% if job.is_featured %}
-								<span class="text-dark badge badge-warning float-right" style="font-size: medium; margin-right: 50px;"> Featured </span>
+								<span class="text-white badge badge-primary float-right" style="font-size: medium; margin-right: 50px;"> Featured </span>
 							{% endif %}
 							<h6 class="small card-title nav-item">{{job.job_type}} ({{job.region}})</h6>
 						</h5>
