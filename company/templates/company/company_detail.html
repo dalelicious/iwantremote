@@ -2,18 +2,18 @@
 
 {% block content_additions %}
 <div class="row justify-content-md-center" style="padding-top: 60px">
-	<div class="col-sm-8">
+	<div class="col-sm-7">
 		<a href="/jobs/" class="" style="color: black"><img src="/static/assets/vendor/iconic/png/caret-left-2x.png"> Back to all jobs</a>
 		<div class="container mt-5">
-			<div class="card border-0">
+			<div class="card bg-light border shadow-sm">
 				<div class="card-body rounded bg-light shadow-sm py-3 border-primary">
 					<span class="text-muted small" style="z-index:15;position:relative; left:-30px; top:-10px">{{job.create_date|date:"M d"}}</span>
 					<h2 class="card-title mb-3">{{company.name}}
 						<img src="/media/{{company.logo}}" class="float-right shadow-sm img-thumbnail" alt="Responsive image" style="max-width: 200px;">
 					</h2>
-					<i class="text-muted"><img src="/static/assets/vendor/iconic/png/location-2x.png"> {{job.headquarters}}</i><br>
+					<i class="text-muted"><img src="/static/assets/vendor/iconic/png/map-marker-2x.png"> {{job.headquarters}}</i><br>
 					<i class="text-muted">Jobs Posted: {{job_posted}}</i><br>
-					<i class="text-muted">Website: <a href="http://{{company.website}}" target="_blank"> {{company.website}}</i></a>
+					<i class="text-muted">Website: <a href="http://{{company.website}}" target="_blank" style="color: black;"> {{company.website}}</i></a>
 					 <div class="row">
 		             		<div class="col"><hr></div>
 		             </div>
@@ -34,21 +34,21 @@
 		{% for job in job_posted_by_company %}
 		<a href="{% url 'jobs:job-detail' job.slugTitle %}" style="color: #343a40; text-decoration: none;">
 			{% if job.is_featured %}
-				<div class="card-body-1 rounded py-3 mt-3 border-left-warning"> 
+				<div class="card-body-1 rounded py-3 mt-3 border-left-primary"> 
 			{% else %}
-				<div class="card-body-1 rounded border-left-primary py-3 mt-3"> 
+				<div class="card-body-1 rounded border-left-secondary py-3 mt-3"> 
 			{% endif %}
 				<div class="float-right">
 					<img src="/media/{{job.get_job_company}}" alt="Responsive image" style="max-width: 100px">
 				</div>
 				<span class="text-muted small" style="z-index:15;position:relative; left:-30px; top:-10px">{{job.create_date|date:"M d"}}</span>
 				<h6 class="card-title nav-item">{{job.get_company_name}}</h6>
-				<h5 class="card-title nav-item">{{job.title}}
+				<h6 class="card-title nav-item">{{job.title}}
 					{% if job.is_featured %}
-						<span class="text-dark badge badge-warning float-right" style="font-size: medium; margin-right: 50px;"> Featured </span>
-					{% endif %} </h5>
+						<span class="text-white badge badge-primary float-right" style="font-size: medium; margin-right: 50px;"> Featured </span>
+					{% endif %} </h6>
 					<h6 class="small card-title nav-item text-muted">{{job.job_type}} ({{job.headquarters}})</h6>
-				</h5>
+				</h6>
 			</div>
 		</a>
 		{% endfor %}

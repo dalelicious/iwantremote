@@ -2,10 +2,12 @@
 
 {% block content_additions %}
 
-<div class="jumbotron row justify-content-md-center py-3">
+
+
+<div class="jumbotron bg-dark row justify-content-md-center py-3">
   <div class="col-sm-8">
     <div class="container">
-    <h3 class="card-title nav-item text-center text-dark mt-3" style="color: white"><span class="text-muted"></span>{{category_name}}</h3>
+    <h3 class="card-title nav-item text-center text-white mt-3" style="color: white"><span class="text-muted"></span>{{category_name}}</h3>
   </div>
   </div>
 </div>
@@ -15,48 +17,32 @@
     <div class="row-sm-2">
        <a href="/jobs/" style="color: black"><img src="/static/assets/vendor/iconic/png/caret-left-2x.png"> Back to all jobs</a>
     <div class="container">
-      <div class="card border-0">
-        <div class="card-body border-0">
-          <h6 class="text-muted mt-5">Posted {{job.create_date|date:"M d"}}</h6>
+      <div class="card mt-5 shadow border">
+        <h6 class="card-header bg-white border-0 text-muted ml-2 mb-3">Posted {{job.create_date|date:"M d"}}</h6>
+        <div class="card-body border-0 ml-2">
           <a href="{% url 'company:company-detail' company.slugName %}">
-            <img src="/media/{{company.logo}}" class="float-right shadow-sm img-thumbnail" alt="Responsive image" style="max-width: 130px" style="max-height: 130px">
+            <img src="/media/{{company.logo}}" class="float-right shadow-sm img-thumbnail" alt="Responsive image" style="max-width: 150px">
           </a>
-          <h2 class="card-title nav-item mt-4">{{job.title}}</h2>
-          <p class="card-title nav-item text-dark-50">{{job.job_type}} ({{job.region}})
-          </p>
-          <p class="card-title nav-item text-dark-50">Salary: {{job.salary}}
-          </p>
-          <a href="{% url 'company:company-detail' company.slugName %}">
-            <span class="float-right" style="color:black;"><img src="/static/assets/vendor/iconic/png/arrow-right-2x.png"> View all jobs</span>
-          </a>
+          <h2 class="mt-1">{{job.title}}</h2>
+          <p class="card-title nav-item text-dark-50 mt-3">{{job.job_type}} ({{job.region}})</p>
+          <p class="card-title nav-item text-dark-50">Salary: {{job.salary}}</p>
+          <img src="/static/assets/vendor/iconic/png/tags-2x.png"> 
           {% for tag in job.get_job_tags %}
-            <h4 class="badge badge-secondary"> {{tag}} </h4>
+            <p class="badge badge-light">{{tag}}</p>
           {% endfor %}
           <div class="row">
-              <div class="col"><hr></div>
-          </div>
+            <div class="col"><hr></div>
+            <div class="col-auto"><button type="button" class="mb-4 btn btn-danger btn-md rounded" onclick="location.href='{{job.link}}'">Apply for this Position</button></div>
+            <div class="col"><hr></div>
+        </div>
           <!-- Start Job Description from database with correct format -->
           <!-- {{job.job_description}} -->
           <p class="card-text">
             {{job.description|safe}}
           </p>
-          <div class="float-left mt-2">
-                Share this job: <br>
-                <ul class="list-unstyled">
-                <button type="button" class="btn btn-dark btn-md btn-linkedin"><li class="fa fa-linkedin"></li></button>
-                <button type="button" class="btn btn-dark btn-md btn-facebook"><i class="fa fa-facebook"></i></button>
-                <button type="button" class="btn btn-dark btn-md btn-twitter"><i class="fa fa-twitter"></i></button>
-                <button type="button" class="btn btn-dark btn-md btn-slack"><i class="fa fa-slack"></i></button>
-              </ul>
-          </div>
-          <div class="float-right mt-4">
-              <div class="col"></div>
-              <div class="col-auto">
-                  <button type="button" class="btn btn-danger btn-md rounded" onclick="location.href='{{job.link}}'">Apply for this Position</button></div>
-              <div class="col"></div>
-          </div>
               <div class="container justify-content-md-center">
           </div> 
+           <div class="col-auto"><button type="button" class="mt-5 float-right btn btn-danger btn-lg rounded" onclick="location.href='{{job.link}}'">Apply now</button></div>
         </div>
       </div>
     </div>
@@ -64,11 +50,34 @@
 </div>
 <div class="col-sm-2">
   <a href="{% url 'category:categories' job.category %}" style="color: black">See more {{category_name}} jobs <img src="/static/assets/vendor/iconic/png/caret-right-2x.png"></a>
-    <div class="text-center alert alert-secondary mt-5"> 
-      <h6 class="">Help us maintain the quality of jobs posted on IWantRemote. <br><br> Is this job not remote?</h6>
+  <div class="text-center alert alert-secondary shadow-sm rounded mt-5"> 
+      <h5 class="mt-3">{{company.name}}</h5>
+      <hr>
       <ul class="list-unstyled">
-        <button type="button" class="mt-2 btn btn-success btn-md rounded" onclick="location.href='{% url 'feedback:feedback' %}'">Let us know</button>
+        <li><img src="/static/assets/vendor/iconic/png/target-2x.png">
+          <a href="{{company.website}}" style="color: black;">Visit Website</a>
+        </li>
+        <li><img src="/static/assets/vendor/iconic/png/map-marker-2x.png"> {{job.headquarters}}</li>
+        <li><img src="/static/assets/vendor/iconic/png/check-2x.png"> Jobs Posted: {{all_jobs}}</li>
+        <li>
+          <button type="button" class="mt-2 btn btn-primary shadow-sm border-0 btn-sm rounded" onclick="location.href='{% url 'company:company-detail' company.slugName %}'">View company</button>
+        </li>
       </ul>
+    </div>
+    <div class="text-center text-dark alert alert-secondary mt-3"> 
+      <h6 class="card-text">Help us maintain the quality of jobs posted on iWantRemote. <br><br> Is this job not remote?</h6>
+      <ul class="list-unstyled">
+        <button type="button" class="mt-2 btn btn-primary border-0 btn-sm shadow-sm rounded" onclick="location.href='{% url 'feedback:feedback' %}'">Let us know</button>
+      </ul>
+    </div>
+    <div class="text-center rounded mt-4"> 
+      <h6 class="">Share this job:</h6>
+                <ul class="list-unstyled">
+                <button type="button" class="btn btn-dark btn-sm btn-linkedin"><li class="fa fa-linkedin"></li></button>
+                <button type="button" class="btn btn-dark btn-sm btn-facebook"><i class="fa fa-facebook"></i></button>
+                <button type="button" class="btn btn-dark btn-sm btn-twitter"><i class="fa fa-twitter"></i></button>
+                <button type="button" class="btn btn-dark btn-sm btn-slack"><i class="fa fa-slack"></i></button>
+               </ul>
     </div>
   </div>
 </div>
