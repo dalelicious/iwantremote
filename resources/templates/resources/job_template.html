@@ -3,42 +3,28 @@
 {% block content_additions %}
 
 <div class="row justify-content-md-center mt-3">
-  <div class="col-sm-5">
+  <div class="col-sm-6">
     <div class="container">
       <div class="card border-0">
         <div class="card-body border-0">
-          <h1 class="card-title nav-item mt-5">Terms and Privacy</h1>
+          <h1 class="card-title nav-item mt-5">The Job Description Template</h1>
+          <p class="card-text" align="justify">
+            Create a job posting that stands out!  
+          </p>
           <div class="row">
              <div class="col"><hr></div>
           </div>
-          <!-- Start Job Description from database with correct format -->
-          <!-- {{job.job_description}} -->
+          <h4 class="card-title nav-item mt-2">About the Job:</h4>
           <p class="card-text" align="justify">
-            At IWR, we value your privacy. Rest assured that the information you provided when you use our websites and related applications will be collected and used in the manner stated in this Policy. 
+           Begin with an innovative and emotive intro! 
           </p>
-          <p align="justify">
-            All personal information such as company name, job description, salary range, address, contact number and email address will not be shared with any 3​rd​-party provider and will be solely used as a medium to connect employers and job applicants.  Apart from this basic purpose, IWR will use your information such as IP address, browser you used, date & time of website visit and other identifiers to provide better customer experience through analytics and to improve our platform to fit the user’s interest and optimize our system’s performance based on the growing user traffic & demand. 
-          </p>
-            <p align="justify">
-              We are fully dedicated to protect our users’ personal information by using the latest technologies and security best practices. We have redundant servers with full encryption and we always make sure that your information is secure from unauthorized or unlawful. 
-              IWR will never abuse your trust. This means that we will never share, sell, rent or otherwise disclose your personal or company information without your explicit consent. 
-          </p>
-          <h4 class="card-title nav-item mt-5">IWR by any means will not: </h4>
+          <h4 class="card-title nav-item mt-5">Who should apply? Where should be the candidate? </h4>
           <p class="card-text" align="justify">
-            <ul>
-              <li>Place monitoring devices onto your computer such as web beacons, or single-pixel gifs. </li>
-              <li>Tighten security across our infrastructure</li>
-              <li>Send unsolicited communications for marketing purposes.</li>
-            </ul>
-            <p align="justify">To ensure the integrity of our privacy policy and to prevent unauthorized access & misuse of the company or job information, we have established physical, electronic and managerial procedures to safeguard and secure your user/company information. All user/company information is encrypted and stored on our servers hosted in AWS cloud environment.</p>
+            Describe the ideal candidate you are looking for or you can list the specific talent/skills..  
           </p>
-          <h4 class="card-title nav-item mt-5">Fair Usage </h4>
-          <p class="card-text" align="justify">
-            Our goal when collecting information is to provide users with a convenient, efficient, and safe experience. You agree that your user information may be used to provide the services you request, provide customer support, resolve disputes, troubleshoot problems, collect fees, prevent illegal activities, enforce our User Agreement, and improve our services.  
-          </p>
-          <h4 class="card-title nav-item mt-5">Listing Policy</h4>
-          <p align="justify">We prohibit any posting or listing of job openings and/or information of the following items: </p>
-          <p class="card-text" align="justify">
+          <h4 class="card-title nav-item mt-5">Requirements:</h4>
+          <p align="justify">List out what the candidate needs or haves for expectations: </p>
+          <p class="text-muted" align="justify">
             <ul>
               <li>Non-technical related jobs</li>
               <li>Illegal job which doesn’t comply with the company’s country of origin’s job policies </li>
@@ -51,16 +37,16 @@
               <li>Listings that promotes illegal activity</li>
             </ul>
           </p>
-          <h4 class="card-title nav-item mt-5">Payments</h4>
+          <h4 class="card-title nav-item mt-5">About/Who We Are/What We Do/Our Story</h4>
           <p class="card-text" align="justify">
-           Your security is our top priority. We will not store or collect your payment card details nor use it on any illegal or unauthorized activities not mentioned on this Terms and Privacy agreement.</p>
-          <p align="justify">All payment card information will be directly processed by our 3rd-party payment processor XXXXXXX wherein your personal information will be covered under their own Privacy policy - www.linktopolicy.com</p>
-          <p align="justify">XXXX​ is a PCI-DSS compliant company and ensures that your personal and payment data is handled securely based on their standards.</p>
-          <p align="justify">All payments will be directed to ​XXX ​website and IWR will not be held accountable for any misuse or fraud activities outside of our knowledge.</p>
-          <p align="justify">Contact Us Please contact us at ​info@iwantremote.com​ for inquiries, payment issues or any complaints. </p>
-
-
-          <!-- End Job Description from database with correct format -->
+           Share to jobseekers what you do in the company. Things like good problems, how long you have been in the business, culture and stability..</p>
+          <h4 class="card-title nav-item mt-5">What we offer</h4>
+          <p class="card-text" align="justify">
+          List out the company benefits. Tell the candidate as honest as possible.</p>
+          <h4 class="card-title nav-item mt-5">Application Process</h4>
+          <p class="card-text" align="justify">
+          List out the process on how the candidate can first apply all throughout to hiring process.</p>
+          <div class="col-auto"><button type="button" class="mt-3 float-right btn btn-danger btn-md rounded" onclick="location.href='{% url 'jobs:create-job' %}'">Ready to Post?</button></div>
           <div class="row mt-5">
               <div class="col"></div>
               <div class="col-auto">
