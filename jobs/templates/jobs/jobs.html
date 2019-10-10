@@ -40,7 +40,7 @@
   </div>
 </div>
 
-<div class="container col-sm-7 mt-4">
+<div class="container col-sm-8 mt-4">
 	     <form method="POST" action="{% url 'jobs:jobs' %}">
 	     {% csrf_token %}
           <div class="bg-light rounded rounded-pill shadow-sm mb-4">
@@ -55,7 +55,7 @@
 </div>
 
 
-<div class="container col-sm-7 mt-4">
+<div class="container col-sm-8 mt-4">
 	<div class="card-0">
 		<h6 class="text-dark mt-2"><img src="/static/images/featured.png" class="img-fluid" alt="Responsive image" width="30"><a href="#" style="color: #343a40"> Featured Jobs<span class="small"> ({{total_featured_jobs}})</a></span>
 		</h6>
@@ -79,7 +79,7 @@
 </div>
 
 {% for category in category_list %}
-<div class="container col-sm-7 mt-5">
+<div class="container col-sm-8 mt-5">
 	<div class="card border-0">
 		<h6 class="text-dark mt-2"><img src="/media/{{category.cat_image}}" class="img-fluid" alt="Responsive image" width="30"><a href="{% url 'category:categories' category.slugCatName %}" style="color: #343a40"> {{category.name}} <span class="small"> ({{category.total_jobs_per_category}})</a></span>
 		</h6>
