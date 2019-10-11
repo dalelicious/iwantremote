@@ -2,13 +2,14 @@
 
 {% block content_additions %}
 
-<div class="jumbotron-fluid" style="background-image: url(/static/images/community.jpg)">
+<div class="jumbotron-fluid bg-light" style="background-image: url(/static/images/community.jpg)">
 	<div class="row">
-		<div class="col-lg-12 text-center mt-5">
+		<div class="col-lg-12 text-center mb-1 mt-5">
 			<img src="/static/images/community.png" class="img-fluid" alt="Responsive image" width="250">
 			<h3 class="mt-2 text-dark">Reach thousands of remote tech workers.</h3>
 		</div>
 	</div>
+	<hr>
 </div>
 
 <section id="tabs" calss="project-tab">
@@ -17,7 +18,7 @@
 			<div class="col-md-10">
 				<div class="tab-content" id="nav-tabContent">
 					<div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-						<div class="container mt-3">
+						<div class="container mt-2">
 							<div class="card">
 								<h5 class="card-header bg-dark text-white text-center">Step 1. Create a Job</h5>
 								<div class="card-body shadow">
@@ -108,17 +109,6 @@
 												<input type="email" name="email" class="form-control form-control-lg" required>
 											</div>
 										</div>
-										<div class="card-body rounded" style="padding-top: 50px">
-											<div class="row">
-												<h5 class="col-md-12 alert alert-success text-center text-dark">Get more visibility! Be at our top and #1 featured category and get highlighted!</h5>
-											</div>
-										</div>
-										<div class="card-title text-center">
-											<div class="col-md-12">
-												<img src="/static/images/highlight.png" class="img-fluid" alt="Responsive image">
-												<input type="checkbox" id="is_featured" name="featured"> Feature this job for <span class="badge badge-pill badge-primary">$29 only.</span>
-											</div>
-										</div>
 										<!-- <button class="btn-lg btn-danger mt-3" id="page-button" data-toggle="modal" data-target="#myModal">Next: Preview Ad post</button> -->
 										<button type="submit" name="create" class="btn-md btn btn-danger mt-3">Next: Preview Ad post</button>
 									</form>
@@ -134,6 +124,30 @@
 		</div>
 	</div>
 </section>
+
+<div class="container mt-5 text-center">
+  <div class="row">
+    <div class="col-sm">
+      <img src="/static/images/google.png" class="opct opacity-70 img-fluid mt-4" alt="Responsive image" style="max-width: 100px">
+    </div>
+    <div class="col-sm">
+      <img src="/static/images/amazon.png" class="iopct opacity-70 mg-fluid" alt="Responsive image" style="max-width: 120px">
+    </div>
+    <div class="col-sm">
+      <img src="/static/images/github.png" class="opct opacity-70 img-fluid" alt="Responsive image" style="max-width: 70px">
+    </div>
+    <div class="col-sm">
+      <img src="/static/images/stack.png" class="opct opacity-70 img-fluid mt-4" alt="Responsive image" style="max-width: 120px">
+    </div>
+    <div class="col-sm mb-5">
+      <img src="/static/images/shopify.png" class="opct opacity-70 img-fluid mt-4" alt="Responsive image" style="max-width: 100px">		
+    </div>
+    <div class="col-sm mb-5">
+      <img src="/static/images/wordpress.png" class="opct opacity-70 img-fluid mt-2" alt="Responsive image" style="max-width: 120px">		
+    </div>
+  </div>
+</div>
+
 
 <!-- <div class="modal hide fade text-left" tabindex="-1" role="dialog" id="myModal" aria-labelledby="myModalLabel1" aria-hidden="true">
     <div class="modal-dialog" role="document">
