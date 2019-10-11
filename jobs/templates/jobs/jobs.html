@@ -4,18 +4,43 @@
 
 <div class="jumbotron-fluid">
 	<div class="row">
-		<div class="col-lg-12 text-center mt-5">
+		<div class="col-lg-12 text-center mt-5 mb-5">
 			<img src="/static/images/bg1.png" class="img-fluid" alt="Responsive image" width="200">
 			<h2 class="mt-2 highlight-word">Remote tech jobs, <span class="text-decoration"> viewed-daily.</span></h2>
 			<p>Every generation seeks flexible work options. Find amazing list of remote tech jobs today.</p>
 			<ul class="list-unstyled">
-				<button class="btn btn-danger mt-1 btn-md rounded" onclick="location.href='{% url 'jobs:create-job' %}'">Post a job for $199</button>
+				<button class="btn btn-danger mt-3 btn-lg rounded" onclick="location.href='{% url 'jobs:create-job' %}'">Post a job for $199</button>
 			</ul>
 		</div>
 	</div>
 </div>
+<hr>
 
-<div class="container col-sm-7 mt-4">
+<div class="container mt-3 text-center">
+	<h5 class="mt-5 text-muted text-center mb-5">Trusted by amazing companies</h5>
+  <div class="row">
+    <div class="col-sm">
+      <img src="/static/images/google.png" class="opct opacity-70 img-fluid mt-4" alt="Responsive image" style="max-width: 100px">
+    </div>
+    <div class="col-sm">
+      <img src="/static/images/amazon.png" class="iopct opacity-70 mg-fluid" alt="Responsive image" style="max-width: 120px">
+    </div>
+    <div class="col-sm">
+      <img src="/static/images/github.png" class="opct opacity-70 img-fluid" alt="Responsive image" style="max-width: 70px">
+    </div>
+    <div class="col-sm">
+      <img src="/static/images/stack.png" class="opct opacity-70 img-fluid mt-4" alt="Responsive image" style="max-width: 120px">
+    </div>
+    <div class="col-sm mb-5">
+      <img src="/static/images/shopify.png" class="opct opacity-70 img-fluid mt-4" alt="Responsive image" style="max-width: 100px">		
+    </div>
+    <div class="col-sm mb-5">
+      <img src="/static/images/wordpress.png" class="opct opacity-70 img-fluid mt-2" alt="Responsive image" style="max-width: 120px">		
+    </div>
+  </div>
+</div>
+
+<div class="container col-sm-8 mt-4">
 	     <form method="POST" action="{% url 'jobs:jobs' %}">
 	     {% csrf_token %}
           <div class="bg-light rounded rounded-pill shadow-sm mb-4">
@@ -30,7 +55,7 @@
 </div>
 
 
-<div class="container col-sm-7 mt-4">
+<div class="container col-sm-8 mt-4">
 	<div class="card-0">
 		<h6 class="text-dark mt-2"><img src="/static/images/featured.png" class="img-fluid" alt="Responsive image" width="30"><a href="#" style="color: #343a40"> Featured Jobs<span class="small"> ({{total_featured_jobs}})</a></span>
 		</h6>
@@ -54,7 +79,7 @@
 </div>
 
 {% for category in category_list %}
-<div class="container col-sm-7 mt-5">
+<div class="container col-sm-8 mt-5">
 	<div class="card border-0">
 		<h6 class="text-dark mt-2"><img src="/media/{{category.cat_image}}" class="img-fluid" alt="Responsive image" width="30"><a href="{% url 'category:categories' category.slugCatName %}" style="color: #343a40"> {{category.name}} <span class="small"> ({{category.total_jobs_per_category}})</a></span>
 		</h6>
