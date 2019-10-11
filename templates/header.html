@@ -11,7 +11,7 @@
           <a class="navbar-brand" href="{% url 'company:companies' %}">Remote Companies</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="navbar-brand dropdown-toggle" data-toggle="dropdown" href="#">Categories</a>
+          <a class="navbar-brand" data-toggle="dropdown" href="#">Categories</a>
           <div class="dropdown-menu">
             {% for category in category_list %}
               <a class="dropdown-item" href="{% url 'category:categories' category.slugCatName %}">{{category.name}}</a>
@@ -19,7 +19,7 @@
           </div>
         </li>
         <li class="nav-item dropdown">
-          <a class="navbar-brand dropdown-toggle" data-toggle="dropdown" href="#">Community</a>
+          <a class="navbar-brand" data-toggle="dropdown" href="#">Community</a>
           <div class="dropdown-menu">
             <a class="dropdown-item" href="https://www.facebook.com/IWantRemote-123799179009952" target="_blank">Facebook</a>
             <a class="dropdown-item" href="#">LinkedIn</a>
@@ -29,7 +29,7 @@
           </div>
         </li>
         <li class="nav-item dropdown">
-          <a class="navbar-brand dropdown-toggle" data-toggle="dropdown" href="#">Resources</a>
+          <a class="navbar-brand" data-toggle="dropdown" href="#">Resources</a>
           <div class="dropdown-menu">
             <a class="dropdown-item" href="{% url 'resources:privacy' %}">Privacy & Terms</a>
             <a class="dropdown-item" href="{% url 'resources:job_template' %}">Job Template</a>
