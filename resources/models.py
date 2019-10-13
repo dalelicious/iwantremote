@@ -5,6 +5,6 @@ class Resources(models.Model):
 
 	title = models.CharField(max_length=50, null=True)
 	author = models.CharField(max_length=50, null=True)
-	content = models.CharField(max_length=200, null=True)
+	content = models.TextField(null=True)
 	create_date = models.DateTimeField()
 	blog_image = models.ImageField(upload_to='images/resources/')

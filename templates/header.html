@@ -1,6 +1,6 @@
-<nav class="sticky-top navbar navbar-expand-lg border-bottom navbar-light bg-white shadow-sm">
+<nav class="sticky-top navbar navbar-expand-lg navbar-light bg-white border shadow-sm">
   <div class="container">
-    <a href="/jobs/"><img src="/static/images/logo6.png" height="30" alt="logo" style="margin-left: 50px"></a>
+    <a href="/jobs/"><img src="/static/images/logo6.png" height="35" alt="logo" style="margin-left: 50px"></a>
     <!-- <a class="navbar-brand" href="#">IWR</a> -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -11,7 +11,7 @@
           <a class="navbar-brand" href="{% url 'company:companies' %}">Remote Companies</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="navbar-brand dropdown-toggle" data-toggle="dropdown" href="#">Categories</a>
+          <a class="navbar-brand" data-toggle="dropdown" href="#">Categories</a>
           <div class="dropdown-menu">
             {% for category in category_list %}
               <a class="dropdown-item" href="{% url 'category:categories' category.slugCatName %}">{{category.name}}</a>
@@ -19,7 +19,7 @@
           </div>
         </li>
         <li class="nav-item dropdown">
-          <a class="navbar-brand dropdown-toggle" data-toggle="dropdown" href="#">Community</a>
+          <a class="navbar-brand" data-toggle="dropdown" href="#">Community</a>
           <div class="dropdown-menu">
             <a class="dropdown-item" href="https://www.facebook.com/IWantRemote-123799179009952" target="_blank">Facebook</a>
             <a class="dropdown-item" href="#">LinkedIn</a>
@@ -29,7 +29,7 @@
           </div>
         </li>
         <li class="nav-item dropdown">
-          <a class="navbar-brand dropdown-toggle" data-toggle="dropdown" href="#">Resources</a>
+          <a class="navbar-brand" data-toggle="dropdown" href="#">Resources</a>
           <div class="dropdown-menu">
             <a class="dropdown-item" href="{% url 'resources:privacy' %}">Privacy & Terms</a>
             <a class="dropdown-item" href="{% url 'resources:job_template' %}">Job Template</a>
@@ -38,7 +38,7 @@
         </li>
       </ul>
       <ul class="list-unstyled">
-        <button class="btn btn-danger mt-3 btn-md border shadow-sm" onclick="location.href='{% url 'jobs:create-job' %}'">Post a job</button>
+        <button class="btn btn-danger mt-3 btn-md" onclick="location.href='{% url 'jobs:create-job' %}'">Post a job</button>
       </ul>
     </div>
   </div>
