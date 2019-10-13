@@ -53,7 +53,7 @@
 											</div>
 										</div>
 										<div class="card-title form-row">
-										<div class="form-group col-md-6">
+											<div class="form-group col-md-6">
 												<h6 for="card-title mt-5">Salary Range</h6>
 												<input type="text" id="jobSalary" name="salary" placeholder="e.g $40-50k/yr" class="form-control col-md-12 form-control-lg">
 											</div>
@@ -65,7 +65,7 @@
 										<div class="card-title mt-5 form-row">
 											<div class="form-group col-md-6">
 												<h6 for="card-title mt-5">Headquarters<span style="color:red;"> *</span></h6>
-												<input type="text" name="headquarters" class="form-control col-md-12 form-control-lg">
+												<input id="jobHeadquarters" type="text" name="headquarters" class="form-control col-md-12 form-control-lg">
 												<p class="text-muted">Location of your company</p>
 											</div>
 											<div class="form-group col-md-6">
@@ -75,16 +75,16 @@
 											</div>
 										</div>
 										<h6 class="card-title" >Apply Link<span style="color:red;">*</span></h6>
-										<input type="text" name="link" class="form-control form-control-lg col-md-12" style="background: #f6f6f6">
+										<input id="jobLink" type="text" name="link" class="form-control form-control-lg col-md-12" style="background: #f6f6f6">
 										<p class="text-muted">Example: https://mybusiness.com/careers/apply or employee@email.com</p>
 										<h6 class="card-title mt-5">Job Description<span style="color:red;"> *</span></h6>
 										<textarea id="jobDescription" name="job_description" rows="6"></textarea>
 										<h3 class="card-title nav-item mt-5">Tell us about your Company</h3>
 										<h6 class="card-title mt-4">Name<span style="color:red;"> *</span></h6>
-										<input type="text" name="company_name" class="form-control form-control-lg col-md-12" style="background: #f6f6f6">
+										<input id="jobCompany" type="text" name="company_name" class="form-control form-control-lg col-md-12" style="background: #f6f6f6">
 										<p class="text-muted">Enter your company or organization’s name.</p>
 										<h6 class="card-title mt-5">Company Description<span style="color:red;"> *</span></h6>
-										<textarea name="company_description" rows="6"></textarea>
+										<textarea id="jobCompDescription" name="company_description" rows="6"></textarea>
 										<br>
 										<h6 for="card-title">Company Logo<span style="color:red;"> *</span></h6>
 										<div class="custom-file">
@@ -94,16 +94,16 @@
 										</div>
 										<div class="form-group mt-5">
 											<h6>Tagline</h6>
-											<input type="text" name="tagline" class="form-control form-control-lg">
+											<input id="jobCompTagline" type="text" name="tagline" class="form-control form-control-lg">
 										</div>
 										<div class="card-title mt-5 form-row">
 											<div class="form-group col-md-6">
 												<h6 for="card-title mt-5">Company Website<span style="color:red;"> *</span></h6>
-												<input type="text" name="website" class="form-control form-control-lg col-md-12">
+												<input id="jobCompWebsite" type="text" name="website" class="form-control form-control-lg col-md-12">
 											</div>
 											<div class="form-group col-md-6">
 												<h6>Email<span style="color:red;"> *</span></h6>
-												<input type="email" name="email" class="form-control form-control-lg" required>
+												<input id="jobCompEmail" type="email" name="email" class="form-control form-control-lg" required>
 											</div>
 										</div>
 										<div class="card-body rounded" style="padding-top: 50px">
@@ -175,15 +175,25 @@
 			// var jobType = jobtype here
 			var jobSalary = $('#jobSalary').val();
 			var jobTags = $('#form-tags-1').val();
+			var jobHeadquarters = $('#jobHeadquarters').val();
 			var jobRegion = $('#jobRegion').val();
+			var jobLink = $('#jobLink').val();
 			var jobDescription = $('#jobDescription').val();
+			var jobCompany = $('#jobCompany').val();
+			// var jobCompDescription = $('#jobCompDescription').val();
 			var jobCompLogo = $('#customFile').val();
+			var jobCompWebsite = $('#jobCompWebsite').val();
 			$('.modal-body').html("<p>"+jobTitle+"</p>"+"<input type='text' value='"+jobTitle+"'/>"+
 								  "<p>"+jobSalary+"</p>"+"<input type='text' value='"+jobSalary+"'/>"+
 								  "<p>"+jobTags+"</p>"+"<input type='text' value='"+jobTags+"'/>"+
+								  "<p>"+jobHeadquarters+"</p>"+"<input type='text' value='"+jobHeadquarters+"'/>"+
 								  "<p>"+jobRegion+"</p>"+"<input type='text' value='"+jobRegion+"'/>"+
-								  "<p>"+jobCompLogo+"</p>"+"<input type='text' value='"+jobCompLogo+"'/>"+
-								  "<p>"+jobDescription+"</p>"+"<input type='text' value='"+jobDescription+"'/>");
+								  "<p>"+jobLink+"</p>"+"<input type='text' value='"+jobLink+"'/>"+
+								  "<p>"+jobDescription+"</p>"+"<input type='text' value='"+jobDescription+"'/>"+
+								  "<p>"+jobCompany+"</p>"+"<input type='text' value='"+jobCompany+"'/>"+
+								  // "<p>"+jobCompDescription+"</p>"+"<input type='text' value='"+jobCompDescription+"'/>"+
+								  "<p>"+jobCompLogo+"</p>"+"<img src='"+jobCompLogo+"'>"+
+								  "<p>"+jobCompWebsite+"</p>"+"<input type='text' value='"+jobCompWebsite+"'/>");
 		});
 	});
 
