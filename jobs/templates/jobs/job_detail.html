@@ -2,15 +2,7 @@
 
 {% block content_additions %}
 
-<div class="jumbotron bg-dark row justify-content-md-center py-3">
-  <div class="col-sm-8">
-    <div class="container">
-    <h3 class="card-title nav-item text-center text-white mt-3" style="color: white"><span class="text-muted"></span>{{category_name}}</h3>
-  </div>
-  </div>
-</div>
-
-<div class="row justify-content-md-center">
+<div class="row mt-5 justify-content-md-center">
   <div class="col-sm-7">
     <div class="row-sm-2">
        <a href="/jobs/" style="color: black"><img src="/static/assets/vendor/iconic/png/caret-left-2x.png"> Back to all jobs</a>
@@ -22,8 +14,9 @@
             <img src="/media/{{company.logo}}" class="float-right" alt="Responsive image" style="max-width: 150px">
           </a>
           <h2 class="mt-1">{{job.title}}</h2>
-          <p class="card-title nav-item text-dark-50 mt-3">{{job.job_type}} ({{job.region}})</p>
+          <u><p class="card-title nav-item text-dark-50 mt-3">{{job.job_type}} ({{job.region}})</p></u>
           <p class="card-title nav-item text-dark-50">Salary: {{job.salary}}</p>
+          <p class="card-title nav-item text-dark-50">Category: {{category_name}}</p>
           <img src="/static/assets/vendor/iconic/png/tags-2x.png"> 
           {% for tag in job.get_job_tags %}
             <p class="badge badge-light">{{tag}}</p>
