@@ -53,4 +53,4 @@ class Jobs(models.Model):
 		return tags_list
 
 	def get_absolute_url(self):
-		return reverse('post', args=[str(self.id)])
+		return reverse('post', args=[str(self.slugTitle)])

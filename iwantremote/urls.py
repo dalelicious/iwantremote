@@ -10,6 +10,7 @@ from django.contrib.sitemaps.views import sitemap
 from jobs.sitemaps import PostSitemap
 from jobs import views as jobs_view
 
+
 sitemaps = {
 	'posts' : PostSitemap,
 }
@@ -20,9 +21,9 @@ urlpatterns = [
 	path('', 			include('category.urls')),
 	path('', 			include('feedback.urls')),
 	path('', 			include('resources.urls')),
+	path('', 			include('subscriber.urls')),
 	path('sitemap.xml', sitemap, {'sitemaps': sitemaps}),
 	path('remote-jobs/<slug:jobName>', jobs_view.post, name='post'),
-	path('', 			include('subscriber.urls')),
 	path('admin/',      admin.site.urls),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
