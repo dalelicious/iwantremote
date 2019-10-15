@@ -5,6 +5,10 @@ from django.db import models
 
 from company.models import Company
 
+# sitemaps
+
+from django.urls import reverse
+
 # Create your models here.
 class Jobs(models.Model):
 
@@ -47,3 +51,6 @@ class Jobs(models.Model):
 		tags_list = re.sub("[^\w]", " ", job_tags).split()
 
 		return tags_list
+
+	def get_absolute_url(self):
+		return reverse('post', args=[str(self.slugTitle)])

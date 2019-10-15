@@ -1,12 +1,15 @@
 # Django
 from django.http 			import HttpResponse
-from django.shortcuts 		import render
+from django.shortcuts 		import render, get_object_or_404
 from django.shortcuts 		import redirect
 
 # iwantremote
 from . viewmodels 			import JobsViewModel
 from company.viewmodels 	import CompanyViewModel
 from category.viewmodels 	import CategoryViewModel
+
+# sitemaps
+from . models import Jobs
 
 
 job = JobsViewModel()
@@ -110,5 +113,11 @@ def job_detail(request, jobName):
 				  'company':company_detail,
 				  'category_name':category_name,
 				  'category_list':category_list})
+	
+def post(request, post_id=id):
+
+	item = get_object_or_404(Post, id=post_id)
+
+	return render(request, 'jobs/post.html', {'post': item})
 
 
