@@ -56,7 +56,7 @@
           <a href="http://{{company.website}}" target="_blank" style="color: black;">Visit Website</a>
         </li>
         <li><img src="/static/assets/vendor/iconic/png/map-marker-2x.png"> {{job.headquarters}}</li>
-        <li>Jobs Posted: {{all_jobs}}</li>
+        <li>Jobs Posted: {{job_posted}}</li>
         <li>
           <button type="button" class="mt-2 btn btn-primary shadow-sm border-0 btn-sm rounded" onclick="location.href='{% url 'company:company-detail' company.slugName %}'">View company</button>
         </li>

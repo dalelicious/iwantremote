@@ -44,6 +44,15 @@ class CompanyViewModel():
 		return job_posted
 
 
+	def get_company_job_posted(self, jobName):
+
+		job = Jobs.objects.get(slugTitle=jobName)
+		company = Company.objects.get(email=job.company)
+		job_posted = Jobs.objects.filter(company=company.email)
+
+		return job_posted
+
+
 	def check_company_exist(self, email):
 		""" Check if email exist
 		"""

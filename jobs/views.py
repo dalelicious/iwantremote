@@ -66,13 +66,12 @@ def create_job(request):
 		region = request.POST['region']
 		link = request.POST['link']
 		job_description = request.POST['job_description']
+
 		if 'featured' in request.POST:
 			is_featured = request.POST['featured']
 		else:
 			is_featured = False
-
-		print(is_featured)
-
+		
 		name = request.POST['company_name']
 		logo = request.FILES['logo']
 		tagline = request.POST['tagline']
@@ -102,10 +101,12 @@ def job_detail(request, jobName):
 	all_jobs = len(job.get_jobs_list())
 	category_list = categories.get_category_list()
 	company_detail = company.get_company_by_job_name(jobName)
+	job_posted_by_company = len(company.get_company_job_posted(jobName))
 
 	return render(request, 'jobs/job_detail.html',
 				 {'job':job_detail,
 				  'all_jobs':all_jobs,
+				  'job_posted':job_posted_by_company,
 				  'company':company_detail,
 				  'category_name':category_name,
 				  'category_list':category_list})
