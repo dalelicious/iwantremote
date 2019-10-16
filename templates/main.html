@@ -56,7 +56,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/5.0.16/plugins/lists/plugin.min.js"></script> -->
   <script>
     tinymce.init({
-        selector:'textarea'
+        mode: "specific_textareas",
+        editor_selector: "myTextEditor"
+        // selector:'textarea'
         // plugins:['lists advlist'],
         // toolbar: [
         //   'bold italic | link image | alignleft aligncenter alignright | bullist numlist outdent indent',
