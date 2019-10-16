@@ -1,9 +1,6 @@
 # Django
 from django.db 		import models
 
-from django.urls import reverse
-
-
 # Create your models here.
 class Company(models.Model):
 
@@ -15,8 +12,6 @@ class Company(models.Model):
 	website = models.CharField(max_length=50, null=True)
 	description = models.TextField(null=True)
 
-<<<<<<< HEAD
-=======
 
 	@property
 	def total_job_posted(self):
@@ -26,5 +21,3 @@ class Company(models.Model):
 		total_jobs = len(Jobs.objects.filter(company=self.email))
 
 		return total_jobs
-
->>>>>>> 04266d39df4e2cde91d71d35fd0f7f0a9962c9ae
