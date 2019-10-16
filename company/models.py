@@ -12,3 +12,14 @@ class Company(models.Model):
 	tagline = models.CharField(max_length=50, null=True)
 	website = models.CharField(max_length=50, null=True)
 	description = models.TextField(null=True)
+
+
+	@property
+	def total_job_posted(self):
+
+		from jobs.models import Jobs
+
+		total_jobs = len(Jobs.objects.filter(company=self.email))
+
+		return total_jobs
+
