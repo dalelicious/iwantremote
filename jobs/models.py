@@ -2,6 +2,7 @@ import re
 
 # Django
 from django.db import models
+from django.contrib.sites.models import Site
 
 from company.models import Company
 
@@ -53,4 +54,4 @@ class Jobs(models.Model):
 		return tags_list
 
 	def get_absolute_url(self):
-		return reverse('post', args=[str(self.slugTitle)])
+		return reverse('jobpost', args=[str(self.slugTitle)])

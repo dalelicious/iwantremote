@@ -118,6 +118,6 @@ def post(request, post_id=id):
 
 	item = get_object_or_404(Post, id=post_id)
 
-	return render(request, 'jobs/post.html', {'post': item})
+	return render(request, {'post': item})
 
 

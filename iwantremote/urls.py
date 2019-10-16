@@ -7,12 +7,12 @@ from django.conf.urls.static 	import static
 
 # Sitemap
 from django.contrib.sitemaps.views import sitemap
-from jobs.sitemaps import PostSitemap
-from jobs import views as jobs_view
-
+from jobs.sitemaps import JobSitemap, StaticSitemap
+from jobs import views
 
 sitemaps = {
-	'posts' : PostSitemap,
+	'dynamic' : JobSitemap,
+	'static': StaticSitemap, 
 }
 
 urlpatterns = [
@@ -22,9 +22,9 @@ urlpatterns = [
 	path('', 			include('feedback.urls')),
 	path('', 			include('resources.urls')),
 	path('', 			include('subscriber.urls')),
-	path('sitemap.xml', sitemap, {'sitemaps': sitemaps}),
-	path('remote-jobs/<slug:jobName>', jobs_view.post, name='post'),
+	path('sitemap.xml', sitemap, {'sitemaps': sitemaps},
+		name='django.contrib.sitemaps.views.sitemap'),
+	path('remote-jobs/<slug:jobName>', views.post, name='jobpost'),
 	path('admin/',      admin.site.urls),
-
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

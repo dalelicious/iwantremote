@@ -1,6 +1,8 @@
 # Django
 from django.db 		import models
 
+from django.urls import reverse
+
 
 # Create your models here.
 class Company(models.Model):
@@ -12,3 +14,4 @@ class Company(models.Model):
 	tagline = models.CharField(max_length=50, null=True)
 	website = models.CharField(max_length=50, null=True)
 	description = models.TextField(null=True)
+

@@ -25,3 +25,4 @@ def categories(request, categoryName):
 				  'jobs_list':jobs_list,
 				  'categories':categories,
 				  'category_list':category_list})
+

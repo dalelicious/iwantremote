@@ -1,6 +1,6 @@
 # Django
 from django.http 			import HttpResponse
-from django.shortcuts 		import render
+from django.shortcuts 		import render, get_object_or_404
 from django.shortcuts 		import redirect
 
 # iwantremote
@@ -40,5 +40,6 @@ def company_detail(request, companyName):
 				  'job_posted':job_posted,
 				  'job_posted_by_company':job_posted_by_company,
 				  'category_list':category_list})
+
 
 
