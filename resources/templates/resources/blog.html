@@ -3,7 +3,7 @@
 {% block content_additions %}
 
 <header class="masthead" style="background-image: url('/static/images/home-bg.jpg')">
-    <div class="overlay"></div>
+  <div class="overlay"></div>
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
@@ -11,31 +11,32 @@
             <h1>Blogs we love</h1>
             <span class="subheading"></span>
           </div>
-        </div>
       </div>
     </div>
-  </header>
+  </div>
+</header>
 
 {% for blog in blog_list %}
- <div class="container">
+  <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
         <div class="post-preview">
           <a href="{% url 'resources:blog-detail' blog.id %}">
-            <h2 class="post-title">
-             {{blog.title}}
-            </h2>
-            <h3 class="post-subtitle">
-              <p class="text-truncate" style="max-width: 200rem">{{blog.content}}</p>
-            </h3>
+          <h2 class="post-title">
+            {{blog.title}}
+          </h2>
+          <h3 class="post-subtitle">
+            <p style="max-width: 200rem">{{blog.content|striptags|truncatechars:50}}</p>
+          </h3>
           </a>
           <p class="post-meta">Posted by
-            <a href="#">{{blog.author}}</a>
-            {{blog.create_date}}</p>
+          <a href="#">{{blog.author}}</a>
+          {{blog.create_date}}</p>
         </div>
         <hr>
       </div>
     </div>
   </div>
-   {% endfor %}
-  {% endblock %}
+{% endfor %}
+
+{% endblock %}

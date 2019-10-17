@@ -16,17 +16,17 @@
 </div>
 
 <div class="container col-sm-7 mt-4">
-	     <form method="POST" action="{% url 'jobs:jobs' %}">
-	     {% csrf_token %}
-          <div class="bg-light rounded rounded-pill mb-4">
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <button id="button-addon2" type="submit" class="btn btn-link text-warning"><i class="fa fa-search" style="color:black;"></i></button>
-              </div>
-              <input type="search" placeholder="Job contents, Position, Title..." name="search" aria-describedby="button-addon2" class="form-control border-0 bg-light">
-            </div>
-          </div>
-        </form>
+	<form method="POST" action="{% url 'jobs:jobs' %}">
+		{% csrf_token %}
+		<div class="bg-light rounded rounded-pill mb-4">
+			<div class="input-group">
+				<div class="input-group-prepend">
+					<button id="button-addon2" type="submit" class="btn btn-link text-warning"><i class="fa fa-search" style="color:black;"></i></button>
+				</div>
+				<input type="search" placeholder="Job contents, Position, Title..." name="search" aria-describedby="button-addon2" class="form-control border-0 bg-light">
+			</div>
+		</div>
+	</form>
 </div>
 
 <div class="container col-sm-8 mt-4">
@@ -56,11 +56,11 @@
 			<div class="mt-2" role="alert">
  		 		<h2 class="text-center">NO JOBS FOUND</h2>
 			</div>
-					<div class="container col-md-4 mt-2">
-							<div class="card text-center btn-lg btn-light">
-								 <a href="/jobs/" style="color: black"><img src="/static/assets/vendor/iconic/png/caret-left-2x.png">See all jobs </a>
-							</div>
-					</div>
+			<div class="container col-md-4 mt-2">
+				<div class="card text-center btn-lg btn-light">
+					 <a href="/jobs/" style="color: black"><img src="/static/assets/vendor/iconic/png/caret-left-2x.png">See all jobs </a>
+				</div>
+			</div>
 		{% endif %}
 	</div>
 </div>

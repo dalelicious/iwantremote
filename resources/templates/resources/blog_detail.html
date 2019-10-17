@@ -18,14 +18,14 @@
   </header>
 
 <article>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-          <p class="justify-content">{{blog.content}}</p>
-        </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <p class="justify-content">{{blog.content|safe}}</p>
       </div>
     </div>
-  </article>
+  </div>
+</article>
 
 {% endblock %}
 
