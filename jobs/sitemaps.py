@@ -1,5 +1,6 @@
 from django.contrib.sitemaps import Sitemap
 from . models import Jobs
+from company.models import Company
 from django.urls import reverse
 
 class JobSitemap(Sitemap):
@@ -11,6 +12,14 @@ class JobSitemap(Sitemap):
 
 	def lastmod(self, obj):
 		return obj.create_date
+
+class CompanySitemap(Sitemap):
+    changefreq = "daily"
+    priority = 1.0
+
+    def items(self):
+        return Company.objects.all()
+        
 
 class StaticSitemap(Sitemap):
 

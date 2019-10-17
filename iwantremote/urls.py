@@ -12,8 +12,8 @@ from jobs.sitemaps import JobSitemap, StaticSitemap
 from jobs import views
 
 sitemaps = {
-	'dynamic' : JobSitemap,
-	'static': StaticSitemap, 
+	'jobs' : JobSitemap,
+	'static': StaticSitemap,
 }
 
 urlpatterns = [
