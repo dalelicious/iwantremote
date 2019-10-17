@@ -2703,18 +2703,22 @@ fieldset:disabled a.btn {
 }
 
 
-.tagsinput{display:flex;-webkit-flex-wrap:
-  wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;background:#f6f6f6;
-  font-weight:400;line-height:1.5;border:1px solid #ced4da;border-radius:0.3rem;font-size: 1.1rem;}
-.tagsinput .tag{position:relative;background:black;display:block;max-width:
-  100%;word-wrap:break-word;color:#fff;padding:5px 30px 5px 5px;border-radius:2px;margin:0 5px 5px 0}
-.tagsinput .tag .tag-remove{position:absolute;background:0 0;display:block;width:30px;height:30px;top:0;right:0;cursor:pointer;text-decoration:none;text-align:center;color:#ff6b6b;line-height:30px;padding:0;border:0}
-.tagsinput .tag .tag-remove:after,.tagsinput .tag .tag-remove:before{background:#f8f9fa;position:absolute;display:block;width:10px;height:2px;top:14px;left:10px;content:''}
+.tagsinput,.tagsinput *{box-sizing:border-box}
+.tagsinput{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-
+  wrap:wrap;flex-wrap:wrap;background:#fff;font-family:Roboto;font-size:1rem;line-height:20px;color:#556270;
+  padding:5px 5px 0;border:1px solid #e6e6e6;border-radius:0.4rem}
+.tagsinput.focus{border-color:#ccc}
+.tagsinput .tag{position:relative;background:#6F7073;display:block;max-width:100%;word-wrap:break-word;color:#fff;
+  padding:5px 30px 5px 5px;border-radius:2px;margin:0 5px 5px 0}
+.tagsinput .tag .tag-remove{position:absolute;background:0 0;display:block;width:30px;height:30px;top:0;right:0;
+  cursor:pointer;text-decoration:none;text-align:center;color:#ff6b6b;line-height:30px;padding:0;border:0}
+.tagsinput .tag .tag-remove:after,.tagsinput .tag .tag-remove:before{background:#fff;position:absolute;
+  display:block;width:10px;height:2px;top:14px;left:10px;content:''}
 .tagsinput .tag .tag-remove:before{-webkit-transform:rotateZ(45deg);transform:rotateZ(45deg)}
 .tagsinput .tag .tag-remove:after{-webkit-transform:rotateZ(-45deg);transform:rotateZ(-45deg)}
 .tagsinput div{-webkit-box-flex:1;-webkit-flex-grow:1;-ms-flex-positive:1;flex-grow:1}
-.tagsinput div input{background:0 0;display:block;width:100%;font-size:1.1rem;line-height:30px;padding:5px;border:0;margin:0 5px 5px 0}
-.tagsinput div input.error{color:#556270}
+.tagsinput div input{background:0 0;display:block;width:100%;font-size:14px;line-height:20px;padding:5px;border:0;margin:0 5px 5px 0}
+.tagsinput div input.error{color:#ff6b6b}
 .tagsinput div input::-ms-clear{display:none}
 .tagsinput div input::-webkit-input-placeholder{color:#ccc;opacity:1}
 .tagsinput div input:-moz-placeholder{color:#ccc;opacity:1}

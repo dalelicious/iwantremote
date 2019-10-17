@@ -8,6 +8,8 @@ from . viewmodels 			import CompanyViewModel
 from jobs.viewmodels 		import JobsViewModel
 from category.viewmodels 	import CategoryViewModel
 
+# sitemaps
+from . models import Company
 
 job = JobsViewModel()
 company = CompanyViewModel()
@@ -40,6 +42,7 @@ def company_detail(request, companyName):
 				  'job_posted':job_posted,
 				  'job_posted_by_company':job_posted_by_company,
 				  'category_list':category_list})
+
 
 
 
