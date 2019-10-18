@@ -2714,7 +2714,7 @@ fieldset:disabled a.btn {
   padding:5px 5px 0;border:1px solid #e6e6e6;border-radius:0.4rem}
 .tagsinput.focus{border-color:#ccc}
 .tagsinput .tag{position:relative;background:#6F7073;display:block;max-width:100%;word-wrap:break-word;color:#fff;
-  padding:5px 30px 5px 5px;border-radius:2px;margin:0 5px 5px 0}
+  padding:5px 30px 5px 5px;border-radius:0.3rem;margin:0 5px 5px 0}
 .tagsinput .tag .tag-remove{position:absolute;background:0 0;display:block;width:30px;height:30px;top:0;right:0;
   cursor:pointer;text-decoration:none;text-align:center;color:#ff6b6b;line-height:30px;padding:0;border:0}
 .tagsinput .tag .tag-remove:after,.tagsinput .tag .tag-remove:before{background:#fff;position:absolute;
