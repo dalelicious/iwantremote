@@ -45,12 +45,29 @@ class CompanyViewModel():
 
 
 	def get_company_job_posted(self, jobName):
+		""" Get company job posted
+		"""
 
 		job = Jobs.objects.get(slugTitle=jobName)
 		company = Company.objects.get(email=job.company)
 		job_posted = Jobs.objects.filter(company=company.email)
 
 		return job_posted
+
+
+	def get_company_headquarters(self, companyName):
+		""" Get company headquarters
+		"""
+
+		headquarters_list = []
+
+		company = Company.objects.get(slugName=companyName)
+		jobs = Jobs.objects.filter(company=company.email)
+
+		for job in jobs:
+			headquarters_list.append(job.headquarters)
+
+		return max(set(headquarters_list), key=headquarters_list.count)
 
 
 	def check_company_exist(self, email):

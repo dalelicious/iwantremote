@@ -10,9 +10,9 @@
 					<h2 class="card-title mb-3">{{company.name}}
 						<img src="/media/{{company.logo}}" class="float-right shadow-sm img-thumbnail" alt="Responsive image" style="max-width: 130px;">
 					</h2>
-					<i class="text-muted"><img src="/static/assets/vendor/iconic/png/map-marker-2x.png"></i><br>
-					<i class="text-muted">Jobs Posted: {{job_posted}}</i><br>
-					<i class="text-muted">Website: <a href="http://{{company.website}}" target="_blank" style="color: black;"> {{company.website}}</i></a>
+					<i class="text-muted"><img src="/static/assets/vendor/iconic/png/map-marker-2x.png"></i> {{company_headquarters}}<br>
+					<i class="text-muted">Jobs Posted: </i>{{job_posted}}<br>
+					<i class="text-muted">Website: <a href="http://{{company.website}}" target="_blank" style="color: black;"></i>{{company.website}}</a>
 					 <div class="row">
 		             		<div class="col"><hr></div>
 		             </div>
@@ -23,7 +23,7 @@
 			</div>
 		</div>
 	</div>
-</div> 
+</div>
 
 <div class="container col-sm-8 mt-5">
 	<div class="card border-0">
