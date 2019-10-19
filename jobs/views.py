@@ -114,6 +114,7 @@ def job_detail(request, jobName):
 				  'category_name':category_name,
 				  'category_list':category_list})
 	
+	
 def post(request, post_id=id):
 
 	item = get_object_or_404(Post, id=post_id)

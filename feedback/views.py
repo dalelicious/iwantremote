@@ -4,6 +4,9 @@ from django.shortcuts 		import render
 from django.shortcuts 		import redirect
 
 from . viewmodels 			import FeedbackViewModel
+from jobs.viewmodels 		import JobsViewModel
+
+job = JobsViewModel()
 
 
 feedbacks = FeedbackViewModel()
@@ -11,11 +14,18 @@ feedbacks = FeedbackViewModel()
 
 def feedback(request):
 
-	return render(request, 'feedback/feedback.html')
+	all_jobs = len(job.get_jobs_list())
+
+	return render(request, 'feedback/feedback.html',
+				 {'all_jobs':all_jobs})
+	
 
 def confirmation(request):
 
-	return render(request, 'feedback/confirmation.html')
+	all_jobs = len(job.get_jobs_list())
+
+	return render(request, 'feedback/confirmation.html',
+				 {'all_jobs':all_jobs})
 
 
 def create_feedback(request):
