@@ -1,6 +1,8 @@
 # Django
 from django.http 			import HttpResponse
-from django.shortcuts 		import render, get_object_or_404
+from django.contrib 		import messages
+from django.shortcuts 		import render
+from django.shortcuts 		import get_object_or_404
 from django.shortcuts 		import redirect
 
 # iwantremote
@@ -83,10 +85,28 @@ def create_job(request):
 		company_description = request.POST['company_description']
 
 		company_exist = company.check_company_exist(email)
+		company_name_exist = company.check_company_name_exist(name)
 
-		if company_exist:
+
+		if company_name_exist:
+
+			if company_exist:
+
+				job.create_new_job(email, title, category, job_type, salary, tags, headquarters, region, link, job_description, is_featured)
+
+				return redirect('jobs:jobs')
+
+			else:
+
+				messages.error(request, 'Company name already exist.')
+
+				return redirect('jobs:create-job')
+
+		elif company_name_exist and company_exist:
 
 			job.create_new_job(email, title, category, job_type, salary, tags, headquarters, region, link, job_description, is_featured)
+
+			return redirect('jobs:jobs')
 
 		else:
 
@@ -94,7 +114,7 @@ def create_job(request):
 
 			company.create_new_company(name, logo, tagline, website, email, company_description)
 
-		return redirect('jobs:jobs')
+			return redirect('jobs:jobs')
 
 
 def job_detail(request, jobName):
