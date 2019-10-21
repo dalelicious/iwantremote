@@ -32,9 +32,9 @@
 		{% for job in job_posted_by_company %}
 		<a href="{% url 'jobs:job-detail' job.slugTitle %}" style="color: #343a40; text-decoration: none;">
 			{% if job.is_featured %}
-				<div class="card-body-1 rounded py-3 mt-3 border-left-primary"> 
+				<div class="card-body-1 rounded py-3 mt-2 border-left-primary"> 
 			{% else %}
-				<div class="card-body-1 rounded border-left-secondary py-3 mt-3"> 
+				<div class="card-body-1 rounded border-left-secondary py-3 mt-2"> 
 			{% endif %}
 				<div class="float-right">
 					<img src="/media/{{job.get_job_company}}" alt="Responsive image" style="max-width: 100px">

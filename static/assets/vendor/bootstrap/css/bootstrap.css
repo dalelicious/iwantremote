@@ -160,6 +160,11 @@ a {
   background-color: transparent;
 }
 
+.vl {
+  border-left: 6px solid green;
+  height: 1000px;
+}
+
 a:hover {
   color: black;
   text-decoration: underline;
@@ -206,6 +211,7 @@ background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
 
 .border-left-primary {
   border-left: 0.25rem solid #007bff !important;
+  border-radius: 0.2rem;
 }
 
 .border-bottom-primary {
@@ -214,6 +220,7 @@ background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
 
 .border-left-secondary {
   border-left: 0.25rem solid #858796 !important;
+  border-radius: 0.2rem;
 }
 
 .border-bottom-secondary {
@@ -2599,7 +2606,7 @@ fieldset:disabled a.btn {
   border: 1px solid #eee;  /* JUST TO LOOK COOL */
   box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px;
   transition: all .2s ease-in-out;
-  line-height: ;
+  line-height: 1;
 }
 
 .card-body-2 {
