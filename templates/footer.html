@@ -1,30 +1,37 @@
-<footer class="page-footer-1 text-white font-small bg-dark mt-5 py-2">
+
+<footer class="page-footer-1 text-white font-small bg-dark mt-5 py-3">
   <div class="container text-center text-md-left">
     <div class="row">
       <div class="col-md-3 mx-auto">
-        <h5 class="text-uppercase mt-3 mb-4">Our Goal</h5>
-        <p>Helping employees and companies save money. It’s likely we’re about to see more remote jobs in the tech market.</p>
+        <h5 class="text-uppercase mt-3 mb-4" style="font-weight: 400;">Our Goal</h5>
+        <p class="text-md-left" style="font-weight: 400;">Helping employees and companies save money. It’s likely we’re about to see more remote jobs in the tech market.</p>
       </div>
-      <div class="col-md-4 mx-auto">
-        <h5 class="text-uppercase text-uppercase mt-3">Get weekly updates<form class="input-group rounded" method="POST" action="{% url 'subscriber:add-subscriber' %}"> 
+      <div class="col-md-6 mx-auto">
+        <h5 class="text-uppercase text-uppercase mt-3" style="font-weight: 400;">Get weekly updates, be the first to know!<form class="input-group rounded" method="POST" action="{% url 'subscriber:add-subscriber' %}"> 
                     {% csrf_token %}
-                    <input type="email" name="email" class="form-control form-control-md mt-4" placeholder="What's your email?" required>
+                    <input type="email" name="email" class="form-control form-control-md mt-4" style="border-radius: 0.3rem;" placeholder="What's your email?" required> 
+                    <div class="col-md-5 mx-auto"><select id="jobCategory" name="category" class="form-control col-md-12 form-control-md mt-4">
+                        {% for category in category_list %}
+                          <option value="{{category.slugCatName}}">{{category.name}}</option>
+                        {% endfor %}
+                        </select>
+                    </div>
                     <span class="input-group-append">
-                      <button class="text-white mt-4 border-0 bg-primary btn btn-dark btn-md" type="submit">Subscribe</button>
+                      <button class="text-white mt-4 border-0 bg-primary btn btn-dark btn-md" type="submit" style="border-radius: 0.3rem;">Subscribe</button>
                     </span>
                   </form> 
                   </h5>
       </div>
       <div class="col-md-2 mx-auto">
-        <h5 class="text-uppercase mt-3 mb-2">{{ all_jobs }},212</h5>
-        <h3><span class="small mt-3 mb-4">Jobs Posted</span></h3>
+        <h5 class="text-uppercase mt-3 mb-2" style="font-weight: 400;">{{ all_jobs }},212</h5>
+        <h3><span class="small mt-3 mb-4" style="font-weight: 400;">Jobs Posted</span></h3>
 				<button class="btn btn-danger btn-md rounded" onclick="location.href='{% url 'jobs:create-job' %}'">Post a job today</button>
 		</div>
       </div>
     </div>
   </div>
 </h6>
- 
+     <hr>
   <ul class="text-white-50 list-inline text-center">
           <a href="https://www.facebook.com/iwantremote" class="fb-ic" target="_blank" style="color: white;">
             <i class="fa fa-facebook-f fa-lg white-text mr-4"> </i>
@@ -42,13 +49,15 @@
             <i class="fa fa-pinterest fa-lg mr-4" target="_blank" style="color: white;"> </i>
           </a>
   </ul>
-   <div class="text-center">
+   <div class="text-center" style="font-weight: 300;">
     <a href="/privacy/" style="color: white;">Privacy</a>
     <a href="mailto:info@iwantremote.com" style="color: white;">| Contact</a>
     <a href="/blog/" style="color: white;">| Blog</a>
     <a href="/job_template/" style="color: white;">| Job Description Template</a>
     </div>
+    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up"></i></button>
    <div class="text-white-50 footer-copyright text-center">Copyright © 2019 </div>
+
 </footer>
 
 
