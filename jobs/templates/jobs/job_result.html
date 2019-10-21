@@ -36,8 +36,9 @@
 			<a href="{% url 'jobs:job-detail' job.slugTitle %}" style="color: #343a40; text-decoration: none;">
 				{% if job.is_featured %}
 					<div class="card-body-1 shadow-sm rounded py-3 mt-3 border-left-primary"> 
+						<span class="text-muted small mt-3" style="z-index:15;position:relative; left:-30px; top:-10px">{{job.create_date|date:"M d"}}</span>
 				{% else %}
-					<div class="card-body-1 shadow-sm rounded py-3 rounded mt-3 border-left-secondary"> 
+					<div class="card-body-1 shadow-sm rounded py-3 rounded mt-3 border-left-secondary"> <span class="text-muted small mt-3" style="z-index:15;position:relative; left:-30px; top:-10px">{{job.create_date|date:"M d"}}</span>
 				{% endif %}
 						<div class="float-right">
 							<img src="/media/{{job.get_job_company}}" alt="Responsive image" style="max-width: 100px">
