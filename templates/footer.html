@@ -6,14 +6,19 @@
         <p>Helping employees and companies save money. It’s likely we’re about to see more remote jobs in the tech market.</p>
       </div>
       <div class="col-md-4 mx-auto">
-        <h5 class="text-uppercase text-uppercase mt-3">Get weekly updates<form class="input-group rounded" method="POST" action="{% url 'subscriber:add-subscriber' %}"> 
-                    {% csrf_token %}
-                    <input type="email" name="email" class="form-control form-control-md mt-4" placeholder="What's your email?" required>
-                    <span class="input-group-append">
-                      <button class="text-white mt-4 border-0 bg-primary btn btn-dark btn-md" type="submit">Subscribe</button>
-                    </span>
-                  </form> 
-                  </h5>
+        <h5 class="text-uppercase text-uppercase mt-3">Get weekly updates</h5>
+          <form class="input-group rounded" method="POST" action="{% url 'subscriber:add-subscriber' %}"> 
+            {% csrf_token %}
+            <input type="email" name="email" class="form-control form-control-md mt-4" placeholder="What's your email?" required>
+            <select id="jobCategory" name="category" class="form-control form-control-md mt-4">
+            {% for category in category_list %}
+              <option value="{{category.slugCatName}}">{{category.name}}</option>
+            {% endfor %}
+            </select>
+            <span class="input-group-append">
+            <button class="text-white mt-4 border-0 bg-primary btn btn-dark btn-md" type="submit">Subscribe</button>
+            </span>
+          </form> 
       </div>
       <div class="col-md-2 mx-auto">
         <h5 class="text-uppercase mt-3 mb-2">{{ all_jobs }},212</h5>
