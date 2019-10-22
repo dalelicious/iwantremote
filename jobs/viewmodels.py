@@ -1,3 +1,6 @@
+import string
+import random
+
 # Django
 from django.utils 	import timezone
 
@@ -71,10 +74,15 @@ class JobsViewModel():
 		""" Create new job
 		"""
 
+		name_pattern = string.digits
+		combi = "".join(random.choice(name_pattern) for x in range(4))
+
+		jobTitle = title + " " + combi
+
 		job = Jobs()
 		job.company = email
-		job.title = title
-		job.slugTitle = title.replace(" ", "-").lower()
+		job.title = jobTitle
+		job.slugTitle = jobTitle.replace(" ", "-").lower()
 		job.category = category
 		job.job_type = job_type
 		job.salary = salary

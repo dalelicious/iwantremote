@@ -44,7 +44,7 @@
 							<img src="/media/{{job.get_job_company}}" alt="Responsive image" style="max-width: 100px">
 						</div>
 						<h6 class="card-title nav-item">{{job.get_company_name}}</h6>
-						<h5 class="card-title nav-item text-truncate" style="max-width: 700px;">{{job.title}}
+						<h5 class="card-title nav-item text-truncate" style="max-width: 700px;">{{job.title|slice:":-5"}}
 							{{job.create_date|date:"M d"}}
 							{% if job.is_featured %}
 								<span class="badge badge-primary float-right"> Featured </span>
