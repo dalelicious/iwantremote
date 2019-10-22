@@ -42,7 +42,7 @@
 				</div>
 				<span class="text-muted small" style="z-index:15;position:relative; left:-30px; top:-10px">{{job.create_date|date:"M d"}}</span>
 				<h6 class="card-title nav-item">{{job.get_company_name}}</h6>
-				<h6 class="card-title nav-item">{{job.title}}
+				<h6 class="card-title nav-item">{{job.title|slice:":-5"}}
 					{% if job.is_featured %}
 						<span class="text-white badge badge-primary float-right" style="font-size: medium; margin-right: 50px;"> Featured </span>
 					{% endif %} </h6>
