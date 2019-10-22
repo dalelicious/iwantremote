@@ -4,3 +4,4 @@ from django.db import models
 class Subscriber(models.Model):
 
 	email = models.CharField(max_length=50, null=True)
+	category = models.CharField(max_length=50, null=True)

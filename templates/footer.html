@@ -5,21 +5,20 @@
         <h5 class="text-uppercase mt-3 mb-4" style="font-weight: 400;">Our Goal</h5>
         <p class="text-md-left" style="font-weight: 400;">Helping employees and companies save money. It’s likely we’re about to see more remote jobs in the tech market.</p>
       </div>
-      <div class="col-md-6 mx-auto">
-        <h5 class="text-uppercase text-uppercase mt-3" style="font-weight: 400;">Get weekly updates, be the first to know!<form class="input-group rounded" method="POST" action="{% url 'subscriber:add-subscriber' %}"> 
-                    {% csrf_token %}
-                    <input type="email" name="email" class="form-control form-control-md mt-4" style="border-radius: 0.3rem;" placeholder="What's your email?" required> 
-                    <div class="col-md-5 mx-auto"><select id="jobCategory" name="category" class="form-control col-md-12 form-control-md mt-4">
-                        {% for category in category_list %}
-                          <option value="{{category.slugCatName}}">{{category.name}}</option>
-                        {% endfor %}
-                        </select>
-                    </div>
-                    <span class="input-group-append">
-                      <button class="text-white mt-4 border-0 bg-primary btn btn-dark btn-md" type="submit" style="border-radius: 0.3rem;">Subscribe</button>
-                    </span>
-                  </form> 
-                  </h5>
+      <div class="col-md-4 mx-auto">
+        <h5 class="text-uppercase text-uppercase mt-3">Get weekly updates</h5>
+          <form class="input-group rounded" method="POST" action="{% url 'subscriber:add-subscriber' %}"> 
+            {% csrf_token %}
+            <input type="email" name="email" class="form-control form-control-md mt-4" placeholder="What's your email?" required>
+            <select id="jobCategory" name="category" class="form-control form-control-md mt-4">
+            {% for category in category_list %}
+              <option value="{{category.slugCatName}}">{{category.name}}</option>
+            {% endfor %}
+            </select>
+            <span class="input-group-append">
+            <button class="text-white mt-4 border-0 bg-primary btn btn-dark btn-md" type="submit">Subscribe</button>
+            </span>
+          </form> 
       </div>
       <div class="col-md-2 mx-auto">
         <h5 class="text-uppercase mt-3 mb-2" style="font-weight: 400;">{{ all_jobs }},212</h5>

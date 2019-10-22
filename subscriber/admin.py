@@ -7,7 +7,7 @@ from subscriber.models 				import Subscriber
 
 
 class SubscriberAdmin(admin.ModelAdmin):
-	list_display = ('id', 'email')
+	list_display = ('id', 'email', 'category')
 
 
 admin.site.register(Subscriber, SubscriberAdmin)
