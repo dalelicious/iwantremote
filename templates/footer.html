@@ -1,9 +1,9 @@
-<footer class="page-footer-1 text-white font-small bg-dark mt-5 py-2">
+<footer class="page-footer-1 text-white font-small bg-dark py-3">
   <div class="container text-center text-md-left">
     <div class="row">
       <div class="col-md-3 mx-auto">
-        <h5 class="text-uppercase mt-3 mb-4">Our Goal</h5>
-        <p>Helping employees and companies save money. It’s likely we’re about to see more remote jobs in the tech market.</p>
+        <h5 class="text-uppercase mt-3 mb-4" style="font-weight: 400;">Our Goal</h5>
+        <p class="text-md-left" style="font-weight: 400;">Helping employees and companies save money. It’s likely we’re about to see more remote jobs in the tech market.</p>
       </div>
       <div class="col-md-4 mx-auto">
         <h5 class="text-uppercase text-uppercase mt-3">Get weekly updates</h5>
@@ -21,15 +21,15 @@
           </form> 
       </div>
       <div class="col-md-2 mx-auto">
-        <h5 class="text-uppercase mt-3 mb-2">{{ all_jobs }},212</h5>
-        <h3><span class="small mt-3 mb-4">Jobs Posted</span></h3>
+        <h5 class="text-uppercase mt-3 mb-2" style="font-weight: 400;">{{ all_jobs }},212</h5>
+        <h3><span class="small mt-3 mb-4" style="font-weight: 400;">Jobs Posted</span></h3>
 				<button class="btn btn-danger btn-md rounded" onclick="location.href='{% url 'jobs:create-job' %}'">Post a job today</button>
 		</div>
       </div>
     </div>
   </div>
 </h6>
- 
+     <hr>
   <ul class="text-white-50 list-inline text-center">
           <a href="https://www.facebook.com/iwantremote" class="fb-ic" target="_blank" style="color: white;">
             <i class="fa fa-facebook-f fa-lg white-text mr-4"> </i>
@@ -47,13 +47,15 @@
             <i class="fa fa-pinterest fa-lg mr-4" target="_blank" style="color: white;"> </i>
           </a>
   </ul>
-   <div class="text-center">
+   <div class="text-center" style="font-weight: 300;">
     <a href="/privacy/" style="color: white;">Privacy</a>
     <a href="mailto:info@iwantremote.com" style="color: white;">| Contact</a>
     <a href="/blog/" style="color: white;">| Blog</a>
     <a href="/job_template/" style="color: white;">| Job Description Template</a>
     </div>
+    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up"></i></button>
    <div class="text-white-50 footer-copyright text-center">Copyright © 2019 </div>
+
 </footer>
 
 

@@ -160,6 +160,11 @@ a {
   background-color: transparent;
 }
 
+.vl {
+  border-left: 6px solid green;
+  height: 1000px;
+}
+
 a:hover {
   color: black;
   text-decoration: underline;
@@ -206,6 +211,7 @@ background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
 
 .border-left-primary {
   border-left: 0.25rem solid #007bff !important;
+  border-radius: 0.2rem;
 }
 
 .border-bottom-primary {
@@ -214,6 +220,7 @@ background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
 
 .border-left-secondary {
   border-left: 0.25rem solid #858796 !important;
+  border-radius: 0.2rem;
 }
 
 .border-bottom-secondary {
@@ -2599,7 +2606,9 @@ fieldset:disabled a.btn {
   border: 1px solid #eee;  /* JUST TO LOOK COOL */
   box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px;
   transition: all .2s ease-in-out;
-  line-height: ;
+  line-height: 1;
+  margin-top: -1rem !important;
+  margin-bottom: : -1rem !important;
 }
 
 .card-body-2 {
@@ -4820,6 +4829,11 @@ input[type="button"].btn-block {
 
 .card-header + .list-group .list-group-item:first-child {
   border-top: 0;
+}
+
+.page-footer-1 {
+    margin-top: 150px; 
+    width: 100%;
 }
 
 .card-footer {
@@ -10278,5 +10292,26 @@ a.text-dark:hover, a.text-dark:focus {
     color: inherit;
     border-color: #dee2e6;
   }
+}
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 30px;
+  width: 60px;
+  border: none;
+  outline: none;
+  background: none;
+  color: #0F7BF4;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 0.3rem;
+}
+
+#myBtn:hover {
+  background-color: none;
 }
 /*# sourceMappingURL=bootstrap.css.map */
