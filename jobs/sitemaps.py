@@ -31,6 +31,7 @@ class StaticSitemap(Sitemap):
             'resources:blog',
             'resources:privacy',
             'resources:job_template',
+            'resources:howitworks',
             'feedback:feedback',
             'jobs:jobs',
             'jobs:create-job'
