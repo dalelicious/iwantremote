@@ -1,3 +1,5 @@
+import re
+
 # Company
 from . models import Company
 from jobs.models import Jobs
@@ -94,13 +96,27 @@ class CompanyViewModel():
 			return False
 
 
+
+	def remove_special_chars(self, name):
+		""" Remove special characters from string
+		"""
+
+		for k in name.split("\n"):
+			compName = re.sub(r"[^a-zA-Z0-9]+", ' ', k)
+
+
+		return compName
+
+
 	def create_new_company(self, name, logo, tagline, website, email, company_description):
 		""" Create new company
 		"""
 
+		compName = self.remove_special_chars(name)
+
 		company = Company()
 		company.name = name
-		company.slugName = name.replace(" ", "-").lower()
+		company.slugName = compName.replace(" ", "-").lower()
 		company.logo = logo
 		company.tagline = tagline
 		company.website = website

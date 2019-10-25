@@ -71,7 +71,9 @@ class JobsViewModel():
 		return jobs_list
 
 
-	def remove_chars(self, title):
+	def remove_special_chars(self, title):
+		""" Remove special characters from string
+		"""
 
 		for k in title.split("\n"):
 			jobTitle = re.sub(r"[^a-zA-Z0-9]+", ' ', k)
@@ -89,7 +91,7 @@ class JobsViewModel():
 
 		specialTitle = title + " " + combi
 
-		jobTitle = self.remove_chars(specialTitle)
+		jobTitle = self.remove_special_chars(specialTitle)
 
 		job = Jobs()
 		job.company = email
