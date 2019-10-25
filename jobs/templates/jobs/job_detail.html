@@ -41,24 +41,18 @@
 </div>
 <div class="col-sm-3">
   <a href="{% url 'category:categories' job.category %}" style="color: black">See more {{category_name}} jobs <img src="/static/assets/vendor/iconic/png/caret-right-2x.png"></a>
-  <div class="text-center alert alert-dark shadow-sm rounded mt-5"> 
-      <h4 class="mt-3">{{company.name}}</h4>
+  <div class="text-center alert alert-light shadow-sm border rounded mt-5"> 
+      <h4 class="text-dark mt-3">{{company.name}}</h4>
       <hr>
       <ul class="list-unstyled">
         <li><img src="/static/assets/vendor/iconic/png/target-2x.png">
           <a href="http://{{company.website}}" target="_blank" style="color: black;">Visit Website</a>
         </li>
-        <li><img src="/static/assets/vendor/iconic/png/map-marker-2x.png"> {{job.headquarters}}</li>
-        <li>Jobs Posted: {{job_posted}}</li>
+        <li class="text-dark"><img src="/static/assets/vendor/iconic/png/map-marker-2x.png"> {{job.headquarters}}</li>
+        <li class="text-dark">Jobs Posted: {{job_posted}}</li>
         <li>
           <button type="button" class="mt-2 btn btn-secondary shadow-sm border-0 btn-sm rounded" onclick="location.href='{% url 'company:company-detail' company.slugName %}'">View company</button>
         </li>
-      </ul>
-    </div>
-    <div class="text-center text-dark alert alert-secondary mt-3"> 
-      <p class="card-text">Help us maintain the quality of jobs posted on iWantRemote.<br><br>Is this job not remote?</p>
-      <ul class="list-unstyled">
-        <button type="button" class="btn btn-secondary border-0 btn-sm shadow-sm rounded" onclick="location.href='{% url 'feedback:feedback' %}'">Let us know</button>
       </ul>
     </div>
     <div class="text-center rounded mt-4"> 
@@ -69,6 +63,12 @@
                 <button type="button" class="btn btn-dark btn-sm btn-twitter"><i class="fa fa-twitter"></i></button>
                 <button type="button" class="btn btn-dark btn-sm btn-slack"><i class="fa fa-slack"></i></button>
                </ul>
+    </div>
+     <div class="text-center text-dark alert alert-secondary mt-4"> 
+      <p class="card-text">Help us maintain the quality of jobs.<br>Is this job not remote?</p>
+      <ul class="list-unstyled">
+        <button type="button" class="btn btn-secondary border-0 btn-md shadow-sm rounded" onclick="location.href='{% url 'feedback:feedback' %}'">Let us know</button>
+      </ul>
     </div>
   </div>
 </div>
