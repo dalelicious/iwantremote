@@ -1,3 +1,4 @@
+import re
 import string
 import random
 
@@ -70,6 +71,15 @@ class JobsViewModel():
 		return jobs_list
 
 
+	def remove_chars(self, title):
+
+		for k in title.split("\n"):
+			jobTitle = re.sub(r"[^a-zA-Z0-9]+", ' ', k)
+
+
+		return jobTitle
+
+
 	def create_new_job(self, email, title, category, job_type, salary, tags, headquarters, region, link, job_description, is_featured):
 		""" Create new job
 		"""
@@ -77,11 +87,13 @@ class JobsViewModel():
 		name_pattern = string.digits
 		combi = "".join(random.choice(name_pattern) for x in range(4))
 
-		jobTitle = title + " " + combi
+		specialTitle = title + " " + combi
+
+		jobTitle = self.remove_chars(specialTitle)
 
 		job = Jobs()
 		job.company = email
-		job.title = jobTitle
+		job.title = specialTitle
 		job.slugTitle = jobTitle.replace(" ", "-").lower()
 		job.category = category
 		job.job_type = job_type
