@@ -55,6 +55,12 @@
         </li>
       </ul>
     </div>
+    <div class="text-center text-dark alert alert-secondary mt-3"> 
+      <p class="card-text">Help us maintain the quality of jobs.<br>Is this job not remote?</p>
+      <ul class="list-unstyled">
+        <button type="button" class="btn btn-secondary border-0 btn-md shadow-sm rounded" onclick="location.href='{% url 'feedback:feedback' %}'">Let us know</button>
+      </ul>
+    </div>
     <div class="text-center rounded mt-4"> 
       <h6 class="">Share this job:</h6>
                 <ul class="list-unstyled">
@@ -63,12 +69,6 @@
                 <button type="button" class="btn btn-dark btn-sm btn-twitter"><i class="fa fa-twitter"></i></button>
                 <button type="button" class="btn btn-dark btn-sm btn-slack"><i class="fa fa-slack"></i></button>
                </ul>
-    </div>
-     <div class="text-center text-dark alert alert-secondary mt-4"> 
-      <p class="card-text">Help us maintain the quality of jobs.<br>Is this job not remote?</p>
-      <ul class="list-unstyled">
-        <button type="button" class="btn btn-secondary border-0 btn-md shadow-sm rounded" onclick="location.href='{% url 'feedback:feedback' %}'">Let us know</button>
-      </ul>
     </div>
   </div>
 </div>
