@@ -13,7 +13,7 @@
           <a href="{% url 'company:company-detail' company.slugName %}">
             <img src="/media/{{company.logo}}" class="float-right" alt="Responsive image" style="max-width: 150px;">
           </a>
-          <h2 class="mt-1">{{job.title}}</h2>
+          <h2 class="mt-1">{{job.title|slice:":-5"}}</h2>
           <u><p class="card-title nav-item text-dark-50 mt-3">{{job.job_type}} ({{job.region}})</p></u>
           <p class="card-title nav-item text-dark-50">Salary: {{job.salary}}</p>
           <p class="card-title nav-item text-dark-50">Category: {{category_name}}</p>
