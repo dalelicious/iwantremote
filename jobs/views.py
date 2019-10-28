@@ -133,6 +133,15 @@ def job_detail(request, jobName):
 				  'company':company_detail,
 				  'category_name':category_name,
 				  'category_list':category_list})
+
+def billing(request):
+
+	all_jobs = len(job.get_jobs_list())
+	category_list = categories.get_category_list()
+
+	return render(request, 'jobs/billing.html',
+				 {'all_jobs':all_jobs,
+				  'category_list':category_list})
 	
 	
 def post(request, post_id=id):
