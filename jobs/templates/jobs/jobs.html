@@ -63,7 +63,7 @@
 		</h6>
 		{% for job in jobs_list %}
 		<a href="{% url 'jobs:job-detail' job.slugTitle %}" style="color: #343a40; text-decoration: none;">
-			<div class="card-body-1 py-3 mt-2 border-left-primary border-right-primary"> 
+			<div class="card-body-1 py-3 mt-2 border-left-primary"> 
 				<div class="float-right">
 					<img src="/media/{{job.get_job_company}}" alt="Responsive image" style="max-width: 100px">
 				</div>
