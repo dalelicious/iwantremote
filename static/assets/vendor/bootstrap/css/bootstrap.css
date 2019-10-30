@@ -196,6 +196,13 @@ samp {
   overflow-x: hidden;
 }
 
+text-truncate {
+  max-width: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 figure {
   margin: 0 0 1rem;
 }
@@ -10016,6 +10023,7 @@ button.bg-dark:focus {
 }
 
 .text-truncate {
+  max-width: 650px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;

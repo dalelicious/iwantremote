@@ -69,11 +69,11 @@
 				</div>
 				<span class="text-muted small mt-2" style="z-index:15;position:relative; left:-30px; top:-10px">{{job.create_date|date:"M d"}}</span>
 				<h6 class="card-title nav-item">{{job.get_company_name}}</h6>
-				<h5 class="card-title nav-item">{{job.title|slice:":-5"}}
-					{% if job.is_featured %}
+				 {% if job.is_featured %}
 						<span class="text-white badge badge-primary float-right" style="font-size: medium; margin-right: 50px;"> Featured </span>
-					{% endif %} </h5>
-					<h6 class="small card-title nav-item">{{job.job_type}} ({{job.region}})</h6>
+					{% endif %}
+				<h5 class="card-title nav-item text-truncate">{{job.title|slice:":-5"}}</h5>
+				<h6 class="small card-title nav-item">{{job.job_type}} ({{job.region}})</h6>
 			</div>
 		</a>
 		{% endfor %}
@@ -97,10 +97,10 @@
 						</div>
 						<span class="text-muted small" style="z-index:15;position:relative; left:-30px; top:-10px">{{job.create_date|date:"M d"}}</span>
 						<h6 class="card-title nav-item">{{job.get_company_name}}</h6>
-						<h5 class="card-title nav-item" >{{job.title|slice:":-5"}}
-							{% if job.is_featured %}
+						{% if job.is_featured %}
 								<span class="text-white badge badge-primary float-right" style="font-size: medium; margin-right: 50px;"> Featured </span>
 							{% endif %}
+						<h5 class="card-title nav-item text-truncate">{{job.title|slice:":-5"}}
 							<h6 class="small card-title nav-item">{{job.job_type}} ({{job.region}})</h6>
 						</h5>
 					</div>
