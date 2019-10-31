@@ -2618,6 +2618,8 @@ fieldset:disabled a.btn {
   margin-top: -1rem !important;
   margin-bottom: : -1rem !important;
   border-radius: 0.5rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .card-body-3 {
@@ -2625,15 +2627,11 @@ fieldset:disabled a.btn {
   border: 1px solid #eee;  /* JUST TO LOOK COOL */
   box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px;
   transition: all .2s ease-in-out;
-  width: 750px;
+  width: 720px;
   height: 130px;
   border-radius: 0.5rem;
 }
 
-.card-body-2 {
-  padding: 50px; /* JUST TO LOOK COOL */
-  border-radius: 0.5rem;
-}
 
 .card-body-1:hover {
   box-shadow: 0 0.325rem 0.35rem rgba(0, 0, 0, 0.15) !important;
@@ -4825,6 +4823,7 @@ input[type="button"].btn-block {
   -ms-flex: 1 auto;
   flex: 1 auto;
   padding: 30px;
+  border-radius: 1rem;
 }
 
 .card-title {
