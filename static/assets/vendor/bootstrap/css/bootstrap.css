@@ -2637,6 +2637,11 @@ fieldset:disabled a.btn {
   transform: translate3d(0px, -4px, 0px);
 }
 
+.card-body-3:hover {
+  box-shadow: 0 0.325rem 0.35rem rgba(0, 0, 0, 0.15) !important;
+  transform: translate3d(0px, -4px, 0px);
+}
+
 .btn-secondary:focus, .btn-secondary.focus {
   box-shadow: 0 0 0 0.2rem rgba(130, 138, 145, 0.5);
 }
