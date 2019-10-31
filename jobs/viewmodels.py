@@ -3,11 +3,12 @@ import string
 import random
 
 # Django
-from django.utils 	import timezone
+from django.utils 		import timezone
+from django.db.models 	import Q
 
 # Jobs
-from . models 		import Jobs
-from category.models import Category
+from . models 			import Jobs
+from category.models 	import Category
 
 
 class JobsViewModel():
@@ -55,8 +56,16 @@ class JobsViewModel():
 
 		job = Jobs.objects.get(slugTitle=jobName)
 		title = job.title[:-5]
+		keywords = title.split(" ")
 
-		related_jobs_list = Jobs.objects.filter(title__icontains="engineer")
+		qs = [Q(title__icontains=keyword) for keyword in keywords]
+
+		query = qs.pop()
+
+		for q in qs:
+			query |= q
+
+		related_jobs_list = Jobs.objects.filter(query).order_by('?')[:4]
 
 		return related_jobs_list
 
