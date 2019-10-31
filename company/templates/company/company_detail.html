@@ -26,7 +26,7 @@
 	</div>
 </div>
 
-<div class="container col-sm-8 mt-3">
+<div class="container col-sm-7 mt-3">
 	<div class="card border-0">
 		<h5 class="text-dark mt-3">All {{company.name}} Jobs<span class="small"> ({{job_posted}})</a></span>
 		</h5>
@@ -35,7 +35,7 @@
 			{% if job.is_featured %}
 				<div class="card-body-1 rounded py-3 mt-2 border-left-primary"> 
 			{% else %}
-				<div class="card-body-1 rounded border-left-secondary py-3 mt-2"> 
+				<div class="card-body-1 rounded border-left-dark py-3 mt-2"> 
 			{% endif %}
 				<div class="float-right">
 					<img src="/media/{{job.get_job_company}}" alt="Responsive image" style="max-width: 100px">
