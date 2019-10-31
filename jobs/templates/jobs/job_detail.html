@@ -75,8 +75,8 @@
              {% if r_job.is_featured %}
                 <span class="text-white badge badge-primary float-right" style="font-size: medium; margin-right: 50px;"> Featured </span>
               {% endif %}
-            <h5 class="card-title nav-item text-truncate">{{r_job.title|slice:":-5"}}
-            </h5>
+            <h6 class="card-title nav-item text-truncate">{{r_job.title|slice:":-5"}}
+            </h6>
             <h6 class="small card-title nav-item">{{r_job.job_type}} ({{r_job.region}})</h6>
           </div>
         </a>
@@ -86,10 +86,10 @@
   </div>
 </div>
 <div class="container">
-<div class="col-sm-8 text-center text-dark alert alert-secondary border mt-5"> 
+  <div class="col-sm-8 text-center text-dark alert alert-secondary border mt-5"> 
       <p class="card-text">Help us maintain the quality of jobs. Is this job not remote?</p>
         <button type="button" class="btn btn-success border-0 btn-sm shadow-sm rounded" onclick="location.href='{% url 'feedback:feedback' %}'">Let us know</button>
-</div>
+  </div>
 </div>
 
 
