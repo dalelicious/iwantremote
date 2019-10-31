@@ -4,12 +4,12 @@
 
 <div class="row mt-5 justify-content-md-center">
   <div class="col-sm-8" style="padding-left: 80px;">
-    <div class="row-sm-2">
-       <a href="/jobs/" style="color: black"><img src="/static/assets/vendor/iconic/png/caret-left-2x.png" > Back to all jobs</a>
-    <div class="container">
+    <div class="row-sm-2 ml-5">
+     <div class="container">
+      <a href="/jobs/" class="ml-5" style="color: black"><img src="/static/assets/vendor/iconic/png/caret-left-2x.png" > Back to all jobs</a>
       <div class="card-body-2">
-        <h6 class="card-header border-0 bg-white text-muted ml-2">Posted {{job.create_date|date:"M d"}}</h6>
-        <div class="card-body ml-2 py-5">
+        <h6 class="card-header border-0 bg-white text-muted">Posted {{job.create_date|date:"M d"}}</h6>
+        <div class="card-body py-5">
           <a href="{% url 'company:company-detail' company.slugName %}">
             <img src="/media/{{company.logo}}" class="float-right" alt="Responsive image" style="max-width: 150px;">
           </a>
@@ -21,7 +21,7 @@
           {% for tag in job.get_job_tags %}
             <p class="badge badge-light">{{tag}}</p>
           {% endfor %}
-          <div class="row ml-2">
+          <div class="row">
             <div class="col"><hr></div>
             <div class="col-auto"><button type="button" class="mb-2 btn btn-danger btn-md rounded" onclick="location.href='http://{{company.website}}'">Apply for this Position</button></div>
             <div class="col"><hr></div>
@@ -72,7 +72,9 @@
     </div>
   </div>
 </div>
-    <div class="container rounded mt-5" style="margin-left: 130px;"> 
+  <div class="row-sm-2 ml-5">
+    <div class="container rounded mt-5"> 
           <h4 class="">Related Jobs</h4>
     </div>
+  </div>
 {% endblock %}
