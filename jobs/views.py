@@ -126,10 +126,13 @@ def job_detail(request, jobName):
 	company_detail = company.get_company_by_job_name(jobName)
 	job_posted_by_company = len(company.get_company_job_posted(jobName))
 
+	related_jobs = job.get_related_jobs(jobName)
+
 	return render(request, 'jobs/job_detail.html',
 				 {'job':job_detail,
 				  'all_jobs':all_jobs,
 				  'job_posted':job_posted_by_company,
+				  'related_jobs':related_jobs,
 				  'company':company_detail,
 				  'category_name':category_name,
 				  'category_list':category_list})

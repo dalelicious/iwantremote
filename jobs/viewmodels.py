@@ -3,11 +3,12 @@ import string
 import random
 
 # Django
-from django.utils 	import timezone
+from django.utils 		import timezone
+from django.db.models 	import Q
 
 # Jobs
-from . models 		import Jobs
-from category.models import Category
+from . models 			import Jobs
+from category.models 	import Category
 
 
 class JobsViewModel():
@@ -47,6 +48,26 @@ class JobsViewModel():
 		jobs_list = Jobs.objects.filter(is_featured=True, is_active=True).order_by('-create_date')
 
 		return jobs_list
+
+
+	def get_related_jobs(self, jobName):
+		""" Get related jobs
+		"""
+
+		job = Jobs.objects.get(slugTitle=jobName)
+		title = job.title[:-5]
+		keywords = title.split(" ")
+
+		qs = [Q(title__icontains=keyword) for keyword in keywords]
+
+		query = qs.pop()
+
+		for q in qs:
+			query |= q
+
+		related_jobs_list = Jobs.objects.filter(query).order_by('?')[:4]
+
+		return related_jobs_list
 
 
 	def get_category_name(self, jobName):
