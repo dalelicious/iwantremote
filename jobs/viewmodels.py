@@ -65,7 +65,7 @@ class JobsViewModel():
 		for q in qs:
 			query |= q
 
-		related_jobs_list = Jobs.objects.filter(query).order_by('?')[:4]
+		related_jobs_list = Jobs.objects.filter(query).order_by('?')[:5]
 
 		return related_jobs_list
 
