@@ -37,7 +37,7 @@
     </div>
 <div class="col-sm-3">
   <a href="{% url 'category:categories' job.category %}" style="color: black">See more {{category_name}} jobs <img src="/static/assets/vendor/iconic/png/caret-right-2x.png"></a>
-  <div class="text-center alert alert-light shadow-sm border rounded mt-5 mb-5"> 
+  <div class="text-center alert alert-light shadow-sm border mt-5 mb-5" style="border-radius:0.5rem;">  
       <h4 class="text-dark mt-3">{{company.name}}</h4>
       <hr>
       <ul class="list-unstyled">
@@ -60,17 +60,8 @@
                 <button type="button" class="btn btn-dark btn-sm btn-slack"><i class="fa fa-slack"></i></button>
                </ul>
     </div>
-    <div class="small text-center text-dark alert alert-secondary border mt-3"> 
-      <p class="card-text">Help us maintain the quality of jobs.<br>Is this job not remote?</p>
-      <ul class="list-unstyled">
-        <button type="button" class="btn btn-success border-0 btn-sm shadow-sm rounded" onclick="location.href='{% url 'feedback:feedback' %}'">Let us know</button>
-      </ul>
-    </div>
-  </div>
-</div>
-<div class="row justify-content-md-center">
-  <div class="col-sm-8 mt-5"> 
-    <h4 class="mb-4 mt-4">Related Jobs</h4>
+  <div class="col mt-5"> 
+    <h5 class="mb-4 mt-4">Related Jobs</h5>
     {% for r_job in related_jobs %}
       {% if r_job.title == job.title %}
         <!-- show nothing -->
@@ -79,12 +70,8 @@
           {% if r_job.is_featured %}
             <div class="card-body-3 py-3 mt-2 border-left-primary"> 
           {% else %}
-            <div class="card-body-3 py-3 mt-2 border-left-secondary"> 
+            <div class="card-body-3 py-3 mt-2 border-left-dark"> 
           {% endif %}
-            <div class="float-right">
-              <img src="/media/{{job.get_job_company}}" alt="Responsive image" style="max-width: 100px">
-            </div>
-            <h6 class="card-title nav-item">{{r_job.get_company_name}}</h6>
              {% if r_job.is_featured %}
                 <span class="text-white badge badge-primary float-right" style="font-size: medium; margin-right: 50px;"> Featured </span>
               {% endif %}
@@ -98,4 +85,12 @@
     </div>
   </div>
 </div>
+<div class="container">
+<div class="col-sm-8 text-center text-dark alert alert-secondary border mt-5"> 
+      <p class="card-text">Help us maintain the quality of jobs. Is this job not remote?</p>
+        <button type="button" class="btn btn-success border-0 btn-sm shadow-sm rounded" onclick="location.href='{% url 'feedback:feedback' %}'">Let us know</button>
+</div>
+</div>
+
+
 {% endblock %}
