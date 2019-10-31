@@ -2,8 +2,8 @@
 
 {% block content_additions %}
 
-<div class="row justify-content-md-center" style="padding-top: 60px">
-	<div class="col-sm-8">
+<div class="row justify-content-md-center" style="padding-top: 50px">
+	<div class="col-sm-7">
 		<a href="/jobs/" class="" style="color: black"><img src="/static/assets/vendor/iconic/png/caret-left-2x.png"> Back to all jobs</a>
 		<div class="container mt-5">
 			<div class="card bg-light shadow-sm mb-4">
@@ -35,17 +35,17 @@
 			{% if job.is_featured %}
 				<div class="card-body-1 rounded py-3 mt-2 border-left-primary"> 
 			{% else %}
-				<div class="card-body-1 rounded border-left-secondary py-3 mt-2"> 
+				<div class="card-body-1 rounded border-left-dark py-3 mt-2"> 
 			{% endif %}
 				<div class="float-right">
 					<img src="/media/{{job.get_job_company}}" alt="Responsive image" style="max-width: 100px">
 				</div>
 				<span class="text-muted small" style="z-index:15;position:relative; left:-30px; top:-10px">{{job.create_date|date:"M d"}}</span>
 				<h6 class="card-title nav-item">{{job.get_company_name}}</h6>
-				<h6 class="card-title nav-item">{{job.title|slice:":-5"}}
-					{% if job.is_featured %}
+				{% if job.is_featured %}
 						<span class="text-white badge badge-primary float-right" style="font-size: medium; margin-right: 50px;"> Featured </span>
-					{% endif %} </h6>
+					{% endif %}
+				<h5 class="card-title nav-item text-truncate">{{job.title|slice:":-5"}}</h5>
 					<h6 class="small card-title nav-item text-muted">{{job.job_type}} ({{job.headquarters}})</h6>
 				</h6>
 			</div>

@@ -1,6 +1,6 @@
-<nav class="sticky-top navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+<nav class="sticky-top navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
   <div class="container">
-    <a href="/jobs/"><img src="/static/images/logo6.png" height="40" alt="logo"></a>
+    <a href="/jobs/"><img src="/static/images/logo6.png" height="35" alt="logo"></a>
     <!-- <a class="navbar-brand" href="#">IWR</a> -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -39,7 +39,7 @@
         </li>
       </ul>
       <ul class="list-unstyled">
-        <button class="btn btn-danger mt-3 btn-md" onclick="location.href='{% url 'jobs:create-job' %}'">Post a job</button>
+        <button class="btn btn-danger mt-3 btn-sm" onclick="location.href='{% url 'jobs:create-job' %}'">Post a job</button>
       </ul>
     </div>
   </div>

@@ -8,6 +8,7 @@ class Category(models.Model):
 	name = models.CharField(max_length=50, null=True)
 	slugCatName = models.CharField(max_length=50, null=True)
 	cat_image = models.ImageField(upload_to='images/categories/')
+	description = models.TextField(null=True)
 
 	@property
 	def jobs_per_category(self):

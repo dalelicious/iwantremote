@@ -2,37 +2,38 @@
 
 {% block content_additions %}
 
-<div class="jumbotron-fluid" style="background-image: url()">
+<div class="jumbotron-fluid mt-4">
 	<div class="row">
-		<div class="col-lg-12 text-center mt-5">
-			<img src="/static/images/laptop.png" class="img-fluid" alt="Responsive image" width="250">
-			<h4 class="mt-2 text-dark">Find remote jobs in <u class="list-unstyled"> {{ categories.name }}</u></h4>
+		<div class="col-lg-12 text-center mt-3">
+			<img src="/static/images/laptop.png" class="img-fluid" alt="Responsive image" width="200">
+			<h2 class="mt-2 text-dark">Find remote jobs in <u class="list-unstyled"> {{ categories.name }} </u></h2>
+			<div class="container col-sm-6"><h6 style="font-weight: 400;">{{categories.description}}</h6></div>
 			<ul class="list-unstyled">
-				<button class="btn btn-danger mt-4 btn-md rounded" onclick="location.href='{% url 'jobs:create-job' %}'">Post a job for $199</button>
+				<button class="btn btn-danger mt-2 btn-md rounded" onclick="location.href='{% url 'jobs:create-job' %}'">Post a job for $199</button>
 			</ul>
 		</div>
 	</div>
 </div>
-<div class="container col-sm-7 mt-4">
+<div class="container mt-3 col-sm-8">
 	<div class="card border-0">
-		<h6 class="text-dark mt-2"><img src="/media/{{categories.cat_image}}" class="img-fluid" alt="Responsive image" width="30">{{categories.name}} <span class="small">({{categories.total_jobs_per_category}})</a></span>
+		<h6 class="text-dark mt-2"><img src="/media/{{categories.cat_image}}" class="img-fluid" alt="Responsive image" width="30"> {{categories.name}}<span class="small">({{categories.total_jobs_per_category}})</a></span>
 		</h6>
 		{% for job in jobs_list %}
 			<a href="{% url 'jobs:job-detail' job.slugTitle %}" style="color: #343a40; text-decoration: none;">
 			{% if job.is_featured %}
-				<div class="card-body-1 box rounded py-3 mt-2 border-left-primary"> 
+				<div class="card-body-1 rounded py-3 mt-2 border-left-primary"> 
 			{% else %}
-				<div class="card-body-1 box rounded border-left-secondary py-3 mt-2"> 
+				<div class="card-body-1 rounded border-left-dark py-3 mt-2"> 
 			{% endif %} 
 					<div class="float-right">
 							<img src="/media/{{job.get_job_company}}" alt="Responsive image" style="max-width: 100px;">
 					</div>
 					<span class="text-muted small" style="z-index:15;position:relative; left:-30px; top:-10px">{{job.create_date|date:"M d"}}</span>
 					<h6 class="card-title nav-item">{{job.get_company_name}}</h6>
-					<h5 class="card-title nav-item ">{{job.title}}
-						{% if job.is_featured %}
+					{% if job.is_featured %}
 							<span class="text-white badge badge-primary float-right" style="font-size: medium; margin-right: 50px;"> Featured</span>
-						{% endif %} </h5>
+						{% endif %} 
+					<h5 class="card-title nav-item text-truncate">{{job.title}}</h5>
 						<h6 class="small card-title nav-item text-muted">{{job.job_type}} ({{job.headquarters}})</h6>
 				</div>
 		</a>

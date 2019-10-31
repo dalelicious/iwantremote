@@ -2,7 +2,7 @@
 
 {% block content_additions %}
 
-<div class="jumbotron-fluid bg-light">
+<div class="jumbotron-fluid bg-white">
 	<div class="row">
 		<div class="col-lg-12 text-center mt-4">
 			<img src="/static/images/bg1.png" class="img-fluid" alt="Responsive image" width="200">
@@ -11,17 +11,14 @@
 			<p>🌎 Everyone seeks flexible work options. Find amazing list of remote tech jobs today 🌎</p>
 			<h4 class="txt-rotate" data-period="1000" data-rotate ='[ "Software Developer", "System Engineer", "Security Expert", "DevOps Engineer", "Backend Engineer", "Network Engineer", "Telephony Engineer", "UI Designer", "Project Manager", "SEO Expert", "Mobile Developer", "Infrastructure Engineer", "Database Manager", "QA Tester", "Machine Learning Engineer", "Data Engineer", "Cloud Engineer", "Game Developer", "Frontend Developer", "Web Developer", "IT Support Engineer"]' style="font-weight: 400;"></h4>
 			<ul class="list-unstyled">
-				<button class="btn btn-danger mt-2 btn-lg rounded" onclick="location.href='{% url 'jobs:create-job' %}'">Post a job for $199</button>
+				<button class="btn btn-danger mt-2 btn-md rounded" onclick="location.href='{% url 'jobs:create-job' %}'">Post a job for $199</button>
 			</ul>
-
 		</div>
 	</div>
-	<hr>
 </div>
 
-<div class="container py-1 text-center">
-	<h5 class="mt-5 text-muted text-center mb-5">Trusted by amazing companies</h5>
-  <div class="row">
+<div class="container py-1 text-center mt-3">
+  <div class="row mt-3">
     <div class="col-sm">
       <img src="/static/images/google.png" class="opct opacity-70 img-fluid mt-4" alt="Responsive image" style="max-width: 100px">
     </div>
@@ -43,7 +40,7 @@
   </div>
 </div>
 
-<div class="container col-sm-8 mt-4">
+<div class="container col-sm-8">
 	     <form method="POST" action="{% url 'jobs:jobs' %}">
 	     {% csrf_token %}
           <div class="bg-light rounded rounded-pill shadow-sm mb-4">
@@ -51,30 +48,30 @@
               <div class="input-group-prepend">
                 <button id="button-addon2" type="submit" class="btn btn-link text-warning"><i class="fa fa-search" style="color: black;"></i></button>
               </div>
-              <input type="search" placeholder="Job contents, position, location..." name="search" aria-describedby="button-addon2" class="form-control border-0 bg-light">
+              <input type="search" placeholder="Job contents, position, location..." name="search" aria-describedby="button-addon2" class="form-control border-0 bg-light" style="border-radius:0.5rem;">
             </div>
           </div>
         </form>
 </div>
 
 
-<div class="container col-sm-8 mt-4">
+<div class="container col-sm-8 mt-5">
 	<div class="card-0">
 		<h6 class="text-dark mt-2 mb-3"><img src="/static/images/featured.png" class="img-fluid" alt="Responsive image" width="30"><a href="#" style="color: #343a40"> Featured Jobs<span class="small"> ({{total_featured_jobs}})</a></span>
 		</h6>
 		{% for job in jobs_list %}
 		<a href="{% url 'jobs:job-detail' job.slugTitle %}" style="color: #343a40; text-decoration: none;">
-			<div class="card-body-1 py-3 mt-2 border-left-primary border-right-primary"> 
+			<div class="card-body-1 py-3 mt-2 border-left-primary"> 
 				<div class="float-right">
 					<img src="/media/{{job.get_job_company}}" alt="Responsive image" style="max-width: 100px">
 				</div>
 				<span class="text-muted small mt-2" style="z-index:15;position:relative; left:-30px; top:-10px">{{job.create_date|date:"M d"}}</span>
 				<h6 class="card-title nav-item">{{job.get_company_name}}</h6>
-				<h5 class="card-title nav-item">{{job.title|slice:":-5"}}
-					{% if job.is_featured %}
+				 {% if job.is_featured %}
 						<span class="text-white badge badge-primary float-right" style="font-size: medium; margin-right: 50px;"> Featured </span>
-					{% endif %} </h5>
-					<h6 class="small card-title nav-item">{{job.job_type}} ({{job.region}})</h6>
+					{% endif %}
+				<h5 class="card-title nav-item text-truncate">{{job.title|slice:":-5"}}</h5>
+				<h6 class="small card-title nav-item">{{job.job_type}} ({{job.region}})</h6>
 			</div>
 		</a>
 		{% endfor %}
@@ -91,17 +88,17 @@
 				{% if job.is_featured %}
 					<div class="card-body-1 py-3 mt-2 border-left-primary"> 
 				{% else %}
-					<div class="card-body-1 py-3 mt-2 border-left-secondary"> 
+					<div class="card-body-1 py-3 mt-2 border-left-dark"> 
 				{% endif %}
 						<div class="float-right">
 								<img src="/media/{{job.get_job_company}}" alt="Responsive image" style="max-width: 100px">
 						</div>
 						<span class="text-muted small" style="z-index:15;position:relative; left:-30px; top:-10px">{{job.create_date|date:"M d"}}</span>
 						<h6 class="card-title nav-item">{{job.get_company_name}}</h6>
-						<h5 class="card-title nav-item" >{{job.title|slice:":-5"}}
-							{% if job.is_featured %}
+						{% if job.is_featured %}
 								<span class="text-white badge badge-primary float-right" style="font-size: medium; margin-right: 50px;"> Featured </span>
 							{% endif %}
+						<h5 class="card-title nav-item text-truncate">{{job.title|slice:":-5"}}
 							<h6 class="small card-title nav-item">{{job.job_type}} ({{job.region}})</h6>
 						</h5>
 					</div>
