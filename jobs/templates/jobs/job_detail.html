@@ -23,7 +23,7 @@
           {% endfor %}
           <div class="row ml-2">
             <div class="col"><hr></div>
-            <div class="col-auto"><button type="button" class="mb-2 btn btn-success btn-md rounded" onclick="location.href='http://{{company.website}}'">Apply for this Position</button></div>
+            <div class="col-auto"><button type="button" class="mb-2 btn btn-danger btn-md rounded" onclick="location.href='http://{{company.website}}'">Apply for this Position</button></div>
             <div class="col"><hr></div>
           </div>
           <p class="card-text">
@@ -32,7 +32,7 @@
           <div class="container justify-content-md-center">
           </div> 
           <div class="col-auto">
-            <button type="button" class="float-right btn btn-success btn-md rounded" onclick="location.href='http://{{company.website}}'">Apply now</button>
+            <button type="button" class="float-right btn btn-danger btn-md rounded" onclick="location.href='http://{{company.website}}'">Apply now</button>
           </div>
         </div>
       </div>
@@ -51,7 +51,7 @@
         <li class="text-dark"><img src="/static/assets/vendor/iconic/png/map-marker-2x.png"> {{job.headquarters}}</li>
         <li class="text-dark">Jobs Posted: {{job_posted}}</li>
         <li>
-          <button type="button" class="mt-2 btn btn-danger border-0 btn-sm rounded" onclick="location.href='{% url 'company:company-detail' company.slugName %}'">View company</button>
+          <button type="button" class="mt-2 btn btn-success border-0 btn-sm rounded" onclick="location.href='{% url 'company:company-detail' company.slugName %}'">View company</button>
         </li>
       </ul>
     </div>
@@ -67,7 +67,7 @@
     <div class="small text-center text-dark alert alert-secondary border mt-3"> 
       <p class="card-text">Help us maintain the quality of jobs.<br>Is this job not remote?</p>
       <ul class="list-unstyled">
-        <button type="button" class="btn btn-danger border-0 btn-sm shadow-sm rounded" onclick="location.href='{% url 'feedback:feedback' %}'">Let us know</button>
+        <button type="button" class="btn btn-success border-0 btn-sm shadow-sm rounded" onclick="location.href='{% url 'feedback:feedback' %}'">Let us know</button>
       </ul>
     </div>
   </div>
