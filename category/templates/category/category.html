@@ -33,7 +33,7 @@
 					{% if job.is_featured %}
 							<span class="text-white badge badge-primary float-right" style="font-size: medium; margin-right: 50px;"> Featured</span>
 						{% endif %} 
-					<h5 class="card-title nav-item text-truncate">{{job.title}}</h5>
+					<h5 class="card-title nav-item text-truncate">{{job.title|slice:":-5"}}</h5>
 						<h6 class="small card-title nav-item text-muted">{{job.job_type}} ({{job.headquarters}})</h6>
 				</div>
 		</a>
