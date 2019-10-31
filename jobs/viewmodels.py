@@ -49,6 +49,18 @@ class JobsViewModel():
 		return jobs_list
 
 
+	def get_related_jobs(self, jobName):
+		""" Get related jobs
+		"""
+
+		job = Jobs.objects.get(slugTitle=jobName)
+		title = job.title[:-5]
+
+		related_jobs_list = Jobs.objects.filter(title__icontains="engineer")
+
+		return related_jobs_list
+
+
 	def get_category_name(self, jobName):
 		""" Get category name by job name
 		"""
