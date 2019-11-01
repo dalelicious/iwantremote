@@ -17,7 +17,7 @@
           <p class="card-title nav-item text-dark-50">Category: {{category_name}}</p>
           <img src="/static/assets/vendor/iconic/png/tags-2x.png"> 
           {% for tag in job.get_job_tags %}
-            <p class="badge badge-light">{{tag}}</p>
+            <p class="badge badge-light"><a href="{% url 'jobs:jobs-result' tag %}">{{tag}}</p>
           {% endfor %}
           <div class="row">
             <div class="col"><hr></div>

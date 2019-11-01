@@ -48,6 +48,17 @@ def jobs(request):
 					  'category_list':category_list})
 
 
+def jobs_result(request, tag):
+
+	all_jobs = len(job.get_jobs_list())
+	jobs_result_list = job.get_jobs_result_by_tag(tag)
+	category_list = categories.get_category_list()
+
+	return render(request, 'jobs/job_result.html',
+					 {'all_jobs':all_jobs,
+					  'jobs_list':jobs_result_list,
+					  'category_list':category_list})	
+
 
 def create_job(request):
 

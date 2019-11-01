@@ -41,6 +41,15 @@ class JobsViewModel():
 		return jobs_list
 
 
+	def get_jobs_result_by_tag(self, tag):
+		""" Get job search results by tags
+		"""
+
+		jobs_list = Jobs.objects.filter(tags__icontains=tag, is_active=True).order_by('-create_date')
+
+		return jobs_list
+
+
 	def get_featured_jobs_list(self):
 		""" Get all featured jobs
 		"""
