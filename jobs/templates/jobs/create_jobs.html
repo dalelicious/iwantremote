@@ -226,14 +226,13 @@
 			var newjobTags = jobTags.replace(/,/g, ' ');
 			var jobRegion = $('#jobRegion').val();
 			var jobDescription = tinyMCE.get('jobDescription').getContent();
-			var jobCompLogo = $('#customFile').val();
 
 			$('.modal-body').html(
 				"<div class='container'>"+
 					"<div class='card mt-5 border-0'>"+
 						"<h6 class='card-header bg-white border-0 text-muted ml-2 mb-3'>Posted "+jobCreateDate+"</h6>"+
 						"<div class='card-body border-0 ml-2'>"+
-							"<img src='"+jobCompLogo+"' class='float-right' alt='Responsive image' style='max-width: 150px;'>"+
+							"<img src='/static/images/logo-default.png' class='float-right' alt='Responsive image' style='max-width: 150px;'>"+
 							"<h2>"+jobTitle+"</h2>"+
 							"<u><p class='card-title nav-item text-dark-50 mt-3'>"+jobType+" "+(jobRegion)+"</p></u>"+
 							"<p class='card-title nav-item text-dark-50'>Salary: "+jobSalary+"</p>"+
