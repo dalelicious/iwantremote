@@ -145,6 +145,12 @@ def billing(request):
 	return render(request, 'jobs/billing.html',
 				 {'all_jobs':all_jobs,
 				  'category_list':category_list})
+
+def jobfeed(request, post_id=id):
+
+	item = get_object_or_404(Post, id=post_id)
+
+	return render(request, {'job-feed': item})
 	
 	
 def post(request, post_id=id):
