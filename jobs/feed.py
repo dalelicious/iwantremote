@@ -17,6 +17,9 @@ class LatestEntriesFeed(Feed):
     def item_description(self, item):
         return item.description
 
+    def item_applylink(self, item):
+        return item.link
+
     # item_link is only needed if NewsItem has no get_absolute_url method.
     def jobfeed(self, item):
         return reverse('job-feed', args=[item.pk])
