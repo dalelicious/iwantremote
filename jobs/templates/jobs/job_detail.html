@@ -52,7 +52,7 @@
       </ul>
     </div>
     <div class="text-center rounded mt-4 mb-5"> 
-      <h6 class="">Share this job:</h6>
+      <h6 class="" style="font-weight: 400;">Share this job:</h6>
                 <ul class="list-unstyled">
                 <button type="button" class="btn btn-dark btn-sm btn-linkedin"><li class="fa fa-linkedin"></li></button>
                 <button type="button" class="btn btn-dark btn-sm btn-facebook"><i class="fa fa-facebook"></i></button>
@@ -61,7 +61,7 @@
                </ul>
     </div>
   <div class="col mt-5"> 
-    <h5 class="mb-4 mt-4">Related Jobs</h5>
+    <h6 class="mb-4 mt-5 text-center" style="font-weight: 400;">Jobs you might like</h6>
     {% for r_job in related_jobs %}
       {% if r_job.title == job.title %}
         <!-- show nothing -->
@@ -73,11 +73,11 @@
             <div class="card-body-3 py-3 mt-2 border-left-dark"> 
           {% endif %}
              {% if r_job.is_featured %}
-                <span class="text-white badge badge-primary float-right" style="font-size: medium; margin-right: 50px;"> Featured </span>
+                <span class="text-white badge badge-primary float-right" style="font-size: small; margin-right: 50px;"> Featured </span>
               {% endif %}
-            <h6 class="card-title nav-item text-truncate">{{r_job.title|slice:":-5"}}
+            <h6 class="card-title nav-item text-truncate" style="font-weight: 400;">{{r_job.title|slice:":-5"}}
             </h6>
-            <h6 class="small card-title nav-item">{{r_job.job_type}} ({{r_job.region}})</h6>
+            <h6 class="small card-title nav-item" style="font-weight: 400;">{{r_job.job_type}} ({{r_job.region}})</h6>
           </div>
         </a>
       {% endif %}
@@ -86,7 +86,7 @@
   </div>
 </div>
 <div class="container">
-  <div class="col-sm-8 text-center text-dark alert alert-secondary border mt-5"> 
+  <div class="col-sm-7 text-center text-dark alert alert-secondary border mt-5"> 
       <p class="card-text">Help us maintain the quality of jobs. Is this job not remote?</p>
         <button type="button" class="btn btn-success border-0 btn-sm shadow-sm rounded" onclick="location.href='{% url 'feedback:feedback' %}'">Let us know</button>
   </div>
