@@ -144,7 +144,8 @@ window.onload = function() {
 };
   </script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/5.0.16/tinymce.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/4.9.2/tinymce.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/4.9.2/plugins/advlist/plugin.js"></script>
 <!--   <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/5.0.16/plugins/advlist/plugin.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/5.0.16/plugins/advlist/plugin.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/5.0.16/plugins/lists/plugin.js"></script>
@@ -152,9 +153,9 @@ window.onload = function() {
   <script>
     tinymce.init({
         mode: "specific_textareas",
-        editor_selector: "myTextEditor"
+        editor_selector: "myTextEditor",
         // selector:'textarea'
-        // plugins:['lists advlist'],
+        plugins:['lists advlist']
         // toolbar: [
         //   'bold italic | link image | alignleft aligncenter alignright | bullist numlist outdent indent',
         // ]
