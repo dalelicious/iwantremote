@@ -18,7 +18,7 @@
   <meta name="description" content="Find and list amazing remote jobs in software, support, engineering, networks, dev and many more..">
   <meta name="author" content="iwantremote">  
   {% if job.title %}
-    <title>{{job.title}} | iWantRemote</title>
+    <title>{{job.title|slice:":-5"}} | iWantRemote</title>
   {% elif company.name %}
     <title>{{company.name}} | iWantRemote</title>
   {% elif categories.name %}

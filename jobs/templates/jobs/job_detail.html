@@ -15,13 +15,15 @@
           <u><p class="card-title nav-item text-dark-50 mt-3">{{job.job_type}} ({{job.region}})</p></u>
           <p class="card-title nav-item text-dark-50">Salary: {{job.salary}}</p>
           <p class="card-title nav-item text-dark-50">Category: {{category_name}}</p>
-          <img src="/static/assets/vendor/iconic/png/tags-2x.png"> 
-          {% for tag in job.get_job_tags %}
-            <p class="badge badge-light"><a href="{% url 'jobs:jobs-result' tag %}">{{tag}}</a></p>
-          {% endfor %}
+          {% if job.get_job_tags %}
+            <img src="/static/assets/vendor/iconic/png/tags-2x.png"> 
+            {% for tag in job.get_job_tags %}
+              <p class="badge badge-light"><a href="{% url 'jobs:jobs-result' tag %}">{{tag}}</a></p>
+            {% endfor %}
+          {% endif %}
           <div class="row">
             <div class="col"><hr></div>
-            <div class="col-auto"><button type="button" class="mb-2 btn btn-danger btn-md rounded" onclick="location.href='http://{{company.website}}'">Apply for this Position</button></div>
+            <div class="col-auto"><button type="button" class="mb-2 btn btn-danger btn-md rounded" onclick="location.href='http://{{job.link}}'">Apply for this Position</button></div>
             <div class="col"><hr></div>
           </div>
           <p class="card-text">
@@ -30,7 +32,7 @@
           <div class="container justify-content-md-center">
           </div> 
           <div class="col-auto">
-            <button type="button" class="float-right btn btn-danger btn-md rounded" onclick="location.href='http://{{company.website}}'">Apply now</button>
+            <button type="button" class="float-right btn btn-danger btn-md rounded" onclick="location.href='http://{{job.link}}'">Apply now</button>
           </div>
         </div>
       </div>
