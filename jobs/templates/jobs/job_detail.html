@@ -4,14 +4,18 @@
 
 <div class="row mt-5 justify-content-md-center">
   <div class="col-sm-6">
-      <a href="/jobs/" class="" style="color: black"><img src="/static/assets/vendor/iconic/png/caret-left-2x.png" > Back to all jobs</a>
+      <a href="/jobs/" class="small" style="color: black"><img src="/static/assets/vendor/iconic/png/caret-left-2x.png" > Back to all jobs</a>
       <div class="card-body-2">
+        <h6 class="card-header float-right border-0 bg-white text-muted">
+          <a href=""><i class="fa fa-twitter mx-1"></i></a>
+          <a href=""><i class="fa fa-facebook mx-1"></i></a>
+          <a href=""><i class="fa fa-linkedin mx-1"></i></a>
         <h6 class="card-header mt-5 border-0 bg-white text-muted">Posted {{job.create_date|date:"M d"}}</h6>
         <div class="card-body">
           <a href="{% url 'company:company-detail' company.slugName %}">
-            <img src="/media/{{company.logo}}" class="float-right" alt="Responsive image" style="max-width: 150px;">
+            <img src="/media/{{company.logo}}" class="float-right mt-5" alt="Responsive image" style="max-width: 150px;">
           </a>
-          <h2 class="mt-1">{{job.title|slice:":-5"}}</h2>
+          <h2 class="mt-5">{{job.title|slice:":-5"}}</h2>
           <u><p class="card-title nav-item text-dark-50 mt-3">{{job.job_type}} ({{job.region}})</p></u>
           <p class="card-title nav-item text-dark-50">Salary: {{job.salary}}</p>
           <p class="card-title nav-item text-dark-50">Category: {{category_name}}</p>
@@ -38,7 +42,7 @@
       </div>
     </div>
 <div class="col-sm-3">
-  <a href="{% url 'category:categories' job.category %}" style="color: black">See more {{category_name}} jobs <img src="/static/assets/vendor/iconic/png/caret-right-2x.png"></a>
+  <a href="{% url 'category:categories' job.category %}" class="small" style="color: black">See more {{category_name}} jobs <img src="/static/assets/vendor/iconic/png/caret-right-2x.png"></a>
   <div class="text-center alert alert-light shadow-sm border mt-5 mb-5" style="border-radius:0.5rem;">  
       <h4 class="text-dark mt-3">{{company.name}}</h4>
       <hr>
