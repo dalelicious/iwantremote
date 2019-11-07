@@ -155,7 +155,13 @@ window.onload = function() {
         mode: "specific_textareas",
         editor_selector: "myTextEditor",
         // selector:'textarea'
-        plugins:['lists advlist']
+        plugins:['lists advlist'],
+        setup : function(ed){
+          ed.on('init', function() {
+            this.getDoc().body.style.fontSize = '17px';
+            this.getDoc().body.style.fontFamily = 'Roboto';
+          });
+        }
         // toolbar: [
         //   'bold italic | link image | alignleft aligncenter alignright | bullist numlist outdent indent',
         // ]
