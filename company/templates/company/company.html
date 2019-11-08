@@ -31,4 +31,38 @@
   </div>
 {% endfor %}
 
+<div class="container col-sm-7 mt-5">
+{% if company_list.has_other_pages %}
+  <ul class="pagination">
+    {% if company_list.has_previous %}
+      <li class="page-item">
+        <a class="page-link" aria-label="Previous" href="?page={{ company_list.previous_page_number }}">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+      </li>
+    {% else %}
+      <li class="page-item disabled"><span class="page-link">&laquo;</span></li>
+    {% endif %}
+    {% for i in company_list.paginator.page_range %}
+      {% if company_list.number == i %}
+        <li class="page-item active">
+          <span class="page-link">{{ i }} 
+            <span class="sr-only">(current)</span>
+          </span>
+        </li>
+      {% else %}
+        <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+      {% endif %}
+    {% endfor %}
+    {% if company_list.has_next %}
+      <li class="page-item">
+        <a class="page-link" href="?page={{ company_list.next_page_number }}">&raquo;</a>
+      </li>
+    {% else %}
+      <li class="page-item disabled"><span class="page-link">&raquo;</span></li>
+    {% endif %}
+  </ul>
+{% endif %}
+</div>
+
 {% endblock %}

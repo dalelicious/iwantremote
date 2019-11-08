@@ -2,6 +2,7 @@
 from django.http 			import HttpResponse
 from django.shortcuts 		import render, get_object_or_404
 from django.shortcuts 		import redirect
+from django.core.paginator 	import Paginator
 
 # iwantremote
 from . viewmodels 			import CompanyViewModel
@@ -21,6 +22,16 @@ def companies(request):
 	all_jobs = len(job.get_jobs_list())
 	company_list = company.get_company_list()
 	category_list = category.get_category_list()
+
+	page = request.GET.get('page', 1)
+	paginator = Paginator(company_list, 20)
+
+	try:
+		company_list = paginator.page(page)
+	except PageNotAnInteger:
+		company_list = paginator.page(1)
+	except EmptyPage:
+		company_list = paginator.page(paginator.num_pages)
 
 	return render(request, 'company/company.html',
 				 {'all_jobs':all_jobs,
