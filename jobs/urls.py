@@ -6,7 +6,7 @@ from . import views
 app_name = 'jobs'
 
 urlpatterns = [
-    path('jobs/', 							views.jobs, 		name='jobs'),
+    path('', 								views.jobs, 		name='jobs'),
     path('billing/', 						views.billing, 		name='billing'),
     path('create_job/', 					views.create_job, 	name='create-job'),
     path('jobs_result/<slug:tag>/',			views.jobs_result,	name='jobs-result'),
