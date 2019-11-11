@@ -28,7 +28,9 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
-    'iwantremote.com'
+    'iwantremote.com',
+    'www.iwantremote.com',
+    '54.183.160.53'
 ]
 
 
