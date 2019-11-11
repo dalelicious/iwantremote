@@ -20,6 +20,6 @@ class Company(models.Model):
 
 		from jobs.models import Jobs
 
-		total_jobs = len(Jobs.objects.filter(company=self.email))
+		total_jobs = len(Jobs.objects.filter(company=self.website))
 
 		return total_jobs

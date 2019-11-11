@@ -14,8 +14,8 @@ from django.urls import reverse
 class Jobs(models.Model):
 
 	company = models.CharField(max_length=50, null=True)
-	title = models.CharField(max_length=50, null=True)
-	slugTitle = models.CharField(max_length=50, null=True)
+	title = models.CharField(max_length=100, null=True)
+	slugTitle = models.CharField(max_length=150, null=True)
 	category = models.CharField(max_length=50, null=True)
 	job_type = models.CharField(max_length=50, null=True)
 	salary = models.CharField(max_length=50, null=True)
@@ -32,7 +32,7 @@ class Jobs(models.Model):
 	@property
 	def get_job_company(self):
 
-		company = Company.objects.get(email=self.company)
+		company = Company.objects.get(website=self.company)
 
 		return company.logo
 
@@ -40,7 +40,7 @@ class Jobs(models.Model):
 	@property
 	def get_company_name(self):
 
-		company = Company.objects.get(email=self.company)
+		company = Company.objects.get(website=self.company)
 
 		return company.name
 

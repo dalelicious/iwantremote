@@ -112,7 +112,7 @@ class JobsViewModel():
 		return jobTitle
 
 
-	def create_new_job(self, email, title, category, job_type, salary, tags, headquarters, region, link, job_description, is_featured):
+	def create_new_job(self, website, title, category, job_type, salary, tags, headquarters, region, link, job_description, is_featured):
 		""" Create new job
 		"""
 
@@ -124,7 +124,7 @@ class JobsViewModel():
 		jobTitle = self.remove_special_chars(specialTitle)
 
 		job = Jobs()
-		job.company = email
+		job.company = website
 		job.title = specialTitle
 		job.slugTitle = jobTitle.replace(" ", "-").lower()
 		job.category = category
