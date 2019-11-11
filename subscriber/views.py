@@ -22,6 +22,7 @@ def confirmation(request):
 				 {'all_jobs':all_jobs,
 				  'category_list':category_list})
 
+
 def add_subscriber(request):
 
 	email = request.POST['email']

@@ -1,5 +1,6 @@
 # Django
 from django.http 			import HttpResponse
+from django.contrib 		import messages
 from django.shortcuts 		import render
 from django.shortcuts 		import redirect
 from django.shortcuts 		import get_object_or_404
@@ -101,7 +102,11 @@ def create_job(request):
 
 			job.create_new_job(website, title, category, job_type, salary, tags, headquarters, region, link, job_description, is_featured)
 
-			return redirect('jobs:jobs')
+			companyName = company.get_company_by_website(website)
+
+			context_data = {'jobName':title, 'companyName':companyName}
+
+			return render(request, 'jobs/job_success.html', context=context_data)
 
 		else:
 
@@ -109,7 +114,9 @@ def create_job(request):
 
 			company.create_new_company(name, logo, tagline, website, email, company_description)
 
-			return redirect('jobs:jobs')
+			context_data = {'jobName':title, 'companyName':name}
+
+			return render(request, 'jobs/job_success.html', context=context_data)
 
 
 def job_detail(request, jobName):
@@ -132,6 +139,7 @@ def job_detail(request, jobName):
 				  'category_name':category_name,
 				  'category_list':category_list})
 
+
 def billing(request):
 
 	all_jobs = len(job.get_jobs_list())
@@ -140,6 +148,7 @@ def billing(request):
 	return render(request, 'jobs/billing.html',
 				 {'all_jobs':all_jobs,
 				  'category_list':category_list})
+
 
 def jobfeed(request, post_id=id):
 
@@ -153,5 +162,15 @@ def post(request, post_id=id):
 	item = get_object_or_404(Post, id=post_id)
 
 	return render(request, {'post': item})
+
+
+def success(request):
+
+	all_jobs = len(job.get_jobs_list())
+	category_list = categories.get_category_list()
+
+	return render(request, 'jobs/job_success.html',
+				 {'all_jobs':all_jobs,
+				  'category_list':category_list})
 
 

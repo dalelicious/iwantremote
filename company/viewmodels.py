@@ -18,6 +18,14 @@ class CompanyViewModel():
 
 		return company
 
+	def get_company_by_website(self, companyWebsite):
+		""" Get company by website
+		"""
+
+		company = Company.objects.get(website=companyWebsite)
+
+		return company.name
+
 
 	def get_company_by_job_name(self, jobName):
 		""" Get company by job name
