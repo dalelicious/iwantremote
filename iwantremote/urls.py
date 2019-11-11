@@ -25,7 +25,7 @@ urlpatterns = [
 	path('', 			include('subscriber.urls')),
 	path('sitemap.xml', sitemap, {'sitemaps': sitemaps},
 		name='django.contrib.sitemaps.views.sitemap'),
-	path('remote-jobs/<slug:jobName>', views.post, name='jobpost'),
+	path('remote-jobs/<slug:jobName>/', views.post, name='jobpost'),
 	path('admin/',      admin.site.urls),
 	path('robots.txt', TemplateView.as_view(template_name="jobs/robots.txt", content_type='text/plain')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
