@@ -4,7 +4,7 @@
 
 <div class="row mt-5 justify-content-md-center">
   <div class="col-sm-6">
-      <a href="/jobs/" class="small" style="color: black"><img src="/static/assets/vendor/iconic/png/caret-left-2x.png" > Back to all jobs</a>
+      <a href="{% url 'jobs:jobs' %}" class="small" style="color: black"><img src="/static/assets/vendor/iconic/png/caret-left-2x.png" > Back to all jobs</a>
       <div class="card-body-2">
         <h6 class="card-header float-right border-0 bg-white text-muted">
           <a href=""><i class="fa fa-twitter mx-1"></i></a>
@@ -44,7 +44,7 @@
 <div class="col-sm-3">
   <a href="{% url 'category:categories' job.category %}" class="small" style="color: black">See more {{category_name}} jobs <img src="/static/assets/vendor/iconic/png/caret-right-2x.png"></a>
   <div class="text-center alert alert-light shadow-sm border mt-5 mb-5" style="border-radius:0.5rem;">  
-      <h4 class="text-dark mt-3">{{company.name}}</h4>
+      <h4 class="text-dark mt-3">{{company.name|slice:":-5"}}</h4>
       <hr>
       <ul class="list-unstyled">
         <li><img src="/static/assets/vendor/iconic/png/target-2x.png">

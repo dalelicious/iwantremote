@@ -1,3 +1,7 @@
+#########################
+##### RELEASE 0.0.1 #####
+#########################
+
 """
 Django settings for iwantremote project.
 

@@ -1,4 +1,6 @@
 import re
+import string
+import random
 
 # Company
 from . models import Company
@@ -16,13 +18,21 @@ class CompanyViewModel():
 
 		return company
 
+	def get_company_by_website(self, companyWebsite):
+		""" Get company by website
+		"""
+
+		company = Company.objects.get(website=companyWebsite)
+
+		return company.name
+
 
 	def get_company_by_job_name(self, jobName):
 		""" Get company by job name
 		"""
 
 		job = Jobs.objects.get(slugTitle=jobName)
-		company = Company.objects.get(email=job.company)
+		company = Company.objects.get(website=job.company)
 
 		return company
 
@@ -41,7 +51,7 @@ class CompanyViewModel():
 		"""
 
 		company = Company.objects.get(slugName=companyName)
-		job_posted = Jobs.objects.filter(company=company.email)
+		job_posted = Jobs.objects.filter(company=company.website)
 
 		return job_posted
 
@@ -51,8 +61,8 @@ class CompanyViewModel():
 		"""
 
 		job = Jobs.objects.get(slugTitle=jobName)
-		company = Company.objects.get(email=job.company)
-		job_posted = Jobs.objects.filter(company=company.email)
+		company = Company.objects.get(website=job.company)
+		job_posted = Jobs.objects.filter(company=company.website)
 
 		return job_posted
 
@@ -64,7 +74,7 @@ class CompanyViewModel():
 		headquarters_list = []
 
 		company = Company.objects.get(slugName=companyName)
-		jobs = Jobs.objects.filter(company=company.email)
+		jobs = Jobs.objects.filter(company=company.website)
 
 		for job in jobs:
 			headquarters_list.append(job.headquarters)
@@ -72,29 +82,16 @@ class CompanyViewModel():
 		return max(set(headquarters_list), key=headquarters_list.count)
 
 
-	def check_company_exist(self, email):
+	def check_company_exist(self, website):
 		""" Check if email exist
 		"""
 
-		company = Company.objects.filter(email=email)
+		company = Company.objects.filter(website=website)
 
 		if len(company) > 0:
 			return True
 		else:
 			return False
-
-
-	def check_company_name_exist(self, name):
-		""" Check if email exist
-		"""
-
-		company = Company.objects.filter(name=name)
-
-		if len(company) > 0:
-			return True
-		else:
-			return False
-
 
 
 	def remove_special_chars(self, name):
@@ -112,10 +109,15 @@ class CompanyViewModel():
 		""" Create new company
 		"""
 
-		compName = self.remove_special_chars(name)
+		name_pattern = string.digits
+		combi = "".join(random.choice(name_pattern) for x in range(4))
+
+		specialCompName = name + " " + combi
+
+		compName = self.remove_special_chars(specialCompName)
 
 		company = Company()
-		company.name = name
+		company.name = specialCompName
 		company.slugName = compName.replace(" ", "-").lower()
 		company.logo = logo
 		company.tagline = tagline
