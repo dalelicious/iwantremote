@@ -20,7 +20,7 @@
   {% if job.title %}
     <title>{{job.title|slice:":-5"}} | iWantRemote</title>
   {% elif company.name %}
-    <title>{{company.name}} | iWantRemote</title>
+    <title>{{company.name|slice:":-5"}} | iWantRemote</title>
   {% elif categories.name %}
     <title>{{categories.name}} Jobs | iWantRemote</title>
   {% else %}
