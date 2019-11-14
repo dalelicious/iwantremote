@@ -56,7 +56,6 @@ INSTALLED_APPS = [
     'resources',
     'feedback',
     'subscriber',
-    'cookielaw',
 ]
 
 SITE_ID = 1

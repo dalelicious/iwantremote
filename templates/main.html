@@ -5,12 +5,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!-- Facebook Meta -->
-  <meta property="og:title" content="Remote Tech Jobs">
-  <meta property="og:description" content="Find your next remote jobs in software, support, engineering, telephony and many more...">
   {% if company.name %}
+  <meta property="og:title" content="{{job.tile}}">
+  <meta property="og:description" content="{{job.description}}">
   <meta property="og:image" content="https://iwantremote.com/media/{{company.logo}}">
-  {% endif %}
   <meta property="og:url" content="https://iwantremote.com">
+  {% endif %}
   <!-- Twitter Meta -->
   <meta name="twitter:title" content="Remote Tech Jobs">
   <meta name="twitter:description" content="Find and list amazing remote jobs in software, support, engineering, networks, dev and many more..">
