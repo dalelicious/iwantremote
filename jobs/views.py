@@ -100,23 +100,23 @@ def create_job(request):
 
 		if company_exist:
 
-			job.create_new_job(website, title, category, job_type, salary, tags, headquarters, region, link, job_description, is_featured)
+			jobSlugTitle = job.create_new_job(website, title, category, job_type, salary, tags, headquarters, region, link, job_description, is_featured)
 
 			companyName = company.get_company_by_website(website)
 
-			context_data = {'jobName':title, 'companyName':companyName}
+			context_data = {'jobSlugTitle':jobSlugTitle, 'jobName':title, 'companyName':companyName}
 
 			return render(request, 'jobs/job_success.html', context=context_data)
 
 		else:
 
-			job.create_new_job(website, title, category, job_type, salary, tags, headquarters, region, link, job_description, is_featured)
+			jobSlugTitle = job.create_new_job(website, title, category, job_type, salary, tags, headquarters, region, link, job_description, is_featured)
 
 			company.create_new_company(name, logo, tagline, website, email, company_description)
 
 			companyName = company.get_company_by_website(website)
 
-			context_data = {'jobName':title, 'companyName':companyName}
+			context_data = {'jobSlugTitle':jobSlugTitle, 'jobName':title, 'companyName':companyName}
 
 			return render(request, 'jobs/job_success.html', context=context_data)
 

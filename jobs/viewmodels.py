@@ -141,6 +141,8 @@ class JobsViewModel():
 
 		self.save_to_jobs(job)
 
+		return job.slugTitle
+
 
 	def save_to_jobs(self, job):
 		""" Save job to database

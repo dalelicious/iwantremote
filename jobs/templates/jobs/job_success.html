@@ -5,7 +5,7 @@
 <div class="jumbotron bg-white text-center">
 	<img src="/static/images/success.png" class="img-fluid" alt="Responsive image" width="200">
   <h1 class="display-3">Thank You!</h1>
-  <p class="lead">You have successfully added <strong>{{jobName}}</strong> under <strong>{{companyName}}</strong> </p>
+  <p class="lead">You have successfully added <a href="{% url 'jobs:job-detail' jobSlugTitle %}"><strong>{{jobName}}</strong></a> under <strong>{{companyName}}</strong> </p>
   <p>
     Having trouble? <a href="mailto:iwantremote@gmail.com">Contact us</a>
   </p>
@@ -13,7 +13,5 @@
     <a class="btn btn-success btn-md" href="{% url 'jobs:jobs' %}" role="button">Continue to see all jobs</a>
   </p>
 </div>
-
-
 
 {% endblock %}
