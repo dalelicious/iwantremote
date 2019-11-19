@@ -2,31 +2,18 @@
 
 {% block content_additions %}
 
-<div class="jumbotron-fluid">
-	<div class="row">
-		<div class="col-lg-12 text-center mt-5">
-			<img src="/static/images/bg1.png" class="img-fluid" alt="Responsive image" width="200">
-			<p class="mt-2">You have successfully added</p> <h4>{{jobName}} under {{companyName|slice:":-5"}}. 💌 </h4>
-		</div>
-	</div>
+<div class="jumbotron bg-white text-center">
+	<img src="/static/images/success.png" class="img-fluid" alt="Responsive image" width="200">
+  <h1 class="display-3">Thank You!</h1>
+  <p class="lead">You have successfully added <strong>{{jobName}}</strong> under <strong>{{companyName}}</strong> </p>
+  <p>
+    Having trouble? <a href="mailto:iwantremote@gmail.com">Contact us</a>
+  </p>
+  <p class="lead">
+    <a class="btn btn-success btn-md" href="{% url 'jobs:jobs' %}" role="button">Continue to see all jobs</a>
+  </p>
 </div>
 
-<section id="tabs" calss="project-tab">
-	<div class="container">
-		<div class="row justify-content-md-center">
-			<div class="col-md-4">
-				<div class="tab-content" id="nav-tabContent">
-					<div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-						<div class="container mt-5">
-							<div class="card text-center btn-lg btn-light">
-								 <a href="{% url 'jobs:jobs' %}" style="color: black"><img src="/static/assets/vendor/iconic/png/caret-left-2x.png"> See all jobs </a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
+
 
 {% endblock %}
