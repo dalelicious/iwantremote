@@ -114,7 +114,9 @@ def create_job(request):
 
 			company.create_new_company(name, logo, tagline, website, email, company_description)
 
-			context_data = {'jobName':title, 'companyName':name}
+			companyName = company.get_company_by_website(website)
+
+			context_data = {'jobName':title, 'companyName':companyName}
 
 			return render(request, 'jobs/job_success.html', context=context_data)
 
