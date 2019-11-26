@@ -20,7 +20,7 @@ class Jobs(models.Model):
 	job_type = models.CharField(max_length=50, null=True)
 	salary = models.CharField(max_length=50, null=True)
 	tags = models.CharField(max_length=50, null=True)
-	headquarters = models.CharField(max_length=50, null=True)
+	headquarters = models.CharField(max_length=100, null=True)
 	region = models.CharField(max_length=50, null=True)
 	link = models.CharField(max_length=200, null=True)
 	description = models.TextField(null=True)
