@@ -91,18 +91,24 @@ def create_job(request):
 		name = request.POST['company_name']
 		logo = request.FILES['logo']
 		tagline = request.POST['tagline']
-		website = request.POST['website']
+		initial_website = request.POST['website']
+
+		if initial_website[:4] == "www.":
+			final_website = initial_website[4:]
+		else:
+			final_website = initial_website
+
 		email = request.POST['email']
 		company_description = request.POST['company_description']
 
-		company_exist = company.check_company_exist(website)
+		company_exist = company.check_company_exist(final_website)
 
 
 		if company_exist:
 
-			jobSlugTitle = job.create_new_job(website, title, category, job_type, salary, tags, headquarters, region, link, job_description, is_featured)
+			jobSlugTitle = job.create_new_job(final_website, title, category, job_type, salary, tags, headquarters, region, link, job_description, is_featured)
 
-			companyName = company.get_company_by_website(website)
+			companyName = company.get_company_by_website(final_website)
 
 			context_data = {'jobSlugTitle':jobSlugTitle, 'jobName':title, 'companyName':companyName}
 
@@ -110,11 +116,11 @@ def create_job(request):
 
 		else:
 
-			jobSlugTitle = job.create_new_job(website, title, category, job_type, salary, tags, headquarters, region, link, job_description, is_featured)
+			jobSlugTitle = job.create_new_job(final_website, title, category, job_type, salary, tags, headquarters, region, link, job_description, is_featured)
 
-			company.create_new_company(name, logo, tagline, website, email, company_description)
+			company.create_new_company(name, logo, tagline, final_website, email, company_description)
 
-			companyName = company.get_company_by_website(website)
+			companyName = company.get_company_by_website(final_website)
 
 			context_data = {'jobSlugTitle':jobSlugTitle, 'jobName':title, 'companyName':companyName}
 
