@@ -38,10 +38,10 @@ class CompanyViewModel():
 
 
 	def get_company_list(self):
-		""" Get all company
+		""" Get all company sorted by job posted
 		"""
 
-		company_list = Company.objects.all()
+		company_list = sorted(Company.objects.all(), key=lambda t: t.total_job_posted, reverse=True)
 
 		return company_list
 
