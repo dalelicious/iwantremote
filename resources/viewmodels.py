@@ -8,11 +8,11 @@ from . models 		import Resources
 class ResourcesViewModel():
 
 
-	def get_blog_by_id(self, blogId):
+	def get_blog_by_name(self, blogTitle):
 		""" Get blog by id
 		"""
 
-		blog = Resources.objects.get(id=blogId)
+		blog = Resources.objects.get(slugTitle=blogTitle)
 
 		return blog
 

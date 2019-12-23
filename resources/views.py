@@ -25,10 +25,10 @@ def blog(request):
 				  'category_list':category_list})
 
 
-def blog_detail(request, blogId):
+def blog_detail(request, blogTitle):
 
 	all_jobs = len(job.get_jobs_list())
-	blog = resources.get_blog_by_id(blogId)
+	blog = resources.get_blog_by_name(blogTitle)
 	category_list = categories.get_category_list()
 
 	return render(request, 'resources/blog_detail.html',
@@ -46,6 +46,7 @@ def privacy(request):
 				 {'all_jobs':all_jobs,
 				  'category_list':category_list})
 
+
 def job_template(request):
 
 	all_jobs = len(job.get_jobs_list())
@@ -55,6 +56,7 @@ def job_template(request):
 				 {'all_jobs':all_jobs,
 				  'category_list':category_list})
 
+
 def testimony(request):
 
 	all_jobs = len(job.get_jobs_list())
@@ -63,6 +65,7 @@ def testimony(request):
 	return render(request, 'resources/testimony.html',
 				 {'all_jobs':all_jobs,
 				  'category_list':category_list})
+
 
 def howitworks(request):
 
