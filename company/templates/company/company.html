@@ -10,6 +10,21 @@
     </div>
   </div>
 </div>
+
+<div class="container col-sm-8">
+  <form method="POST" action="{% url 'company:companies' %}">
+    {% csrf_token %}
+    <div class="bg-light rounded rounded-pill shadow-sm mb-4">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <button id="button-addon2" type="submit" class="btn btn-link text-warning"><i class="fa fa-search" style="color: black;"></i></button>
+        </div>
+        <input type="search" placeholder="Company contents, jobs, location..." name="search" aria-describedby="button-addon2" class="form-control border-0 bg-light" style="border-radius:0.5rem;">
+      </div>
+    </div>
+  </form>
+</div>
+
 {% for company in company_list %}
   <div class="container col-sm-7 mt-1">
     <a href="{% url 'company:company-detail' company.slugName %}" style="color: #343a40; text-decoration: none;">

@@ -18,6 +18,7 @@ class CompanyViewModel():
 
 		return company
 
+
 	def get_company_by_website(self, companyWebsite):
 		""" Get company by website
 		"""
@@ -42,6 +43,15 @@ class CompanyViewModel():
 		"""
 
 		company_list = sorted(Company.objects.all(), key=lambda t: t.total_job_posted, reverse=True)
+
+		return company_list
+
+
+	def get_company_result_list(self, search):
+		""" Get company search results
+		"""
+
+		company_list = Company.objects.filter(name__icontains=search)
 
 		return company_list
 
